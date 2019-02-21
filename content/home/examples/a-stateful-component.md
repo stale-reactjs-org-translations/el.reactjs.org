@@ -1,7 +1,7 @@
 ---
-title: A Stateful Component
+title: Ένα Stateful Component
 order: 1
 domid: timer-example
 ---
 
-In addition to taking input data (accessed via `this.props`), a component can maintain internal state data (accessed via `this.state`). When a component's state data changes, the rendered markup will be updated by re-invoking `render()`.
+Εκτός από τη λήψη δεδομένων εισόδου (πρόσβαση μέσω `this.props`), ένα component μπορεί να διατηρήσει εσωτερικά δεδομένα της κατάστασης (state) του - (πρόσβαση μέσω `this.state`). Όταν μεταβληθούν τα δεδομένα του state ενός component, το rendered markup θα ενημερωθεί με επανάκληση της `render ()`.
