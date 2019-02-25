@@ -3,6 +3,6 @@ title: Learn Once, Write Anywhere
 order: 2
 ---
 
-We don't make assumptions about the rest of your technology stack, so you can develop new features in React without rewriting existing code.
+Δεν κάνουμε υποθέσεις σχετικά με το υπόλοιπο stack της τεχνολογίας σας, ώστε να μπορείτε να αναπτύξετε νέες λειτουργίες στο React χωρίς να ξαναγράψετε τον κώδικα σας.
 
-React can also render on the server using Node and power mobile apps using [React Native](https://facebook.github.io/react-native/).
+Το React μπορεί επίσης να κάνει render στο server χρησιμοποιώντας Node, και mobile apps με χρήση του [React Native](https://facebook.github.io/react-native/).
