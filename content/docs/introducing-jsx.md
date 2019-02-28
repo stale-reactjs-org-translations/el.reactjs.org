@@ -1,36 +1,36 @@
 ---
 id: introducing-jsx
-title: Introducing JSX
+title: Εισαγωγή στο JSX
 permalink: docs/introducing-jsx.html
 prev: hello-world.html
 next: rendering-elements.html
 ---
 
-Consider this variable declaration:
+Εξετάστε τη δήλωση αυτής της μεταβλητής
 
 ```js
 const element = <h1>Hello, world!</h1>;
 ```
 
-This funny tag syntax is neither a string nor HTML.
+Αυτό το περίεργο συντακτικό με το tag δεν είναι ούτε string ούτε HTML.
 
-It is called JSX, and it is a syntax extension to JavaScript. We recommend using it with React to describe what the UI should look like. JSX may remind you of a template language, but it comes with the full power of JavaScript.
+Ονομάζεται JSX και είναι μια επέκταση του συντακτικού της JavaScript. Σας συνιστούμε να το χρησιμοποιείται με το React για να περιγράψετε πως θα πρέπει να μοιάζει το UI. Το JSX μπορεί να σας θυμίζει ένα template language, αλλά έρχεται με την πλήρη ισχύ της JavaScript.
 
-JSX produces React "elements". We will explore rendering them to the DOM in the [next section](/docs/rendering-elements.html). Below, you can find the basics of JSX necessary to get you started.
+Το JSX παράγει τα React “elements”. Θα διερευνήσουμε τη διαδικασία του rendering τους στο DOM στην [επόμενη ενότητα](/docs/rendering-elements.html). Παρακάτω, θα βρείτε τα βασικά του JSX που είναι απαραίτητα για να ξεκινήσετε.
 
-### Why JSX? {#why-jsx}
+### Γιατί JSX? {#why-jsx}
 
-React embraces the fact that rendering logic is inherently coupled with other UI logic: how events are handled, how the state changes over time, and how the data is prepared for display.
+Το React θεωρεί το γεγονός ότι η λογική του rendering συνδέεται φυσικά με άλλη λογική του UI: πώς γίνεται ο χειρισμός των events, πώς αλλάζει το state με την πάροδο του χρόνου καθώς και πώς προετοιμάζονται τα δεδομένα για εμφάνιση.
 
-Instead of artificially separating *technologies* by putting markup and logic in separate files, React [separates *concerns*](https://en.wikipedia.org/wiki/Separation_of_concerns) with loosely coupled units called "components" that contain both. We will come back to components in a [further section](/docs/components-and-props.html), but if you're not yet comfortable putting markup in JS, [this talk](https://www.youtube.com/watch?v=x7cQ3mrcKaY) might convince you otherwise.
+Αντί να διαχωρίζει τις *τεχνολογίες* με το να βάζει το markup και τη λογική σε διαφορετικά αρχεία, το React ακολουθεί την αρχιτεκτονική του [separation of *concerns*](https://en.wikipedia.org/wiki/Separation_of_concerns) έχωντας και τα δυο μέσα σε ελαφρώς συνδεδεμένα units που λέγονται "components". Θα επανέλθουμε στα components σε μια [επόμενη ενότητα](/docs/components-and-props.html), αλλά αν δεν αισθάνεστε άνετα με το να βάζετε το markup στη JS, [αυτή η ομιλία](https://www.youtube.com/watch?v=x7cQ3mrcKaY) μπορεί να σας πείσει για το αντίθετο.
 
-React [doesn't require](/docs/react-without-jsx.html) using JSX, but most people find it helpful as a visual aid when working with UI inside the JavaScript code. It also allows React to show more useful error and warning messages.
+Το React [δεν απαιτεί](/docs/react-without-jsx.html) τη χρήση του JSX, αλλά οι περισσότεροι το βρίσκουν ως οπτικό βοήθημα όταν εργάζονται με το UI μέσα από την JavaScript. Επιτρέπει επίσης στο React να εμφανίζει πιο χρήσιμα μηνύματα λάθους και προειδοποιήσεις.
 
-With that out of the way, let's get started!
+Τώρα που βγήκαν αυτά από τη μέση, ας ξεκινήσουμε!
 
-### Embedding Expressions in JSX {#embedding-expressions-in-jsx}
+### Ενσωματώνοντας εκφράσεις στο JSX {#embedding-expressions-in-jsx}
 
-In the example below, we declare a variable called `name` and then use it inside JSX by wrapping it in curly braces:
+Στο παρακάτω παράδειγμα, δηλώνουμε μια μεταβλητή που ονομάζεται `name` και στη συνέχεια τη χρησιμοποιούμε στο JSX περικλείοντας τη σε αγκύλες:
 
 ```js{1,2}
 const name = 'Josh Perez';
@@ -42,9 +42,9 @@ ReactDOM.render(
 );
 ```
 
-You can put any valid [JavaScript expression](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) inside the curly braces in JSX. For example, `2 + 2`, `user.firstName`, or `formatName(user)` are all valid JavaScript expressions.
+Μπορείτε να βάλετε οποιαδήποτε έγκυρη [έκφραση της JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) μέσα σε αγκύλες στο JSX. Για παράδειγμα οι `2 + 2`, `user.firstName` ή `fotmatName(user)` είναι έγκυρες εκφράσεις της JavaScript.
 
-In the example below, we embed the result of calling a JavaScript function, `formatName(user)`, into an `<h1>` element.
+Στο παρακάτω παράδειγμα, βάζουμε το αποτέλεσμα μιας συνάρτησης της JavaScript, `formatName(user)`, σε ένα `<h1>` element.
 
 ```js{12}
 function formatName(user) {
@@ -68,15 +68,15 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://introducing-jsx)
+**[Δοκιμάστε το στο CodePen](codepen://introducing-jsx)**
 
-We split JSX over multiple lines for readability. While it isn't required, when doing this, we also recommend wrapping it in parentheses to avoid the pitfalls of [automatic semicolon insertion](https://stackoverflow.com/q/2846283).
+Διαχωρίζουμε το JSX σε πολλές γραμμές για ευκολία στην ανάγνωση. Ενώ δεν απαιτείται, όταν το κάνετε αυτό, προτείνουμε να το κλείσετε σε παρενθέσεις για να αποφύγετε τις παγίδες [της αυτόματης εισαγωγής ερωτηματικού](https://stackoverflow.com/q/2846283).
 
-### JSX is an Expression Too {#jsx-is-an-expression-too}
+### Το JSX μέσα σε εκφράσεις {#jsx-is-an-expression-too}
 
-After compilation, JSX expressions become regular JavaScript function calls and evaluate to JavaScript objects.
+Έπειτα από το compilation, οι εκφράσεις του JSX γίνονται JavaScript function calls και κάνουν evaluate σε JavaScript objects.
 
-This means that you can use JSX inside of `if` statements and `for` loops, assign it to variables, accept it as arguments, and return it from functions:
+Αυτό σημαίνει ότι μπορείτε να χρησιμοποιήσετε το JSX μέσα σε `if` statements και `for` loops, να το αναθέσετε σε μεταβλητές, να το δεχτείτε σαν arguments και να το επιστρέψετε από functions.
 
 ```js{3,5}
 function getGreeting(user) {
@@ -87,37 +87,38 @@ function getGreeting(user) {
 }
 ```
 
-### Specifying Attributes with JSX {#specifying-attributes-with-jsx}
+### Καθορίζοντας Attributes με το JSX {#specifying-attributes-with-jsx}
 
-You may use quotes to specify string literals as attributes:
+Μπορείτε να χρησιμοποιήσετε εισαγωγικά για να καθορίσετε τα string literals ως attributes:
 
 ```js
 const element = <div tabIndex="0"></div>;
 ```
 
-You may also use curly braces to embed a JavaScript expression in an attribute:
+Μπορείτε επίσης να χρησιμοποιήσετε άγκιστρα για να ενσωματώσετε μια έκφραση JavaScript σε ένα argument:
 
 ```js
 const element = <img src={user.avatarUrl}></img>;
 ```
 
-Don't put quotes around curly braces when embedding a JavaScript expression in an attribute. You should either use quotes (for string values) or curly braces (for expressions), but not both in the same attribute.
+Μην βάλετε εισαγωγικά γύρω από τα άγκιστρα όταν θέλετε να ενσωματώσετε μια έκφραση JavaScript σε ένα argument. Θα πρέπει να χρησιμοποιήσετε είτε εισαγωγικά (για strings) είτε άγκιστρα (για εκφράσεις), αλλά όχι και τα δύο στο ίδιο argument.
 
->**Warning:**
+>**Προσοχή:**
 >
->Since JSX is closer to JavaScript than to HTML, React DOM uses `camelCase` property naming convention instead of HTML attribute names.
+>Εφόσον το JSX είναι πιο κοντά στη JavaScript από ό,τι στην HTML, το React DOM χρησιμοποιεί ως σύμβαση `camelCase` για την ονοματολογία ενός property αντί για τα ονόματα των attributes της HTML.
 >
->For example, `class` becomes [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) in JSX, and `tabindex` becomes [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
+>Για παράδειγμα, το `class` γίνεται [`className`](https://developer.mozilla.org/en-US/docs/Web/API/Element/className) στο JSX, και το `tabindex` γίνεται [`tabIndex`](https://developer.mozilla.org/en-US/docs/Web/API/HTMLElement/tabIndex).
 
-### Specifying Children with JSX {#specifying-children-with-jsx}
+### Καθορίζοντας Children με το JSX {#specifying-children-with-jsx}
 
-If a tag is empty, you may close it immediately with `/>`, like XML:
+Αν ένα tag είναι κενό, μπορείτε να το κλείσετε άμεσα με `/>`, όπως στην XML:
 
 ```js
 const element = <img src={user.avatarUrl} />;
 ```
 
-JSX tags may contain children:
+
+Τα JSX tags μπορεί να περιέχουν children
 
 ```js
 const element = (
@@ -128,23 +129,23 @@ const element = (
 );
 ```
 
-### JSX Prevents Injection Attacks {#jsx-prevents-injection-attacks}
+### To JSX αποτρέπει τα Injection Attacks {#jsx-prevents-injection-attacks}
 
-It is safe to embed user input in JSX:
+Είναι ασφαλές να ενσωματώσετε δεδομένα δοσμένα από τον χρήστη στο JSX:
 
 ```js
 const title = response.potentiallyMaliciousInput;
-// This is safe:
+// Αυτό είναι ασφαλές:
 const element = <h1>{title}</h1>;
 ```
 
-By default, React DOM [escapes](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) any values embedded in JSX before rendering them. Thus it ensures that you can never inject anything that's not explicitly written in your application. Everything is converted to a string before being rendered. This helps prevent [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting) attacks.
+Από προεπιλογή, το React DOM κάνει [escape](https://stackoverflow.com/questions/7381974/which-characters-need-to-be-escaped-on-html) οποιεσδήποτε τιμές είναι ενσωματωμένες στο JSX πριν από τη στιγμή του rendering. Έτσι εξασφαλίζει ότι δεν μπορεί ποτέ να γίνει inject οτιδήποτε δεν είναι γραμμένο αποκλειστικά στην εφαρμογή σας. Τα πάντα μετατρέπονται σε ένα string πριν γίνουν rendered. Αυτό αποτρέπει τις επιθέσεις τύπου [XSS (cross-site-scripting)](https://en.wikipedia.org/wiki/Cross-site_scripting).
 
-### JSX Represents Objects {#jsx-represents-objects}
+### Το JSX αντιπροσοπέυει Objects {#jsx-represents-objects}
 
-Babel compiles JSX down to `React.createElement()` calls.
+Το Babel κανει compile το JSX σε `React.createElement()`.
 
-These two examples are identical:
+Αυτά τα δύο παραδείγματα είναι ταυτόσημα:
 
 ```js
 const element = (
@@ -162,10 +163,10 @@ const element = React.createElement(
 );
 ```
 
-`React.createElement()` performs a few checks to help you write bug-free code but essentially it creates an object like this:
+To `React.createElement()` εκτελεί μερικούς ελέγχους για να σας βοηθήσει να γράψετε bug-free κώδικα αλλά στην ουσία φτιάχνει ένα object σαν κι αυτό:
 
 ```js
-// Note: this structure is simplified
+// Σημείωση: αυτή η δομή είναι απλοποιημένη
 const element = {
   type: 'h1',
   props: {
@@ -175,10 +176,10 @@ const element = {
 };
 ```
 
-These objects are called "React elements". You can think of them as descriptions of what you want to see on the screen. React reads these objects and uses them to construct the DOM and keep it up to date.
+Αυτά τα objects ονομάζονται "React elements". Μπορείτε να τα σκεφτείτε σαν περιγραφές του τι θα θέλατε να δείτε στην οθόνη. Το React διαβάζει αυτά τα objects και τα χρησιμοποιεί για να κατασκευάσει το DOM και να το ενημερώνει.
 
-We will explore rendering React elements to the DOM in the next section.
+Θα διευρύνουμε το rendering των React elements στο DOM στην επόμενη ενότητα.
 
 >**Tip:**
 >
->We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted. This website uses the [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/) color scheme which is compatible with it.
+>Προτείνουμε τη χρήση του ["Babel" language definition](https://babeljs.io/docs/editors) για τον editor της επιλογής σας, ώστε ο κώδικας ES6 και JSX να επισημαίνονται σωστά. Αυτή η ιστοσελίδα χρησιμοποιεί το συμβατό color scheme [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/).
