@@ -1,6 +1,6 @@
 ---
 id: hello-world
-title: Γεια σου Κόσμε
+title: Hello World
 permalink: docs/hello-world.html
 prev: cdn-links.html
 next: introducing-jsx.html
@@ -10,12 +10,12 @@ next: introducing-jsx.html
 
 ```js
 ReactDOM.render(
-  <h1>Γεια σου, κόσμε!</h1>,
+  <h1>Hello, world!</h1>,
   document.getElementById('root')
 );
 ```
 
-Εμφανίζει μια επικεφαλίδα λέγοντας "Γεια σου, κόσμε!" στη σελίδα.
+Εμφανίζει μια επικεφαλίδα λέγοντας "Hello, world!" στη σελίδα.
 
 [](codepen://hello-world)
 
@@ -44,5 +44,5 @@ ReactDOM.render(
 
 ## Ας Ξεκινήσουμε! {#lets-get-started}
 
-Συνεχίστε να μετακινήστε προς τα κάτω και θα βρείτε τον σύνδεσμο στον [επόμενο κεφάλαιο αυτού του οδηγού](/docs/introducing-jsx.html) ακριβώς πριν το υποσέλιδο ιστότοπου.
+Συνεχίστε να μετακινήστε προς τα κάτω και θα βρείτε τον σύνδεσμο στον [επόμενο κεφάλαιο αυτού του οδηγού](/docs/introducing-jsx.html) ακριβώς πριν το footer του ιστότοπου.
 
