@@ -30,7 +30,7 @@ function Welcome(props) {
 }
 ```
 
-Αυτή η συνάρτηση είναι ένα έγκυρο React component επειδή δέχεται μία μόνο 
+Αυτή η συνάρτηση είναι ένα έγκυρο React component επειδή δέχεται ένα μόνο 
 "prop" (που σημαίνει properties) object παράμετρο με δεδομένα και επιστρέφει ένα React element. Ονομάζουμε αυτά τα components "function components", επειδή είναι κυριολεκτικά συναρτήσεις JavaScript.
 
 Μπορείτε επίσης να χρησιμοποιήσετε μια [ES6 κλάση](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) για να ορίσετε ένα component:
