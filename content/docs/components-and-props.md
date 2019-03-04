@@ -88,7 +88,7 @@ ReactDOM.render(
 
 >**Σημείωση:** Πάντα να ξεκινάτε τα ονόματα των components με κεφαλαίο γράμμα.
 >
->Το React μεταχειρίζει τα components που ξεκινούν με πεζά γράμματα ως DOM tags. Για παράδειγμα, το `<div />` αντιπροσωπεύει ένα HTML div tag, αλλά το `<Welcome />` αντιπροσωπεύει ένα component και απαιτεί το `Welcome` να είναι στο scope.
+>Το React μεταχειρίζεται τα components που ξεκινούν με πεζά γράμματα ως DOM tags. Για παράδειγμα, το `<div />` αντιπροσωπεύει ένα HTML div tag, αλλά το `<Welcome />` αντιπροσωπεύει ένα component και απαιτεί το `Welcome` να είναι στο scope.
 >
 >Για να μάθετε περισσότερα για την αιτιολογία πίσω από αυτή τη σύμβαση, διαβάστε το [JSX Σε Βάθος](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized).
 
