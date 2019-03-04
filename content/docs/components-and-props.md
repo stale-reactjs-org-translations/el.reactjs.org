@@ -77,7 +77,7 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/rendering-a-component)
+**[Δοκιμάστε το στο CodePen](codepen://components-and-props/rendering-a-component)**
 
 Ας ανακεφαλαιώσουμε τι συμβαίνει σε αυτό το παράδειγμα:
 
