@@ -30,8 +30,7 @@ function Welcome(props) {
 }
 ```
 
-Αυτή η συνάρτηση είναι ένα έγκυρο React component επειδή δέχεται ένα μόνο 
-"prop" (που σημαίνει properties) object παράμετρο με δεδομένα και επιστρέφει ένα React element. Ονομάζουμε αυτά τα components "function components", επειδή είναι κυριολεκτικά συναρτήσεις JavaScript.
+Αυτή η συνάρτηση είναι ένα έγκυρο React component επειδή δέχεται ένα μόνο "prop" (που σημαίνει properties) object παράμετρο με δεδομένα και επιστρέφει ένα React element. Ονομάζουμε αυτά τα components "function components", επειδή είναι κυριολεκτικά συναρτήσεις JavaScript.
 
 Μπορείτε επίσης να χρησιμοποιήσετε μια [ES6 κλάση](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) για να ορίσετε ένα component:
 
@@ -153,13 +152,9 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components)
+[Δοκιμάστε το στο CodePen](codepen://components-and-props/extracting-components)
 
 Αποδέχεται το `author` (ένα object), το `text` (ένα string), και το `date` (ένα date) ως props, και περιγράφει ένα σχόλιο σε έναν ιστότοπο social media.
-
-This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of it. Let's extract a few components from it.
-
-Αυτό το στοιχείο μπορεί να είναι δύσκολο να αλλάξει λόγω όλων των φωλιών, και είναι επίσης δύσκολο να επαναχρησιμοποιηθούν μεμονωμένα μέρη του. Ας εξάγουμε μερικά συστατικά από αυτό.
 
 Αυτό το component μπορεί να είναι δύσκολο να αλλάξει λόγω όλων των nesting, και είναι επίσης δύσκολο να επαναχρησιμοποιηθούν μεμονωμένα μέρη του. Ας εξάγουμε μερικά components από αυτό.
 
@@ -236,7 +231,7 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components-continued)
+[Δοκιμάστε το στο CodePen](codepen://components-and-props/extracting-components-continued)
 
 Η εξαγωγή των components ίσως μοιάζει αρχικά με εργασία, αλλά μια παλέτα επαναχρησιμοποιούμενων components αποδίδει σε μεγαλύτερες εφαρμογές. Ένας καλός κανόνας είναι ότι εαν ένα μέρος του UI σας χρησιμοποιείται αρκετές φορές (`Button`, `Panel`, `Avatar`), ή είναι αρκετά σύνθετο από μόνο του (`App`, `FeedStory`, `Comment`), είναι ένας καλός υποψήφιος να είναι ένα επαναχρησιμοποιήσιμο component.
 
