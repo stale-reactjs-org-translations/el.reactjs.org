@@ -119,7 +119,7 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/composing-components)
+**[Δοκιμάστε το στο CodePen](codepen://components-and-props/composing-components)**
 
 Συνήθως, οι νέες React εφαρμογές έχουν ένα μόνο `App` component στην κορυφή. Ωστόσο, εαν ενσωματώσετε το React σε μια υπάρχουσα εφαρμογή, μπορεί να ξεκινήσετε από τη βάση προς τα πάνω με ένα μικρό component όπως το `Button` και να φτάσετε σταδιακά στην κορυφή της view ιεραρχίας.
 
