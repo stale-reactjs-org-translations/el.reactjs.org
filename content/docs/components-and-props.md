@@ -1,6 +1,6 @@
 ---
 id: components-and-props
-title: Components and Props
+title: Components και Props
 permalink: docs/components-and-props.html
 redirect_from:
   - "docs/reusable-components.html"
@@ -16,13 +16,13 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
-Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+Τα components σας επιτρέπουν να χωρίσετε το UI σε ανεξάρτητα, επαναχρησιμοποιούμενα κομμάτια και να σκεφτείτε κάθε κομμάτι μεμονωμένα. Αυτή η σελίδα παρέχει μια εισαγωγή στην ιδέα των components. Μπορείτε να βρείτε [εδώ μια αναλυτική αναφορά του component API](/docs/react-component.html).
 
-Conceptually, components are like JavaScript functions. They accept arbitrary inputs (called "props") and return React elements describing what should appear on the screen.
+Εννοιολογικά, τα components είναι σαν συναρτήσεις JavaScript. Δέχονται αυθαίρετες εισόδους (που ονομάζονται "props") και επιστρέφουν React elements που περιγράφουν τι πρέπει να εμφανίζεται στην οθόνη.
 
-## Function and Class Components {#function-and-class-components}
+## Function και Class Components {#function-and-class-components}
 
-The simplest way to define a component is to write a JavaScript function:
+Ο πιο απλός τρόπος για τον ορισμό ενός component είναι να γράψετε μια συνάρτηση JavaScript:
 
 ```js
 function Welcome(props) {
@@ -30,9 +30,9 @@ function Welcome(props) {
 }
 ```
 
-This function is a valid React component because it accepts a single "props" (which stands for properties) object argument with data and returns a React element. We call such components "function components" because they are literally JavaScript functions.
+Αυτή η συνάρτηση είναι ένα έγκυρο React component επειδή δέχεται ένα μόνο "prop" (που σημαίνει properties) object παράμετρο με δεδομένα και επιστρέφει ένα React element. Ονομάζουμε αυτά τα components "function components", επειδή είναι κυριολεκτικά συναρτήσεις JavaScript.
 
-You can also use an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) to define a component:
+Μπορείτε επίσης να χρησιμοποιήσετε μια [ES6 κλάση](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes) για να ορίσετε ένα component:
 
 ```js
 class Welcome extends React.Component {
@@ -42,27 +42,27 @@ class Welcome extends React.Component {
 }
 ```
 
-The above two components are equivalent from React's point of view.
+Τα παραπάνω δύο components είναι ισοδύναμα από την άποψη του React.
 
-Classes have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html). Until then, we will use function components for their conciseness.
+Οι κλάσεις έχουν κάποια επιπλέον χαρακτηριστικά που θα συζητήσουμε στις [επόμενες ενότητες](/docs/state-and-lifecycle.html). Μέχρι τότε, θα χρησιμοποιήσουμε function components για τη συνοπτικότητά τους.
 
-## Rendering a Component {#rendering-a-component}
+## Κάνοντας render ένα Component {#rendering-a-component}
 
-Previously, we only encountered React elements that represent DOM tags:
+Προηγουμένως, συναντήσαμε μόνο React elements που αντιπροσωπεύουν DOM tags:
 
 ```js
 const element = <div />;
 ```
 
-However, elements can also represent user-defined components:
+Ωστόσο, τα elements μπορούν επίσης να αντιπροσωπεύουν components που ορίζονται από το χρήστη:
 
 ```js
 const element = <Welcome name="Sara" />;
 ```
 
-When React sees an element representing a user-defined component, it passes JSX attributes to this component as a single object. We call this object "props".
+Όταν το React βλέπει ένα element που αντιπροσωπεύει ένα component καθορισμένο από το χρήστη, μεταβιβάζει τα JSX attributes σε αυτό το component ως ένα μόνο object. Ονομάζουμε αυτό το αντικείμενο "props".
 
-For example, this code renders "Hello, Sara" on the page:
+Για παράδειγμα, αυτός ο κώδικας κάνει render "Hello, Sara" στη σελίδα:
 
 ```js{1,5}
 function Welcome(props) {
@@ -76,26 +76,26 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/rendering-a-component)
+**[Δοκιμάστε το στο CodePen](codepen://components-and-props/rendering-a-component)**
 
-Let's recap what happens in this example:
+Ας ανακεφαλαιώσουμε τι συμβαίνει σε αυτό το παράδειγμα:
 
-1. We call `ReactDOM.render()` with the `<Welcome name="Sara" />` element.
-2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
-3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
-4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+1. Θα καλέσουμε το `ReactDOM.render()`  με το `<Welcome name="Sara" />` element.
+2. Το React καλεί το `Welcome` component με το `{name: 'Sara'}` ως τα props.
+3. Το `Welcome` component μας επειστρέφει ως αποτέλεσμα ένα `<h1>Hello, Sara</h1>` element.
+4. Το React DOM ενημερώνει αποδοτικά το DOM για να ταιριάζει το `<h1>Hello, Sara</h1>`.
 
->**Note:** Always start component names with a capital letter.
+>**Σημείωση:** Πάντα να ξεκινάτε τα ονόματα των components με κεφαλαίο γράμμα.
 >
->React treats components starting with lowercase letters as DOM tags. For example, `<div />` represents an HTML div tag, but `<Welcome />` represents a component and requires `Welcome` to be in scope.
+>Το React μεταχειρίζεται τα components που ξεκινούν με πεζά γράμματα ως DOM tags. Για παράδειγμα, το `<div />` αντιπροσωπεύει ένα HTML div tag, αλλά το `<Welcome />` αντιπροσωπεύει ένα component και απαιτεί το `Welcome` να είναι στο scope.
 >
->To learn more about the reasoning behind this convention, please read [JSX In Depth](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized).
+>Για να μάθετε περισσότερα για την αιτιολογία πίσω από αυτή τη σύμβαση, διαβάστε το [JSX Σε Βάθος](/docs/jsx-in-depth.html#user-defined-components-must-be-capitalized).
 
 ## Composing Components {#composing-components}
 
-Components can refer to other components in their output. This lets us use the same component abstraction for any level of detail. A button, a form, a dialog, a screen: in React apps, all those are commonly expressed as components.
+Τα components μπορούν να αναφέρουν άλλα components στην έξοδο τους. Αυτό μας επιτρέπει να χρησιμοποιήσουμε την ίδια αφαίρεση του component για οποιοδήποτε επίπεδο λεπτομέρειας. Ένα κουμπί, μια φόρμα, ένας διάλογος, μια οθόνη: στις εφαρμογές React, όλα αυτά εκφράζονται συνήθως ως components.
 
-For example, we can create an `App` component that renders `Welcome` many times:
+Για παράδειγμα, μπορούμε να δημιουργήσουμε ένα `App` component που κάνει render πολλές φορές το `Welcome`:
 
 ```js{8-10}
 function Welcome(props) {
@@ -118,15 +118,15 @@ ReactDOM.render(
 );
 ```
 
-[](codepen://components-and-props/composing-components)
+**[Δοκιμάστε το στο CodePen](codepen://components-and-props/composing-components)**
 
-Typically, new React apps have a single `App` component at the very top. However, if you integrate React into an existing app, you might start bottom-up with a small component like `Button` and gradually work your way to the top of the view hierarchy.
+Συνήθως, οι νέες React εφαρμογές έχουν ένα μόνο `App` component στην κορυφή. Ωστόσο, εαν ενσωματώσετε το React σε μια υπάρχουσα εφαρμογή, μπορεί να ξεκινήσετε από τη βάση προς τα πάνω με ένα μικρό component όπως το `Button` και να φτάσετε σταδιακά στην κορυφή της view ιεραρχίας.
 
-## Extracting Components {#extracting-components}
+## Εξαγωγή των Components {#extracting-components}
 
-Don't be afraid to split components into smaller components.
+Μην φοβάστε να χωρίσετε τα components σε μικρότερα components.
 
-For example, consider this `Comment` component:
+Για παράδειγμα, εξετάστε αυτό το `Comment` component:
 
 ```js
 function Comment(props) {
@@ -152,13 +152,13 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components)
+[Δοκιμάστε το στο CodePen](codepen://components-and-props/extracting-components)
 
-It accepts `author` (an object), `text` (a string), and `date` (a date) as props, and describes a comment on a social media website.
+Αποδέχεται το `author` (ένα object), το `text` (ένα string), και το `date` (ένα date) ως props, και περιγράφει ένα σχόλιο σε έναν ιστότοπο social media.
 
-This component can be tricky to change because of all the nesting, and it is also hard to reuse individual parts of it. Let's extract a few components from it.
+Αυτό το component μπορεί να είναι δύσκολο να αλλάξει λόγω όλων των nesting, και είναι επίσης δύσκολο να επαναχρησιμοποιηθούν μεμονωμένα μέρη του. Ας εξάγουμε μερικά components από αυτό.
 
-First, we will extract `Avatar`:
+Πρώτα, θα εξαγάγουμε το `Avatar`:
 
 ```js{3-6}
 function Avatar(props) {
@@ -171,11 +171,11 @@ function Avatar(props) {
 }
 ```
 
-The `Avatar` doesn't need to know that it is being rendered inside a `Comment`. This is why we have given its prop a more generic name: `user` rather than `author`.
+Το `Avatar` δεν χρειάζεται να γνωρίζει ότι γίνεται rendered μέσα σε ένα `Comment`. Αυτός είναι ο λόγος για τον οποίο δώσαμε στο prop του ένα γενικότερο όνομα: `user` παρά `author`.
 
-We recommend naming props from the component's own point of view rather than the context in which it is being used.
+Συνιστούμε να ονομάζετε τα props από την οπτική γωνία του component και όχι από το πλαίσιο στο οποίο χρησιμοποιείται.
 
-We can now simplify `Comment` a tiny bit:
+Τώρα μπορούμε να απλοποιήσουμε λίγο το `Comment`:
 
 ```js{5}
 function Comment(props) {
@@ -198,7 +198,7 @@ function Comment(props) {
 }
 ```
 
-Next, we will extract a `UserInfo` component that renders an `Avatar` next to the user's name:
+Στη συνέχεια, θα εξαγάγουμε ένα `UserInfo` component που κάνει render ένα `Avatar` δίπλα στο όνομα του χρήστη:
 
 ```js{3-8}
 function UserInfo(props) {
@@ -213,7 +213,7 @@ function UserInfo(props) {
 }
 ```
 
-This lets us simplify `Comment` even further:
+Αυτό μας επιτρέπει να απλοποιήσουμε ακόμα περισσότερο το `Comment`:
 
 ```js{4}
 function Comment(props) {
@@ -231,13 +231,13 @@ function Comment(props) {
 }
 ```
 
-[](codepen://components-and-props/extracting-components-continued)
+[Δοκιμάστε το στο CodePen](codepen://components-and-props/extracting-components-continued)
 
-Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be a reusable component.
+Η εξαγωγή των components ίσως μοιάζει αρχικά με εργασία, αλλά μια παλέτα επαναχρησιμοποιούμενων components αποδίδει σε μεγαλύτερες εφαρμογές. Ένας καλός κανόνας είναι ότι εαν ένα μέρος του UI σας χρησιμοποιείται αρκετές φορές (`Button`, `Panel`, `Avatar`), ή είναι αρκετά σύνθετο από μόνο του (`App`, `FeedStory`, `Comment`), είναι ένας καλός υποψήφιος να είναι ένα επαναχρησιμοποιήσιμο component.
 
-## Props are Read-Only {#props-are-read-only}
+## Τα Props είναι Read-Only {#props-are-read-only}
 
-Whether you declare a component [as a function or a class](#function-and-class-components), it must never modify its own props. Consider this `sum` function:
+Είτε δηλώνετε ένα component [ως συνάρτηση είτε ως κλάση](#function-and-class-components), δεν πρέπει ποτέ να τροποποιήσει τα δικά του props. Εξετάστε αυτή τη συνάρτηση `sum ':
 
 ```js
 function sum(a, b) {
@@ -245,9 +245,9 @@ function sum(a, b) {
 }
 ```
 
-Such functions are called ["pure"](https://en.wikipedia.org/wiki/Pure_function) because they do not attempt to change their inputs, and always return the same result for the same inputs.
+Αυτές οι συναρτήσεις ονομάζονται ["pure"](https://en.wikipedia.org/wiki/Pure_function) επειδή δεν επιχειρούν να αλλάξουν τις εισόδους τους και πάντα επιστρέφουν το ίδιο αποτέλεσμα για τις ίδιες εισόδους. 
 
-In contrast, this function is impure because it changes its own input:
+Αντίθετα, αυτή η συνάρτηση είναι impure επειδή αλλάζει τη δικιά της είσοδο:
 
 ```js
 function withdraw(account, amount) {
@@ -255,8 +255,8 @@ function withdraw(account, amount) {
 }
 ```
 
-React is pretty flexible but it has a single strict rule:
+Το React είναι αρκετά ευέλικτο αλλά έχει έναν μόνο αυστηρό κανόνα:
 
-**All React components must act like pure functions with respect to their props.**
+**Όλα τα React component πρέπει να ενεργούν σαν pure συναρτήσεις σε σχέση με τα props τους**
 
-Of course, application UIs are dynamic and change over time. In the [next section](/docs/state-and-lifecycle.html), we will introduce a new concept of "state". State allows React components to change their output over time in response to user actions, network responses, and anything else, without violating this rule.
+Φυσικά, οι UI εφαρμογές είναι δυναμικές και αλλάζουν με την πάροδο του χρόνου. Στο [επόμενο τμήμα](/docs/state-and-lifecycle.html), θα εισαγάγουμε μια νέα έννοια του "state". Το state επιτρέπει στα React components να αλλάζουν την έξοδο τους με την πάροδο του χρόνου, ανταποκρινόμενη στις ενέργειες των χρηστών, τις αποκρίσεις δικτύου και οτιδήποτε άλλο, χωρίς να παραβιάζει αυτόν τον κανόνα.
