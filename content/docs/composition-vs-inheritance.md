@@ -1,6 +1,6 @@
 ---
 id: composition-vs-inheritance
-title: Composition vs Inheritance
+title: Σύνθεση έναντι Κληρονομιάς
 permalink: docs/composition-vs-inheritance.html
 redirect_from:
   - "docs/multiple-components.html"
@@ -8,15 +8,15 @@ prev: lifting-state-up.html
 next: thinking-in-react.html
 ---
 
-React has a powerful composition model, and we recommend using composition instead of inheritance to reuse code between components.
+Το React έχει ένα ισχυρό μοντέλο σύνθεσης και σας συνιστούμε να χρησιμοποιήσετε τη σύνθεση αντί της κληρονομιάς για να επαναχρησιμοποιήσετε τον κώδικα μεταξύ των components.
 
-In this section, we will consider a few problems where developers new to React often reach for inheritance, and show how we can solve them with composition.
+Σε αυτή την ενότητα θα εξετάσουμε μερικά προβλήματα στα οποία οι developers νέοι στο React συχνά φτάνουν για κληρονομία και θα δείξοτμε πώς μπορούμε να τα λύσουμε με τη σύνθεση.
 
-## Containment {#containment}
+## Περιορισμός {#containment}
 
-Some components don't know their children ahead of time. This is especially common for components like `Sidebar` or `Dialog` that represent generic "boxes".
+Ορισμένα components δεν γνωρίζουν τα children τους πριν των ώρα τους. Αυτό είναι ιδιαίτερα κοινό για τα components όπως `Sidebar` ή `Dialog` που αντιπροσωπεύουν γενικά "κουτιά".
 
-We recommend that such components use the special `children` prop to pass children elements directly into their output:
+Συνιστούμε τα components αυτά να χρησιμοποιούν το ειδικό `children` props για να μεταφέρουν τα children elements απευθείας στην έξοδο τους:
 
 ```js{4}
 function FancyBorder(props) {
@@ -28,7 +28,7 @@ function FancyBorder(props) {
 }
 ```
 
-This lets other components pass arbitrary children to them by nesting the JSX:
+Αυτό επιτρέπει σε άλλα components να περάσουν αυθαίρετα children σε αυτά, εμφωλιάζοντας το JSX:
 
 ```js{4-9}
 function WelcomeDialog() {
@@ -45,11 +45,11 @@ function WelcomeDialog() {
 }
 ```
 
-**[Try it on CodePen](https://codepen.io/gaearon/pen/ozqNOV?editors=0010)**
+**[Δοκιμάστε το στο CodePen](https://codepen.io/gaearon/pen/ozqNOV?editors=0010)**
 
-Anything inside the `<FancyBorder>` JSX tag gets passed into the `FancyBorder` component as a `children` prop. Since `FancyBorder` renders `{props.children}` inside a `<div>`, the passed elements appear in the final output.
+Οτιδήποτε μέσα στο `<FancyBorder>` JSX tag περνάει στο `FancyBorder` component ως `children` prop. Επειδή το `FancyBorder` κάνει render το `{props.children}` μέσα σε ένα `<div>`, τα περασμένα elements εμφανίζονται στην τελική έξοδο.
 
-While this is less common, sometimes you might need multiple "holes" in a component. In such cases you may come up with your own convention instead of using `children`:
+Ενώ αυτό είναι λιγότερο κοινό, μερικές φορές μπορεί να χρειαστείτε πολλαπλές "τρύπες" σε ένα component. Σε τέτοιες περιπτώσεις μπορείτε να καταλήξετε στη δική σας σύμβαση αντί να χρησιμοποιήσετε το `children`:
 
 ```js{5,8,18,21}
 function SplitPane(props) {
@@ -78,15 +78,16 @@ function App() {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/gwZOJp?editors=0010)
+[**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/gwZOJp?editors=0010)
 
-React elements like `<Contacts />` and `<Chat />` are just objects, so you can pass them as props like any other data. This approach may remind you of "slots" in other libraries but there are no limitations on what you can pass as props in React.
+Τα React elements όπως `<Επαφές />` και `<Chat />` είναι απλά objects, επομένως μπορείτε να τα περάσετε ως props όπως οποιαδήποτε άλλα δεδομένα. Αυτή η προσέγγιση μπορεί να σας υπενθυμίσει τα "slots" σε άλλες βιβλιοθήκες, αλλά δεν υπάρχουν περιορισμοί σε αυτό που μπορείτε να περάσετε ως props στο React.
 
-## Specialization {#specialization}
+## Ειδίκευση {#specialization}
 
-Sometimes we think about components as being "special cases" of other components. For example, we might say that a `WelcomeDialog` is a special case of `Dialog`.
+Μερικές φορές σκεφτόμαστε τα components ως "ειδικές περιπτώσεις" άλλων components. Για παράδειγμα, θα μπορούσαμε να πούμε ότι ένα `WelcomeDialog` είναι μια ειδική περίπτωση του `Dialog`.
 
-In React, this is also achieved by composition, where a more "specific" component renders a more "generic" one and configures it with props:
+Στο React, αυτό επιτυγχάνεται επίσης με τη σύνθεση, όπου ένα πιο "ειδικό" component κάνει render ένα πιο "γενικό" και το διαμορφώνει με props:
+
 
 ```js{5,8,16-18}
 function Dialog(props) {
@@ -111,9 +112,9 @@ function WelcomeDialog() {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/kkEaOZ?editors=0010)
+[**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/kkEaOZ?editors=0010)
 
-Composition works equally well for components defined as classes:
+Η σύνθεση λειτουργεί εξίσου καλά για τα components που ορίζονται ως κλάσεις:
 
 ```js{10,27-31}
 function Dialog(props) {
@@ -161,12 +162,12 @@ class SignUpDialog extends React.Component {
 }
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)
+[**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)
 
-## So What About Inheritance? {#so-what-about-inheritance}
+## Τι Γίνεται Με Την Κληρονομία? {#so-what-about-inheritance}
 
-At Facebook, we use React in thousands of components, and we haven't found any use cases where we would recommend creating component inheritance hierarchies.
+Στο Facebook, χρησιμοποιούμε το React σε χιλιάδες componentsκαι δεν βρήκαμε καμιά περίπτωση χρήσης όπου θα συνιστούσαμε τη δημιουργία κληρονομιάς ιεραρχιών του component.
 
-Props and composition give you all the flexibility you need to customize a component's look and behavior in an explicit and safe way. Remember that components may accept arbitrary props, including primitive values, React elements, or functions.
+Τα props και η σύνθεση σας δίνουν όλη την ευελιξία που χρειάζεστε για να προσαρμόσετε την εμφάνιση και τη συμπεριφορά ενός component με έναν σαφή και ασφαλή τρόπο. Θυμηθείτε ότι τα components ενδέχεται να δέχονται αυθαίρετα props, συμπεριλαμβανομένων των primitive values, React elements ή συναρτήσεις.
 
-If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or a class, without extending it.
+Εάν θέλετε να επαναχρησιμοποιήσετε λειτουργίες εκτός UI μεταξύ των components, σας συνιστούμε να τα εξαγάγετε σε ξεχωριστό JavaScript module. Τα components μπορούν να το εισάγουν και να χρησιμοποιούν αυτή τη συνάρτηση, object ή κλάση, χωρίς να το επεκτείνουν.
