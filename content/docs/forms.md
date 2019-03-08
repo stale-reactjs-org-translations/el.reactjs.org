@@ -1,15 +1,15 @@
 ---
 id: forms
-title: Forms
+title: Φόρμες
 permalink: docs/forms.html
 prev: lists-and-keys.html
 next: lifting-state-up.html
 redirect_from:
-  - "tips/controlled-input-null-value.html"
-  - "docs/forms-zh-CN.html"
+  - tips/controlled-input-null-value.html
+  - docs/forms-zh-CN.html
 ---
 
-HTML form elements work a little bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+Ta HTML form elements λειτουργούν λίγο διαφορετικά από τα υπόλοιπα DOM elements στο React, λόγω του ότι τα form elements συνήθως διατηρούν εσωτερικό state.  Για παράδειγμα, η επόμενη φόρμα σε απλή HTML δέχεται απλά ένα όνομα:
 
 ```html
 <form>
@@ -21,15 +21,15 @@ HTML form elements work a little bit differently from other DOM elements in Reac
 </form>
 ```
 
-This form has the default HTML form behavior of browsing to a new page when the user submits the form. If you want this behavior in React, it just works. But in most cases, it's convenient to have a JavaScript function that handles the submission of the form and has access to the data that the user entered into the form. The standard way to achieve this is with a technique called "controlled components".
+Αυτή η φόρμα έχει την προεπιλεγμένη συμπεριφορά φόρμας HTML, αυτή της περιήγησης σε μια νέα σελίδα όταν ο χρήστης υποβάλει αυτή τη φόρμα. Στο React η συμπεριφορά της φόρμας είναι ακριβώς η ίδια. Απλά σε πολλές περιπτώσεις, είναι πιο βολικό να υπάρχει μια Javascript function, η οποία θα διαχειρίζεται την υποβολή της φόρμας και θα έχει πρόσβαση στα δεδομένα τα οποία ο χρήστης εισήγαγε σε αυτή. Ο συνήθης τρόπος για να επιτευχθεί αυτό είναι με μια τεχνική που ονομάζεται "controlled components".
 
 ## Controlled Components {#controlled-components}
 
-In HTML, form elements such as `<input>`, `<textarea>`, and `<select>` typically maintain their own state and update it based on user input. In React, mutable state is typically kept in the state property of components, and only updated with [`setState()`](/docs/react-component.html#setstate).
+Σε HTML, τα form elements όπως `<input>`, `<textarea>`, και `<select>`  διατηρούν συνήθως το δικό τους state και τo ενημερώνουν με βάση τα στοιχεία εισαγωγής του χρήστη. Στο React, το mutable state συνήθως διατηρείται στο state των components, και ενημερώνεται μόνο με [`setState()`](/docs/react-component.html#setstate).
 
-We can combine the two by making the React state be the "single source of truth". Then the React component that renders a form also controls what happens in that form on subsequent user input. An input form element whose value is controlled by React in this way is called a "controlled component".
+Μπορούμε να συνδυάσουμε τα δύο, κάνοντας το React state να είναι η "μόνη πηγή της αλήθειας". Στη συνέχεια, το React component που κάνει render μία φόρμα, ελέγχει επίσης τί συμβαίνει σε αυτή τη φόρμα σύμφωνα με την αλληλεπίδραση του χρήστη σε αυτή. Ένα input form element του οποίου η τιμή ελέγχεται από το React με αυτόν τον τρόπο, ονομάζεται "controlled component".
 
-For example, if we want to make the previous example log the name when it is submitted, we can write the form as a controlled component:
+Για παράδειγμα, εάν θέλουμε να κάνουμε το προηγούμενο παράδειγμα να καταγράψει το όνομα όταν υποβληθεί, μπορούμε να γράψουμε τη φόρμα ως controlled component:
 
 ```javascript{4,10-12,24}
 class NameForm extends React.Component {
@@ -66,9 +66,9 @@ class NameForm extends React.Component {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/VmmPgp?editors=0010)
 
-Since the `value` attribute is set on our form element, the displayed value will always be `this.state.value`, making the React state the source of truth. Since `handleChange` runs on every keystroke to update the React state, the displayed value will update as the user types.
+Καθώς το `value` attribute έχει οριστεί στο form element, η εμφανιζόμενη τιμή θα είναι πάντα το `this.state.value`, καθιστώντας το React state ως την πηγή της αλήθειας. Καθώς το `handleChange` τρέχει σε κάθε πάτημα κάθε πλήκτρου, έτσι ώστε να ενημερωθεί το React state, η εμφανιζόμενη τιμή θα ενημερώνεται όσο ο χρήστης πληκτρολογεί.
 
-With a controlled component, every state mutation will have an associated handler function. This makes it straightforward to modify or validate user input. For example, if we wanted to enforce that names are written with all uppercase letters, we could write `handleChange` as:
+Με ένα controlled component, κάθε μεταβολή του state θα συνδέεται και με μία function διαχείρισης του. Με αυτό τον τρόπο είναι πολύ απλό να αλλαχτεί ή να ελέγχθει ότι έχει εισάγει ο χρήστης στη φόρμα. Για παράδειγμα, εάν θέλαμε όλα τα ονόματα της φόρμας να είναι σε κεφαλαία μορφή, θα γράφαμε την `handleChange` ως εξής:
 
 ```javascript{2}
 handleChange(event) {
@@ -78,7 +78,7 @@ handleChange(event) {
 
 ## The textarea Tag {#the-textarea-tag}
 
-In HTML, a `<textarea>` element defines its text by its children:
+Σε HTML, ένα `<textarea>` element ορίζει το περιεχόμενο του από τα παιδιά του:
 
 ```html
 <textarea>
@@ -86,7 +86,7 @@ In HTML, a `<textarea>` element defines its text by its children:
 </textarea>
 ```
 
-In React, a `<textarea>` uses a `value` attribute instead. This way, a form using a `<textarea>` can be written very similarly to a form that uses a single-line input:
+Στο React, αντ' αυτού, ένα `<textarea>` χρησιμοποιεί ένα `value` attribute. Με αυτόν τον τρόπο μία φόρμα χρησιμοποιώντας ένα `<textarea>` μπορεί να γραφεί με παρόμοιο τρόπο με μία φόρμα που χρησιμοποιεί ένα single-line input:
 
 ```javascript{4-6,12-14,26}
 class EssayForm extends React.Component {
@@ -123,11 +123,11 @@ class EssayForm extends React.Component {
 }
 ```
 
-Notice that `this.state.value` is initialized in the constructor, so that the text area starts off with some text in it.
+Παρατηρείστε ότι το `this.state.value` αρχικοποιείται σε επίπεδο constructor, έτσι ώστε το text area να έχει εξ' αρχής κάποια τιμή.
 
-## The select Tag {#the-select-tag}
+## Το select Tag {#the-select-tag}
 
-In HTML, `<select>` creates a drop-down list. For example, this HTML creates a drop-down list of flavors:
+Σε  HTML, το `<select>` δημιουργεί ένα drop-down list. Για παράδειγμα, το επόμενο κομμάτι HTML δημιουργεί ένα drop-down list με γεύσεις:
 
 ```html
 <select>
@@ -138,7 +138,7 @@ In HTML, `<select>` creates a drop-down list. For example, this HTML creates a d
 </select>
 ```
 
-Note that the Coconut option is initially selected, because of the `selected` attribute. React, instead of using this `selected` attribute, uses a `value` attribute on the root `select` tag. This is more convenient in a controlled component because you only need to update it in one place. For example:
+Λάβετε υπόψη ότι η επιλογή Coconut είναι εξ' αρχής επιλεγμένη, λόγω του `selected` attribute. Το React, αντί να χρησιμοποιεί το `selected` attribute, χρησιμοποιεί ένα `value` attribute στο `select` tag. Αυτό είναι πιο βολικό σε ένα controlled component, επειδή χρειάζεται να το ενημερώσετε μόνο σε ένα σημείο. Για παράδειγμα:
 
 ```javascript{4,10-12,24}
 class FlavorForm extends React.Component {
@@ -180,31 +180,31 @@ class FlavorForm extends React.Component {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/JbbEzX?editors=0010)
 
-Overall, this makes it so that `<input type="text">`, `<textarea>`, and `<select>` all work very similarly - they all accept a `value` attribute that you can use to implement a controlled component.
+Γενικά, τα `<input type="text">`, `<textarea>`, και`<select>` δουλεύουν με τον ίδιο τρόπο - δέχονται ένα `value` attribute που μπορείς να χρησιμοποιήσεις για να υλοποιήσεις ένα controlled component.
 
-> Note
+> Σημείωση
 >
-> You can pass an array into the `value` attribute, allowing you to select multiple options in a `select` tag:
+> Μπορείς να περάσεις έναν πίνακα στο `value` attribute, επιτρέποντας σου να κάνεις πολλαπλές επιλογές μέσα στο `select` tag:
 >
 >```js
 ><select multiple={true} value={['B', 'C']}>
 >```
 
-## The file input Tag {#the-file-input-tag}
+## Το file input Tag {#the-file-input-tag}
 
-In HTML, an `<input type="file">` lets the user choose one or more files from their device storage to be uploaded to a server or manipulated by JavaScript via the [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
+Σε HTML, ένα `<input type="file">` επιτρέπει στο χρήστη να επιλέξει ένα ή περισσότερα αρχεία από το χώρο αποθήκευσης της συσκευής του για μεταφορτωθούν σε ένα διακομιστή ή να γίνει διαχείριση αυτών από τη JavaScript μέσω του  [File API](https://developer.mozilla.org/en-US/docs/Web/API/File/Using_files_from_web_applications).
 
 ```html
 <input type="file" />
 ```
 
-Because its value is read-only, it is an **uncontrolled** component in React. It is discussed together with other uncontrolled components [later in the documentation](/docs/uncontrolled-components.html#the-file-input-tag).
+Επειδή η τιμή του είναι μόνο για ανάγνωση (read-only), είναι ένα **uncontrolled** component στο React. Γίνεται εκτενέστερη αναφορά μαζί με τα υπόλοιπα uncontrolled components [παρακάτω στην τεκμηριωση](/docs/uncontrolled-components.html#the-file-input-tag).
 
-## Handling Multiple Inputs {#handling-multiple-inputs}
+## Διαχείριση πολλαπλών Inputs {#handling-multiple-inputs}
 
-When you need to handle multiple controlled `input` elements, you can add a `name` attribute to each element and let the handler function choose what to do based on the value of `event.target.name`.
+Όταν χρειαστεί να διαχειριστείς πολλαπλά controlled `input` elements, μπορείς να προσθέσεις ένα `name` attribute σε κάθε element και να αφήσεις την handler function να διαλέξει τί να κάνει με βάση την τιμή του `event.target.name`.
 
-For example:
+Για παράδειγμα:
 
 ```javascript{15,18,28,37}
 class Reservation extends React.Component {
@@ -256,7 +256,7 @@ class Reservation extends React.Component {
 
 [**Try it on CodePen**](https://codepen.io/gaearon/pen/wgedvV?editors=0010)
 
-Note how we used the ES6 [computed property name](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) syntax to update the state key corresponding to the given input name:
+Σημειώστε πώς χρησιμοποιήσαμε την σύνταξη της ES6 [computed property name](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Object_initializer#Computed_property_names) για να ενημερώσουμε το key του state που αντιστοιχεί στο όνομα του input:
 
 ```js{2}
 this.setState({
@@ -264,7 +264,7 @@ this.setState({
 });
 ```
 
-It is equivalent to this ES5 code:
+Ισοδύναμη σύνταξη σε ES5 :
 
 ```js{2}
 var partialState = {};
@@ -272,13 +272,13 @@ partialState[name] = value;
 this.setState(partialState);
 ```
 
-Also, since `setState()` automatically [merges a partial state into the current state](/docs/state-and-lifecycle.html#state-updates-are-merged), we only needed to call it with the changed parts.
+Επίσης, λόγω του ότι το `setState()` αυτόματα [συγχωνεύει το μερικό state στο τρέχων](/docs/state-and-lifecycle.html#state-updates-are-merged), χρειάζεται μόνο να το καλέσουμε με τα αλλαγμένα μέρη.
 
-## Controlled Input Null Value {#controlled-input-null-value}
+## Controlled Input Null Τιμή{#controlled-input-null-value}
 
-Specifying the value prop on a [controlled component](/docs/forms.html#controlled-components) prevents the user from changing the input unless you desire so. If you've specified a `value` but the input is still editable, you may have accidentally set `value` to `undefined` or `null`.
+Ο καθορισμός της τιμής prop σε ένα [controlled component](/docs/forms.html#controlled-components) εμποδίζει τον χρήστη να αλλάξει το input εκτός αν το επιθυμεί. Εάν έχεις ορίσει ένα `value` αλλά το input είναι ακόμη επεξεργάσιμο, ενδέχεται να ορίσετε τυχαία το `value` σε `undefined` ή `null`.
 
-The following code demonstrates this. (The input is locked at first but becomes editable after a short delay.)
+Ο ακόλουθος κώδικας το καταδεικνύει αυτό. (Το input είναι κλειδωμένο στην αρχή αλλά γίνεται επεξεργάσιμο μετά από μια μικρή καθυστέρηση.)
 
 ```javascript
 ReactDOM.render(<input value="hi" />, mountNode);
@@ -289,10 +289,10 @@ setTimeout(function() {
 
 ```
 
-## Alternatives to Controlled Components {#alternatives-to-controlled-components}
+## Εναλλακτικές για τα Controlled Components {#alternatives-to-controlled-components}
 
-It can sometimes be tedious to use controlled components, because you need to write an event handler for every way your data can change and pipe all of the input state through a React component. This can become particularly annoying when you are converting a preexisting codebase to React, or integrating a React application with a non-React library. In these situations, you might want to check out [uncontrolled components](/docs/uncontrolled-components.html), an alternative technique for implementing input forms.
+Μερικές φορές μπορεί να είναι κουραστική η χρήση των controlled components, επειδή πρέπει να γράψετε ένα event handler για κάθε τρόπο που τα δεδομένα σας μπορούν να αλλάξουν και να διοχετεύσουν το state του input μέσω του React component. Αυτό μπορεί να γίνει ιδιαίτερα ενοχλητικό όταν μετατρέπετε μια προϋπάρχουσα εφαρμογή σε React ή ενσωματώνοντας μια εφαρμογή React με μια μη-React library. Σε αυτές τις περιπτώσεις, ίσως θελήσετε να ελέγξετε τα [uncontrolled components](/docs/uncontrolled-components.html), μία εναλλακτική υλοποίηση των input forms.
 
-## Fully-Fledged Solutions {#fully-fledged-solutions}
+## Πλήρως ολοκληρωμένες λύσεις {#fully-fledged-solutions}
 
-If you're looking for a complete solution including validation, keeping track of the visited fields, and handling form submission, [Formik](https://jaredpalmer.com/formik) is one of the popular choices. However, it is built on the same principles of controlled components and managing state — so don't neglect to learn them.
+Αν ψάχνετε για μια ολοκληρωμένη λύση που να περιλαμβάνει τον έλεγχο, την παρακολούθηση των πεδίων της φόρμας με τα οποία ο χρήστης είχε αλληλεπίδραση και τον χειρισμό της υποβολής μίας φόρμας, η [Formik](https://jaredpalmer.com/formik) είναι μια από τις δημοφιλείς επιλογές. Ωστόσο, βασίζεται στις ίδιες αρχές των controlled components και της διαχείρισης του state - οπότε μην παραλείψετε να τα μάθετε.
