@@ -9,7 +9,7 @@ redirect_from:
   - docs/forms-zh-CN.html
 ---
 
-Ta HTML form elements λειτουργούν λίγο διαφορετικά από τα υπόλοιπα DOM elements στο React, λόγω του ότι τα form elements συνήθως διατηρούν εσωτερικό state.  Για παράδειγμα, η επόμενη φόρμα σε απλή HTML δέχεται απλά ένα όνομα:
+Tα HTML form elements λειτουργούν λίγο διαφορετικά από τα υπόλοιπα DOM elements στο React, λόγω του ότι τα form elements συνήθως διατηρούν εσωτερικό state.  Για παράδειγμα, η επόμενη φόρμα σε απλή HTML δέχεται απλά ένα όνομα:
 
 ```html
 <form>
