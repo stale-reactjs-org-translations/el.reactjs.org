@@ -1,26 +1,26 @@
 ---
 id: conditional-rendering
-title: Υπό όρους Rendering
+title: Υπό συνθήκη Rendering
 permalink: docs/conditional-rendering.html
 prev: handling-events.html
 next: lists-and-keys.html
 redirect_from:
- - "tips/false-in-jsx.html"
+  - "tips/false-in-jsx.html"
 ---
 
 Στο React, μπορείτε να δημιουργήσετε ξεχωριστά στοιχεία που ενσωματώνουν τη συμπεριφορά που χρειάζεστε. Στη συνέχεια, μπορείτε να κάνετε render μόνο μερικές από αυτές, ανάλογα με την κατάσταση της εφαρμογής σας.
 
-Η υπό όρους απόδοση στο React λειτουργεί με τον ίδιο τρόπο που λειτουργούν οι συνθήκες στη JavaScript. Χρησιμοποιήστε τους JavaScript operators όπως [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) ή [υπό όρους operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) για να δημιουργήσετε στοιχεία που αντιπροσωπεύουν την τρέχουσα κατάσταση και αφήστε το React να ενημερώσει το UI για να τα ταιριάξει.
+Η υπό συνθήκη απόδοση στο React λειτουργεί με τον ίδιο τρόπο που λειτουργούν οι συνθήκες στη JavaScript. Χρησιμοποιήστε τους JavaScript operators όπως [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) ή [υπό συνθήκη operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) για να δημιουργήσετε στοιχεία που αντιπροσωπεύουν την τρέχουσα κατάσταση και αφήστε το React να ενημερώσει το UI για να τα ταιριάξει.
 
 Εξετάστε αυτά τα δύο στοιχεία:
 
 ```js
 function UserGreeting(props) {
- return <h1>Welcome back!</h1>;
+  return <h1>Welcome back!</h1>;
 }
 
 function GuestGreeting(props) {
- return <h1>Please sign up.</h1>;
+  return <h1>Please sign up.</h1>;
 }
 ```
 
@@ -28,17 +28,17 @@ function GuestGreeting(props) {
 
 ```javascript{3-7,11,12}
 function Greeting(props) {
- const isLoggedIn = props.isLoggedIn;
- if (isLoggedIn) {
-   return <UserGreeting />;
- }
- return <GuestGreeting />;
+  const isLoggedIn = props.isLoggedIn;
+  if (isLoggedIn) {
+    return <UserGreeting />;
+  }
+  return <GuestGreeting />;
 }
 
 ReactDOM.render(
- // Try changing to isLoggedIn={true}:
- <Greeting isLoggedIn={false} />,
- document.getElementById('root')
+  // Try changing to isLoggedIn={true}:
+  <Greeting isLoggedIn={false} />,
+  document.getElementById('root')
 );
 ```
 
@@ -48,25 +48,25 @@ ReactDOM.render(
 
 ### Μεταβλητές στοιχείων {#element-variables}
 
-Μπορείτε να χρησιμοποιήσετε μεταβλητές για την αποθήκευση στοιχείων. Αυτό μπορεί να σας βοηθήσει να κάνετε render υπό όρους ένα μέρος του component ενώ το υπόλοιπο της εξόδου δεν αλλάζει.
+Μπορείτε να χρησιμοποιήσετε μεταβλητές για την αποθήκευση στοιχείων. Αυτό μπορεί να σας βοηθήσει να κάνετε render υπό συνθήκη ένα μέρος του component ενώ το υπόλοιπο της εξόδου δεν αλλάζει.
 
 Εξετάστε αυτά τα δύο νέα components που αντιπροσωπεύουν τα κουμπιά Logout και Login:
 
 ```js
 function LoginButton(props) {
- return (
-   <button onClick={props.onClick}>
-     Login
-   </button>
- );
+  return (
+    <button onClick={props.onClick}>
+      Login
+    </button>
+  );
 }
 
 function LogoutButton(props) {
- return (
-   <button onClick={props.onClick}>
-     Logout
-   </button>
- );
+  return (
+    <button onClick={props.onClick}>
+      Logout
+    </button>
+  );
 }
 ```
 
@@ -77,72 +77,72 @@ function LogoutButton(props) {
 ```javascript{20-25,29,30}
 class LoginControl extends React.Component {
  constructor(props) {
-   super(props);
-   this.handleLoginClick = this.handleLoginClick.bind(this);
-   this.handleLogoutClick = this.handleLogoutClick.bind(this);
-   this.state = {isLoggedIn: false};
+    super(props);
+    this.handleLoginClick = this.handleLoginClick.bind(this);
+    this.handleLogoutClick = this.handleLogoutClick.bind(this);
+    this.state = {isLoggedIn: false};
  }
 
  handleLoginClick() {
-   this.setState({isLoggedIn: true});
+    this.setState({isLoggedIn: true});
  }
 
  handleLogoutClick() {
-   this.setState({isLoggedIn: false});
+    this.setState({isLoggedIn: false});
  }
 
  render() {
-   const isLoggedIn = this.state.isLoggedIn;
-   let button;
+    const isLoggedIn = this.state.isLoggedIn;
+    let button;
 
-   if (isLoggedIn) {
-     button = <LogoutButton onClick={this.handleLogoutClick} />;
-   } else {
-     button = <LoginButton onClick={this.handleLoginClick} />;
-   }
+    if (isLoggedIn) {
+      button = <LogoutButton onClick={this.handleLogoutClick} />;
+    } else {
+      button = <LoginButton onClick={this.handleLoginClick} />;
+    }
 
-   return (
-     <div>
-       <Greeting isLoggedIn={isLoggedIn} />
-       {button}
-     </div>
-   );
- }
+    return (
+      <div>
+        <Greeting isLoggedIn={isLoggedIn} />
+        {button}
+      </div>
+    );
+  }
 }
 
 ReactDOM.render(
- <LoginControl />,
- document.getElementById('root')
+  <LoginControl />,
+  document.getElementById('root')
 );
 ```
 
 [**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
 
-Ενώ δηλώνεται μια μεταβλητή και χρησιμοποιείτε μια εντολή `if` είναι ένας καλός τρόπος για την υπό όρους render ενός component, μερικές φορές μπορεί να θέλετε να χρησιμοποιήσετε μια σύντομη σύνταξη. Υπάρχουν μερικοί τρόποι για να εισάγετε τις συνθήκες στο JSX, που εξηγείται παρακάτω.
+Ενώ δηλώνεται μια μεταβλητή και χρησιμοποιείτε μια εντολή `if` είναι ένας καλός τρόπος για την υπό συνθήκη render ενός component, μερικές φορές μπορεί να θέλετε να χρησιμοποιήσετε μια σύντομη σύνταξη. Υπάρχουν μερικοί τρόποι για να εισάγετε τις συνθήκες στο JSX, που εξηγείται παρακάτω.
 
 ### If σε μια γραμμή με λογικό Οperator && {#inline-if-with-logical--operator}
 
-Μπορείτε να [ενσωματώσετε οποιεσδήποτε εκφράσεις μέσα στο JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) περικλείοντας τα σε άγκιστρα. Αυτό περιλαμβάνει τον λογικό τελεστή της JavaScript `&&`. Μπορεί να είναι βολικό για να συμπεριλάβει υπό όρους ένα στοιχείο:
+Μπορείτε να [ενσωματώσετε οποιεσδήποτε εκφράσεις μέσα στο JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) περικλείοντας τα σε άγκιστρα. Αυτό περιλαμβάνει τον λογικό τελεστή της JavaScript `&&`. Μπορεί να είναι βολικό για να συμπεριλάβει υπό συνθήκη ένα component:
 
 ```js{6-10}
 function Mailbox(props) {
- const unreadMessages = props.unreadMessages;
- return (
-   <div>
-     <h1>Hello!</h1>
-     {unreadMessages.length > 0 &&
-       <h2>
-         You have {unreadMessages.length} unread messages.
-       </h2>
-     }
-   </div>
- );
+  const unreadMessages = props.unreadMessages;
+  return (
+    <div>
+      <h1>Hello!</h1>
+      {unreadMessages.length > 0 &&
+        <h2>
+          You have {unreadMessages.length} unread messages.
+        </h2>
+      }
+    </div>
+  );
 }
 
 const messages = ['React', 'Re: React', 'Re:Re: React'];
 ReactDOM.render(
- <Mailbox unreadMessages={messages} />,
- document.getElementById('root')
+  <Mailbox unreadMessages={messages} />,
+  document.getElementById('root')
 );
 ```
 
@@ -150,42 +150,42 @@ ReactDOM.render(
 
 Λειτουργεί επειδή στην JavaScript, το `true && expression` πάντα αποτιμάται σε `expression`, και το `false && expression` πάντα αποτιμάται σε `false`.
 
-Επομένως, αν η κατάσταση είναι `true`, το στοιχείο αμέσως μετά το `&&` θα εμφανιστεί στην έξοδο. Εάν είναι `false`, το React θα το αγνοήσει.
+Επομένως, αν η κατάσταση είναι `true`, το component αμέσως μετά το `&&` θα εμφανιστεί στην έξοδο. Εάν είναι `false`, το React θα το αγνοήσει.
 
 ### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
 
-Μια άλλη μέθοδος για το rendering υπό όρους τα στοιχεια inline είναι η χρήση του υπο όρους χειριστή στην JavaScript [`κατάσταση ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+Μια άλλη μέθοδος για το rendering υπό συνθήκη τα components inline είναι η χρήση του υπο συνθήκη χειριστή στην JavaScript [`κατάσταση ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
-Στο παρακάτω παράδειγμα, το χρησιμοποιούμε για να κάνουμε render υπό όρους ενός ένα μικρό κομμάτι κειμένου.
+Στο παρακάτω παράδειγμα, το χρησιμοποιούμε για να κάνουμε render υπό συνθήκη ενός ένα μικρό κομμάτι κειμένου.
 
 ```javascript{5}
 render() {
- const isLoggedIn = this.state.isLoggedIn;
- return (
-   <div>
-     The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
-   </div>
- );
+  const isLoggedIn = this.state.isLoggedIn;
+  return (
+    <div>
+      The user is <b>{isLoggedIn ? 'currently' : 'not'}</b> logged in.
+    </div>
+  );
 }
 ```
 Μπορεί επίσης να χρησιμοποιηθεί για μεγαλύτερες εκφράσεις, αν και είναι λιγότερο προφανές τι συμβαίνει:
 
 ```js{5,7,9}
 render() {
- const isLoggedIn = this.state.isLoggedIn;
- return (
-   <div>
-     {isLoggedIn ? (
-       <LogoutButton onClick={this.handleLogoutClick} />
-     ) : (
-       <LoginButton onClick={this.handleLoginClick} />
-     )}
-   </div>
- );
+  const isLoggedIn = this.state.isLoggedIn;
+  return (
+    <div>
+      {isLoggedIn ? (
+        <LogoutButton onClick={this.handleLogoutClick} />
+      ) : (
+        <LoginButton onClick={this.handleLoginClick} />
+      )}
+    </div>
+  );
 }
 ```
 
-Όπως και στο JavaScript, εξαρτάται από εσάς να επιλέξετε ένα κατάλληλο στυλ με βάση αυτό που εσείς και η ομάδα σας θεωρείτε πιο ευανάγνωστο. Επίσης, να θυμάστε ότι όταν οι συνθήκες είναι υπερβολικά περίπλοκες, ίσως είναι καλή στιγμή να [εξάγετε ένα στοιχείο](/docs/components-and-props.html#extracting-components).
+Όπως και στο JavaScript, εξαρτάται από εσάς να επιλέξετε ένα κατάλληλο στυλ με βάση αυτό που εσείς και η ομάδα σας θεωρείτε πιο ευανάγνωστο. Επίσης, να θυμάστε ότι όταν οι συνθήκες είναι υπερβολικά περίπλοκες, ίσως είναι καλή στιγμή να [εξάγετε ένα component](/docs/components-and-props.html#extracting-components).
 
 ### Αποτρέψτε το Component από το Rendering {#preventing-component-from-rendering}
 
@@ -195,45 +195,45 @@ render() {
 
 ```javascript{2-4,29}
 function WarningBanner(props) {
- if (!props.warn) {
-   return null;
- }
+  if (!props.warn) {
+    return null;
+  }
 
- return (
-   <div className="warning">
-     Warning!
-   </div>
- );
+  return (
+    <div className="warning">
+      Warning!
+    </div>
+  );
 }
 
 class Page extends React.Component {
- constructor(props) {
-   super(props);
-   this.state = {showWarning: true};
-   this.handleToggleClick = this.handleToggleClick.bind(this);
- }
+  constructor(props) {
+    super(props);
+    this.state = {showWarning: true};
+    this.handleToggleClick = this.handleToggleClick.bind(this);
+  }
 
- handleToggleClick() {
-   this.setState(state => ({
-     showWarning: !state.showWarning
-   }));
- }
+  handleToggleClick() {
+    this.setState(state => ({
+      showWarning: !state.showWarning
+    }));
+  }
 
- render() {
-   return (
-     <div>
-       <WarningBanner warn={this.state.showWarning} />
-       <button onClick={this.handleToggleClick}>
-         {this.state.showWarning ? 'Hide' : 'Show'}
-       </button>
-     </div>
-   );
- }
+  render() {
+    return (
+      <div>
+        <WarningBanner warn={this.state.showWarning} />
+        <button onClick={this.handleToggleClick}>
+          {this.state.showWarning ? 'Hide' : 'Show'}
+        </button>
+      </div>
+    );
+  }
 }
 
 ReactDOM.render(
- <Page />,
- document.getElementById('root')
+  <Page />,
+  document.getElementById('root')
 );
 ```
 
