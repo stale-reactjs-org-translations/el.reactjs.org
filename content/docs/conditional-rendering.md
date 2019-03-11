@@ -76,22 +76,22 @@ function LogoutButton(props) {
 
 ```javascript{20-25,29,30}
 class LoginControl extends React.Component {
- constructor(props) {
+  constructor(props) {
     super(props);
     this.handleLoginClick = this.handleLoginClick.bind(this);
     this.handleLogoutClick = this.handleLogoutClick.bind(this);
     this.state = {isLoggedIn: false};
- }
+  }
 
- handleLoginClick() {
+  handleLoginClick() {
     this.setState({isLoggedIn: true});
- }
+  }
 
- handleLogoutClick() {
+  handleLogoutClick() {
     this.setState({isLoggedIn: false});
- }
+  }
 
- render() {
+  render() {
     const isLoggedIn = this.state.isLoggedIn;
     let button;
 
@@ -168,6 +168,7 @@ render() {
   );
 }
 ```
+
 Μπορεί επίσης να χρησιμοποιηθεί για μεγαλύτερες εκφράσεις, αν και είναι λιγότερο προφανές τι συμβαίνει:
 
 ```js{5,7,9}
