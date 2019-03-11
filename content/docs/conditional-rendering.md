@@ -240,5 +240,5 @@ ReactDOM.render(
 
 [**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
 
-Επιστρέφοντας `null` απο μέθοδο `render` του component δεν επηρεάζει την ενεργοποίηση των μεθόδων του κύκλου ζωής του component. Για παράδειγμα το `componentDidUpdate` θα εξακολουθεί να καλείτε.
+Επιστρέφοντας `null` απο την μέθοδο `render` του component, δεν επηρεάζει την ενεργοποίηση των μεθόδων του κύκλου ζωής του component. Για παράδειγμα το `componentDidUpdate` θα εξακολουθεί να καλείτε.
 
