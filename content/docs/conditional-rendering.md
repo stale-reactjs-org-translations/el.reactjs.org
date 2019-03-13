@@ -8,11 +8,11 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
-Στο React, μπορείτε να δημιουργήσετε ξεχωριστά στοιχεία που ενσωματώνουν τη συμπεριφορά που χρειάζεστε. Στη συνέχεια, μπορείτε να κάνετε render μόνο μερικές από αυτές, ανάλογα με την κατάσταση της εφαρμογής σας.
+Στο React, μπορείτε να δημιουργήσετε ξεχωριστά components που ενσωματώνουν τη συμπεριφορά που χρειάζεστε. Στη συνέχεια, μπορείτε να κάνετε render μόνο μαερικά από αυτά, ανάλογα με το state της εφαρμογής σας.
 
-Η υπό συνθήκη απόδοση στο React λειτουργεί με τον ίδιο τρόπο που λειτουργούν οι συνθήκες στη JavaScript. Χρησιμοποιήστε τους JavaScript operators όπως [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) ή [υπό συνθήκη operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) για να δημιουργήσετε στοιχεία που αντιπροσωπεύουν την τρέχουσα κατάσταση και αφήστε το React να ενημερώσει το UI για να τα ταιριάξει.
+Το rendering υπό συνθήκες στο React λειτουργεί με τον ίδιο τρόπο που λειτουργούν οι συνθήκες στη JavaScript. Χρησιμοποιήστε τα JavaScript operators όπως το [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) ή το [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) για να δημιουργήσετε components που αντιπροσωπεύουν το τρέχον state και αφήστε το React να ενημερώσει το UI για να τα ταιριάξει.
 
-Εξετάστε αυτά τα δύο στοιχεία:
+Εξετάστε αυτά τα δύο components:
 
 ```js
 function UserGreeting(props) {
@@ -48,7 +48,7 @@ ReactDOM.render(
 
 ### Μεταβλητές στοιχείων {#element-variables}
 
-Μπορείτε να χρησιμοποιήσετε μεταβλητές για την αποθήκευση στοιχείων. Αυτό μπορεί να σας βοηθήσει να κάνετε render υπό συνθήκη ένα μέρος του component ενώ το υπόλοιπο της εξόδου δεν αλλάζει.
+Μπορείτε να χρησιμοποιήσετε μεταβλητές για την αποθήκευση στοιχείων. Αυτό μπορεί να σας βοηθήσει να κάνετε render υπό συνθήκες ένα μέρος του component ενώ το υπόλοιπο output δεν αλλάζει.
 
 Εξετάστε αυτά τα δύο νέα components που αντιπροσωπεύουν τα κουμπιά Logout και Login:
 
@@ -72,7 +72,7 @@ function LogoutButton(props) {
 
 Στο παρακάτω παράδειγμα, θα δημιουργήσουμε ένα [stateful component](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) που ονομάζεται `LoginControl`.
 
-Αυτό θα κάνει render είτε το `<LoginButton />` είτε το `<LogoutButton />` ανάλογα με την τρέχουσα κατάσταση του. Αυτό επίσης θα κάνει render ένα `<Greeting />` από το προηγούμενο παράδειγμα:
+Αυτό θα κάνει render είτε το `<LoginButton />` είτε το `<LogoutButton />` ανάλογα με το τρέχον state του. Επίσης θα κάνει render ένα `<Greeting />` από το προηγούμενο παράδειγμα:
 
 ```javascript{20-25,29,30}
 class LoginControl extends React.Component {
@@ -120,9 +120,9 @@ ReactDOM.render(
 
 Ενώ δηλώνεται μια μεταβλητή και χρησιμοποιείτε μια εντολή `if` είναι ένας καλός τρόπος για την υπό συνθήκη render ενός component, μερικές φορές μπορεί να θέλετε να χρησιμοποιήσετε μια σύντομη σύνταξη. Υπάρχουν μερικοί τρόποι για να εισάγετε τις συνθήκες στο JSX, που εξηγείται παρακάτω.
 
-### If σε μια γραμμή με λογικό Οperator && {#inline-if-with-logical--operator}
+### If σε μια γραμμή με το λογικό Οperator && {#inline-if-with-logical--operator}
 
-Μπορείτε να [ενσωματώσετε οποιεσδήποτε εκφράσεις μέσα στο JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) περικλείοντας τα σε άγκιστρα. Αυτό περιλαμβάνει τον λογικό τελεστή της JavaScript `&&`. Μπορεί να είναι βολικό για να συμπεριλάβει υπό συνθήκη ένα component:
+Μπορείτε να [ενσωματώσετε οποιεσδήποτε εκφράσεις μέσα στο JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) περικλείοντας τα σε άγκιστρα. Αυτό περιλαμβάνει τον λογικό operator της JavaScript `&&`. Μπορεί να είναι βολικό για να συμπεριλάβει υπό συνθήκη ένα component:
 
 ```js{6-10}
 function Mailbox(props) {
@@ -150,13 +150,13 @@ ReactDOM.render(
 
 Λειτουργεί επειδή στην JavaScript, το `true && expression` πάντα αποτιμάται σε `expression`, και το `false && expression` πάντα αποτιμάται σε `false`.
 
-Επομένως, αν η κατάσταση είναι `true`, το component αμέσως μετά το `&&` θα εμφανιστεί στην έξοδο. Εάν είναι `false`, το React θα το αγνοήσει.
+Επομένως, αν η κατάσταση είναι `true`, το component αμέσως μετά το `&&` θα εμφανιστεί στο output. Εάν είναι `false`, το React θα το αγνοήσει.
 
 ### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
 
-Μια άλλη μέθοδος για το rendering υπό συνθήκη τα components inline είναι η χρήση του υπο συνθήκη χειριστή στην JavaScript [`κατάσταση ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+Μια άλλη μέθοδος για να κάνετε rendering υπό συνθήκες τα components σε μια γραμμή, είναι η χρήση του conditional operator στη JavaScript [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
-Στο παρακάτω παράδειγμα, το χρησιμοποιούμε για να κάνουμε render υπό συνθήκη ενός ένα μικρό κομμάτι κειμένου.
+Στο παρακάτω παράδειγμα, το χρησιμοποιούμε για να κάνουμε render υπό συνθήκες ένα μικρό κομμάτι κειμένου.
 
 ```javascript{5}
 render() {
@@ -186,7 +186,7 @@ render() {
 }
 ```
 
-Όπως και στο JavaScript, εξαρτάται από εσάς να επιλέξετε ένα κατάλληλο στυλ με βάση αυτό που εσείς και η ομάδα σας θεωρείτε πιο ευανάγνωστο. Επίσης, να θυμάστε ότι όταν οι συνθήκες είναι υπερβολικά περίπλοκες, ίσως είναι καλή στιγμή να [εξάγετε ένα component](/docs/components-and-props.html#extracting-components).
+Όπως και στη JavaScript, εξαρτάται από εσάς να επιλέξετε ένα κατάλληλο στυλ με βάση αυτό που εσείς και η ομάδα σας θεωρείτε πιο ευανάγνωστο. Επίσης, να θυμάστε ότι όταν οι συνθήκες είναι υπερβολικά περίπλοκες, ίσως είναι καλή στιγμή να [εξάγετε ένα component](/docs/components-and-props.html#extracting-components).
 
 ### Αποτρέψτε το Component από το Rendering {#preventing-component-from-rendering}
 
