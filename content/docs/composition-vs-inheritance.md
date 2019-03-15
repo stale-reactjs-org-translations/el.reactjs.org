@@ -164,7 +164,7 @@ class SignUpDialog extends React.Component {
 
 [**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/gwZbYa?editors=0010)
 
-## Τι Γίνεται Με Την Κληρονομία? {#so-what-about-inheritance}
+## Τι Γίνεται Με Την Κληρονομικότητα? {#so-what-about-inheritance}
 
 Στο Facebook, χρησιμοποιούμε το React σε χιλιάδες componentsκαι δεν βρήκαμε καμιά περίπτωση χρήσης όπου θα συνιστούσαμε τη δημιουργία κληρονομιάς ιεραρχιών του component.
 
