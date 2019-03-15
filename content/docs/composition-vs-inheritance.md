@@ -16,7 +16,7 @@ next: thinking-in-react.html
 
 Ορισμένα components δεν γνωρίζουν τα children τους πριν των ώρα τους. Αυτό είναι ιδιαίτερα κοινό για τα components όπως `Sidebar` ή `Dialog` που αντιπροσωπεύουν γενικά "κουτιά".
 
-Συνιστούμε τα components αυτά να χρησιμοποιούν το ειδικό `children` props για να μεταφέρουν τα children elements απευθείας στην έξοδο τους:
+Συνιστούμε τα components αυτά να χρησιμοποιούν το ειδικό `children` prop για να μεταφέρουν τα children elements απευθείας στην έξοδο τους:
 
 ```js{4}
 function FancyBorder(props) {
