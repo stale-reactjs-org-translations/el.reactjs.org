@@ -1,6 +1,6 @@
 ---
 id: composition-vs-inheritance
-title: Σύνθεση έναντι Κληρονομιάς
+title: Σύνθεση έναντι Κληρονομικότητας
 permalink: docs/composition-vs-inheritance.html
 redirect_from:
   - "docs/multiple-components.html"
