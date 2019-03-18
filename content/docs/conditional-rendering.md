@@ -1,6 +1,6 @@
 ---
 id: conditional-rendering
-title: Conditional Rendering
+title: Υπό συνθήκες Rendering
 permalink: docs/conditional-rendering.html
 prev: handling-events.html
 next: lists-and-keys.html
@@ -8,11 +8,11 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
-In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.
+Στο React, μπορείτε να δημιουργήσετε ξεχωριστά components που ενσωματώνουν τη συμπεριφορά που χρειάζεστε. Στη συνέχεια, μπορείτε να κάνετε render μόνο μαερικά από αυτά, ανάλογα με το state της εφαρμογής σας.
 
-Conditional rendering in React works the same way conditions work in JavaScript. Use JavaScript operators like [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) or the [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) to create elements representing the current state, and let React update the UI to match them.
+Το rendering υπό συνθήκες στο React λειτουργεί με τον ίδιο τρόπο που λειτουργούν οι συνθήκες στη JavaScript. Χρησιμοποιήστε τα JavaScript operators όπως το [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) ή το [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) για να δημιουργήσετε components που αντιπροσωπεύουν το τρέχον state και αφήστε το React να ενημερώσει το UI για να τα ταιριάξει.
 
-Consider these two components:
+Εξετάστε αυτά τα δύο components:
 
 ```js
 function UserGreeting(props) {
@@ -24,7 +24,7 @@ function GuestGreeting(props) {
 }
 ```
 
-We'll create a `Greeting` component that displays either of these components depending on whether a user is logged in:
+Θα δημιουργήσουμε ένα `Greeting` component που εμφανίζει ένα από τα παραπάνω components ανάλογα με το αν ένας χρήστης είναι συνδεδεμένος ή οχι:
 
 ```javascript{3-7,11,12}
 function Greeting(props) {
@@ -42,15 +42,15 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
+[**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
 
-This example renders a different greeting depending on the value of `isLoggedIn` prop.
+Αυτό το παράδειγμα εμφανίζει διαφορετικό χαιρετισμό ανάλογα με την τιμή του `isLoggedIn` prop.
 
-### Element Variables {#element-variables}
+### Μεταβλητές στοιχείων {#element-variables}
 
-You can use variables to store elements. This can help you conditionally render a part of the component while the rest of the output doesn't change.
+Μπορείτε να χρησιμοποιήσετε μεταβλητές για την αποθήκευση στοιχείων. Αυτό μπορεί να σας βοηθήσει να κάνετε render υπό συνθήκες ένα μέρος του component ενώ το υπόλοιπο output δεν αλλάζει.
 
-Consider these two new components representing Logout and Login buttons:
+Εξετάστε αυτά τα δύο νέα components που αντιπροσωπεύουν τα κουμπιά Logout και Login:
 
 ```js
 function LoginButton(props) {
@@ -70,9 +70,9 @@ function LogoutButton(props) {
 }
 ```
 
-In the example below, we will create a [stateful component](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) called `LoginControl`.
+Στο παρακάτω παράδειγμα, θα δημιουργήσουμε ένα [stateful component](/docs/state-and-lifecycle.html#adding-local-state-to-a-class) που ονομάζεται `LoginControl`.
 
-It will render either `<LoginButton />` or `<LogoutButton />` depending on its current state. It will also render a `<Greeting />` from the previous example:
+Αυτό θα κάνει render είτε το `<LoginButton />` είτε το `<LogoutButton />` ανάλογα με το τρέχον state του. Επίσης θα κάνει render ένα `<Greeting />` από το προηγούμενο παράδειγμα:
 
 ```javascript{20-25,29,30}
 class LoginControl extends React.Component {
@@ -116,13 +116,13 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
+[**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
 
-While declaring a variable and using an `if` statement is a fine way to conditionally render a component, sometimes you might want to use a shorter syntax. There are a few ways to inline conditions in JSX, explained below.
+Ενώ δηλώνεται μια μεταβλητή και χρησιμοποιείτε μια εντολή `if` είναι ένας καλός τρόπος για την υπό συνθήκη render ενός component, μερικές φορές μπορεί να θέλετε να χρησιμοποιήσετε μια σύντομη σύνταξη. Υπάρχουν μερικοί τρόποι για να εισάγετε τις συνθήκες στο JSX, που εξηγείται παρακάτω.
 
-### Inline If with Logical && Operator {#inline-if-with-logical--operator}
+### If σε μια γραμμή με το λογικό Οperator && {#inline-if-with-logical--operator}
 
-You may [embed any expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+Μπορείτε να [ενσωματώσετε οποιεσδήποτε εκφράσεις μέσα στο JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) περικλείοντας τα σε άγκιστρα. Αυτό περιλαμβάνει τον λογικό operator της JavaScript `&&`. Μπορεί να είναι βολικό για να συμπεριλάβει υπό συνθήκη ένα component:
 
 ```js{6-10}
 function Mailbox(props) {
@@ -146,17 +146,17 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
+[**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
 
-It works because in JavaScript, `true && expression` always evaluates to `expression`, and `false && expression` always evaluates to `false`.
+Λειτουργεί επειδή στην JavaScript, το `true && expression` πάντα αποτιμάται σε `expression`, και το `false && expression` πάντα αποτιμάται σε `false`.
 
-Therefore, if the condition is `true`, the element right after `&&` will appear in the output. If it is `false`, React will ignore and skip it.
+Επομένως, αν η κατάσταση είναι `true`, το component αμέσως μετά το `&&` θα εμφανιστεί στο output. Εάν είναι `false`, το React θα το αγνοήσει.
 
 ### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
 
-Another method for conditionally rendering elements inline is to use the JavaScript conditional operator [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
+Μια άλλη μέθοδος για να κάνετε rendering υπό συνθήκες τα components σε μια γραμμή, είναι η χρήση του conditional operator στη JavaScript [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
 
-In the example below, we use it to conditionally render a small block of text.
+Στο παρακάτω παράδειγμα, το χρησιμοποιούμε για να κάνουμε render υπό συνθήκες ένα μικρό κομμάτι κειμένου.
 
 ```javascript{5}
 render() {
@@ -169,7 +169,7 @@ render() {
 }
 ```
 
-It can also be used for larger expressions although it is less obvious what's going on:
+Μπορεί επίσης να χρησιμοποιηθεί για μεγαλύτερες εκφράσεις, αν και είναι λιγότερο προφανές τι συμβαίνει:
 
 ```js{5,7,9}
 render() {
@@ -186,13 +186,13 @@ render() {
 }
 ```
 
-Just like in JavaScript, it is up to you to choose an appropriate style based on what you and your team consider more readable. Also remember that whenever conditions become too complex, it might be a good time to [extract a component](/docs/components-and-props.html#extracting-components).
+Όπως και στη JavaScript, εξαρτάται από εσάς να επιλέξετε ένα κατάλληλο στυλ με βάση αυτό που εσείς και η ομάδα σας θεωρείτε πιο ευανάγνωστο. Επίσης, να θυμάστε ότι όταν οι συνθήκες είναι υπερβολικά περίπλοκες, ίσως είναι καλή στιγμή να [εξάγετε ένα component](/docs/components-and-props.html#extracting-components).
 
-### Preventing Component from Rendering {#preventing-component-from-rendering}
+### Αποτρέψτε το Component από το Rendering {#preventing-component-from-rendering}
 
-In rare cases you might want a component to hide itself even though it was rendered by another component. To do this return `null` instead of its render output.
+Σε σπάνιες περιπτώσεις μπορεί να θέλετε ένα component να μην εμφανίζεται, ακόμα και αν έχει γίνει render από ένα άλλο component. Για να το κάνετε αυτό, επιστρέψτε `null` αντί της κανονικής του εμφάνισης.
 
-In the example below, the `<WarningBanner />` is rendered depending on the value of the prop called `warn`. If the value of the prop is `false`, then the component does not render:
+Στο παρακάτω παράδειγμα, το `<WarningBanner />` θα εμφανιστεί ανάλογα με την τιμή του prop που ονομάζεται `warn`. Εάν η τιμή του prop είναι `false`, τότε το component δεν θα εμφανιστεί:
 
 ```javascript{2-4,29}
 function WarningBanner(props) {
@@ -238,6 +238,7 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
+[**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
 
-Returning `null` from a component's `render` method does not affect the firing of the component's lifecycle methods. For instance `componentDidUpdate` will still be called.
+Επιστρέφοντας `null` απο την μέθοδο `render` του component, δεν επηρεάζει την ενεργοποίηση των μεθόδων του κύκλου ζωής του component. Για παράδειγμα το `componentDidUpdate` θα εξακολουθεί να καλείτε.
+
