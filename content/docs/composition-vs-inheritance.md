@@ -14,7 +14,7 @@ next: thinking-in-react.html
 
 ## Περιορισμός {#containment}
 
-Ορισμένα components δεν γνωρίζουν τα children τους πριν των ώρα τους. Αυτό είναι ιδιαίτερα κοινό για τα components όπως `Sidebar` ή `Dialog` που αντιπροσωπεύουν γενικά "κουτιά".
+Μερικά components δεν γνωρίζουν από πριν τα children τους. Αυτό είναι ιδιαίτερα κοινό για τα components όπως `Sidebar` ή `Dialog` που αντιπροσωπεύουν γενικά "κουτιά".
 
 Συνιστούμε τα components αυτά να χρησιμοποιούν το ειδικό `children` prop για να μεταφέρουν τα children elements απευθείας στην έξοδο τους:
 
