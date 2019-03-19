@@ -1,6 +1,6 @@
 ---
 id: handling-events
-title: Handling Events
+title: Διαχείριση των Events
 permalink: docs/handling-events.html
 prev: state-and-lifecycle.html
 next: conditional-rendering.html
@@ -8,12 +8,12 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
-Handling events with React elements is very similar to handling events on DOM elements. There are some syntactic differences:
+Η διαχείριση των events με τα React elements είναι παρόμοια με τη διαχείριση των events στα DOM elements. Υπάρχουν μερικές διαφορές στο συντακτικό:
 
-* React events are named using camelCase, rather than lowercase.
-* With JSX you pass a function as the event handler, rather than a string.
+* Στο React τα events ονομάζονται χρησιμοποιώντας camelCase, αντί για lowercase.
+* Με το JSX περνάτε μια συνάρτηση ως event handler, αντί για ένα string.
 
-For example, the HTML:
+Για παράδειγμα, το HTML:
 
 ```html
 <button onclick="activateLasers()">
@@ -21,7 +21,7 @@ For example, the HTML:
 </button>
 ```
 
-is slightly different in React:
+είναι λίγο διαφορετικό στο React:
 
 ```js{1}
 <button onClick={activateLasers}>
@@ -29,7 +29,7 @@ is slightly different in React:
 </button>
 ```
 
-Another difference is that you cannot return `false` to prevent default behavior in React. You must call `preventDefault` explicitly. For example, with plain HTML, to prevent the default link behavior of opening a new page, you can write:
+Ακόμη μια διαφορά είναι ότι δεν μπορείτε να επιστρέψετε `false` για να σταματήσετε την προκαθορισμένη συμπεριφορά στο React. Θα πρέπει να καλέσετε τη μέθοδο `preventDefault`. Για παράδειγμα, με απλό HTML, για να σταματήσετε τη προκαθορισμένη συμπεριφορά του link, που ανοίγει μια νέα σελίδα, μπορείτε να γράψετε:
 
 ```html
 <a href="#" onclick="console.log('The link was clicked.'); return false">
@@ -37,7 +37,7 @@ Another difference is that you cannot return `false` to prevent default behavior
 </a>
 ```
 
-In React, this could instead be:
+Στο React αυτό θα μπορούσε να είναι:
 
 ```js{2-5,8}
 function ActionLink() {
@@ -54,11 +54,11 @@ function ActionLink() {
 }
 ```
 
-Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
+Εδώ το `e` είναι ένα synthetic event. Το React ορίζει αυτά τα synthetic events σύμφωνα με το [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), οπότε δεν χρειάζεται να ανησυχείτε για τη συμβατότητα μεταξύ των browsers. Δείτε τον οδηγό αναφοράς του [`SyntheticEvent`](/docs/events.html) για να μάθετε περισσότερα.
 
-When using React you should generally not need to call `addEventListener` to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.
+Όταν χρησιμοποιείτε το React, γενικά δεν θα χρειαστεί να καλείτε το `addEventListener` για να προσθέσετε listeners σε ένα DOM element μετά τη δημιουργία του. Αντί για αυτό, απλά προσθέστε ένα listener όταν το element γίνεται αρχικά rendered.
 
-When you define a component using an [ES6 class](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes), a common pattern is for an event handler to be a method on the class. For example, this `Toggle` component renders a button that lets the user toggle between "ON" and "OFF" states:
+Όταν ορίζετε ένα component χρησιμοποιώντας μια [ES6 κλάση](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes), ένα κοινό μοτίβο για ένα event handler είναι να ορίζεται ως μια μέθοδος της κλάσης. Για παράδειγμα αυτό το `Toggle` component κάνει render ένα button που αφήνει τον χρήστη να κάνει εναλλαγή μεταξύ των "ON" και "OFF" states:
 
 ```js{6,7,10-14,18}
 class Toggle extends React.Component {
@@ -66,7 +66,7 @@ class Toggle extends React.Component {
     super(props);
     this.state = {isToggleOn: true};
 
-    // This binding is necessary to make `this` work in the callback
+    // Αυτό το binding είναι απαραίτητο για να κάνει το `this` να δουλέψει στο callback
     this.handleClick = this.handleClick.bind(this);
   }
 
@@ -91,18 +91,18 @@ ReactDOM.render(
 );
 ```
 
-[**Try it on CodePen**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
+[**Δοκιμάστε το στο Codepen**](https://codepen.io/gaearon/pen/xEmzGg?editors=0010)
 
-You have to be careful about the meaning of `this` in JSX callbacks. In JavaScript, class methods are not [bound](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind) by default. If you forget to bind `this.handleClick` and pass it to `onClick`, `this` will be `undefined` when the function is actually called.
+Πρέπει να είστε προσεκτικοί με τη σημασία του `this` στα JSX callbacks. Στη JavaScript, οι μεθόδοι των κλάσεων δεν είναι [bound](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Global_objects/Function/bind) από προεπιλογή. Αν ξεχάσετε να κάνετε bind το `this.handleClick` και το περάσετε στο `onClick`, το `this` θα είναι `undefined` όταν καλεστεί η συνάρτηση.
 
-This is not React-specific behavior; it is a part of [how functions work in JavaScript](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/). Generally, if you refer to a method without `()` after it, such as `onClick={this.handleClick}`, you should bind that method.
+Αυτή η συμπεριφορά δεν σχετίζεται με το React. Αποτελεί μέρος του [πως λειτουργούν οι συναρτήσεις στη JavaScript](https://www.smashingmagazine.com/2014/01/understanding-javascript-function-prototype-bind/). Γενικά, για να αναφερθείτε σε μια μέθοδο χωρίς να την ακολουθούν `()` όπως το `onClick={this.handleClick}`, θα πρέπει να κάνετε bind αυτή τη μέθοδο.
 
-If calling `bind` annoys you, there are two ways you can get around this. If you are using the experimental [public class fields syntax](https://babeljs.io/docs/plugins/transform-class-properties/), you can use class fields to correctly bind callbacks:
+Αν το να καλείτε το `bind` είναι ενοχλητικό, υπάρχουν δύο τρόποι που μπορείτε να το αποφύγετε. Αν χρησιμοποιείτε το πειραματικό [public class fields syntax](https://babeljs.io/docs/plugins/transform-class-properties/), μπορείτε να χρησιμοποιήσετε πεδία κλάσεων για να κάνετε bind τα callbacks:
 
 ```js{2-6}
 class LoggingButton extends React.Component {
-  // This syntax ensures `this` is bound within handleClick.
-  // Warning: this is *experimental* syntax.
+  // Αυτή η σύνταξη εξασφαλίζει ότι το `this` είναι bound μέσα στο handleClick.
+  // Προσοχή: αυτό το συντακτικό είναι *πειραματικό*
   handleClick = () => {
     console.log('this is:', this);
   }
@@ -117,9 +117,9 @@ class LoggingButton extends React.Component {
 }
 ```
 
-This syntax is enabled by default in [Create React App](https://github.com/facebookincubator/create-react-app).
+Αυτή η σύνταξη είναι ενεργοποιημένη από προεπιλογή στο [Create React App](https://github.com/facebookincubator/create-react-app).
 
-If you aren't using class fields syntax, you can use an [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) in the callback:
+Αν δεν χρησιμοποιήτε το συντακτικό με τα πεδία των κλάσεων, μπορείτε να χρησιμοποιήσετε ένα [arrow function](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Functions/Arrow_functions) στο callback:
 
 ```js{7-9}
 class LoggingButton extends React.Component {
@@ -128,7 +128,7 @@ class LoggingButton extends React.Component {
   }
 
   render() {
-    // This syntax ensures `this` is bound within handleClick
+    // Αυτή η σύνταξη εξασφαλίζει ότι το `this` είναι bound στο handleClick
     return (
       <button onClick={(e) => this.handleClick(e)}>
         Click me
@@ -138,17 +138,17 @@ class LoggingButton extends React.Component {
 }
 ```
 
-The problem with this syntax is that a different callback is created each time the `LoggingButton` renders. In most cases, this is fine. However, if this callback is passed as a prop to lower components, those components might do an extra re-rendering. We generally recommend binding in the constructor or using the class fields syntax, to avoid this sort of performance problem.
+Το πρόβλημα με αυτό το συντακτικό είναι ότι δημιουργείται ένα διαφορετικό callback κάθε φορά που το `LoggingButton` κάνει render. Στις περισσότερες περιπτώσεις αυτό είναι οκ. Ωστόσο, εάν αυτό το callback περνιέται σαν prop σε lower components, αυτά τα components μπορεί να κάνουν ένα περιττό re-rendering. Συνήθως συνηστούμε να κάνετε bind στο constructor ή χρησιμοποιώντας τη σύνταξη με τα πεδία των κλάσεων, για να αποφύγετε τέτοια προβλήματα αποδοτικότητας.
 
-## Passing Arguments to Event Handlers {#passing-arguments-to-event-handlers}
+## Περνώντας Arguments σε Event Handlers {#passing-arguments-to-event-handlers}
 
-Inside a loop it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
+Μέσα σε ένα loop είναι κοινό να θέλετε να περάσετε μια επιπλέον παράμετρο σε ένα event handler. Για παράδειγμα, αν το `id` είναι το row ID, καθένα από τα παρακάτω θα λειτουργούσε:
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
 <button onClick={this.deleteRow.bind(this, id)}>Delete Row</button>
 ```
 
-The above two lines are equivalent, and use [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) and [`Function.prototype.bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) respectively.
+Οι παραπάνω δύο γραμμές είναι ισοδύναμες και χρησιμοποιούν [arrow functions](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Functions/Arrow_functions) και το [`Function.prototype.bind`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_objects/Function/bind) αντίστοιχα.
 
-In both cases, the `e` argument representing the React event will be passed as a second argument after the ID. With an arrow function, we have to pass it explicitly, but with `bind` any further arguments are automatically forwarded.
+Και στις δυο περιπτώσεις, το `e` argument που αντιπροσωπεύει το React event θα περαστεί ως δεύτερο argument μετά το ID. Με ένα arrow function, θα πρέπει να το περάσουμε συγκεκριμένα, αλλά με το `bind` τα ακόλουθα arguments προωθούνται αυτόματα.
