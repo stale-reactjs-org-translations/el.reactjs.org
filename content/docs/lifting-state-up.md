@@ -5,7 +5,7 @@ permalink: docs/lifting-state-up.html
 prev: forms.html
 next: composition-vs-inheritance.html
 redirect_from:
-  - docs/flux-overview.html
+  - "docs/flux-overview.html"
   - "docs/flux-todo-list.html"
 ---
 
