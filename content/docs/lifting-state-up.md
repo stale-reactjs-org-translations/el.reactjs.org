@@ -6,7 +6,7 @@ prev: forms.html
 next: composition-vs-inheritance.html
 redirect_from:
   - docs/flux-overview.html
-  - docs/flux-todo-list.html
+  - "docs/flux-todo-list.html"
 ---
 
 Συχνά, πολλαπλά components πρέπει να μεταβάλλονται ανάλογα με κάποιες κοινές αλλαγές στο state. Για αυτό συνιστούμε τη μεταφορά του state στον πλησιέστερο κοινό πρόγονο τους. Ας δούμε πώς λειτουργεί αυτό στην πράξη.
