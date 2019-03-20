@@ -150,7 +150,7 @@ function tryConvert(temperature, convert) {
 
 ## Μεταφέροντας το State σε ανώτερο επίπεδο (Lifting State Up) {#lifting-state-up}
 
-Αυτή τη στιγμή και τα δύο τα `TemperatureInput` components διατηρούν τις τιμές τους ανεξάρτητες στο state:
+Αυτή τη στιγμή και τα δύο `TemperatureInput` components διατηρούν ανεξάρτητα τις τιμές τους στο τοπικό state:
 
 ```js{5,9,13}
 class TemperatureInput extends React.Component {
