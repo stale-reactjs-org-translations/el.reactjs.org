@@ -13,11 +13,11 @@ import ShallowRenderer from 'react-test-renderer/shallow'; // ES6
 var ShallowRenderer = require('react-test-renderer/shallow'); // ES5 with npm
 ```
 
-## Overview {#overview}
+## Επισκόπηση {#overview}
 
-When writing unit tests for React, shallow rendering can be helpful. Shallow rendering lets you render a component "one level deep" and assert facts about what its render method returns, without worrying about the behavior of child components, which are not instantiated or rendered. This does not require a DOM.
+Όταν γράφετε unit tests για το React, το shallow rendering μπορεί να είναι ιδιαίτερα χρήσιμο. To Shallow rendering σας επιτρέπει να κάνετε render ένα component "σε βάθος ενός επιπέδου"  και να κάνετε assert γεγονότα όπως το τι επιστρέφει στο render ένα method, χωρίς να ανασυχείτε για την συμπεριφορά των child components της μεθόδου, τα οποία δεν αποδίδονται ή αναφέρονται. Αυτό δεν απαιτεί ένα DOM. 
 
-For example, if you have the following component:
+Για παράδειγμα, αν έχετε το ακόλουθο component:
 
 ```javascript
 function MyComponent() {
@@ -30,7 +30,7 @@ function MyComponent() {
 }
 ```
 
-Then you can assert:
+Τότε μπορείτε να κάνετε assert:
 
 ```javascript
 import ShallowRenderer from 'react-test-renderer/shallow';
@@ -47,22 +47,22 @@ expect(result.props.children).toEqual([
 ]);
 ```
 
-Shallow testing currently has some limitations, namely not supporting refs.
+Τo shallow testing έχει κάποιους περιορισμούς για την ώρα, και συγκεκριμένα δεν υποστηρίζει τα refs.
 
-> Note:
+> Σημείωση:
 >
-> We also recommend checking out Enzyme's [Shallow Rendering API](https://airbnb.io/enzyme/docs/api/shallow.html). It provides a nicer higher-level API over the same functionality.
+> Επίσης προτείνουμε να ρίξετε μια ματία [Shallow Rendering API](https://airbnb.io/enzyme/docs/api/shallow.html) του Enzyme. Παρέχει ένα καλύτερο higher-level API πάνω στην ίδια λειτουργικότητα.
 
-## Reference {#reference}
+## Αναφορά {#reference}
 
 ### `shallowRenderer.render()` {#shallowrendererrender}
 
-You can think of the shallowRenderer as a "place" to render the component you're testing, and from which you can extract the component's output.
+Μπορείτε να σκεφτείτε το shallowRenderer σαν ένα "σημείο" όπου κάνετε render το component που δοκιμάζετε, και από το οποίο μπορείτε να εξάγετε το αποτέλεσμα του component.
 
-`shallowRenderer.render()` is similar to [`ReactDOM.render()`](/docs/react-dom.html#render) but it doesn't require DOM and only renders a single level deep. This means you can test components isolated from how their children are implemented.
+Το `shallowRenderer.render()` είναι παρόμοιο με το [`ReactDOM.render()`](/docs/react-dom.html#render) αλλά δεν απαιτεί το DOM και κάνει render μόνο σε βάθος ενός επιπέδου. Αυτό σημαίνει ότι μπορείτε να δοκιμάσετε components απομονωμένα από το πως έχουν εφαρμοστεί τα childen τους.
 
 ### `shallowRenderer.getRenderOutput()` {#shallowrenderergetrenderoutput}
 
-After `shallowRenderer.render()` has been called, you can use `shallowRenderer.getRenderOutput()` to get the shallowly rendered output.
+Μετά την κλήση του `shallowRenderer.render()`, μπορείτε να χρησιμοποιήσετε το `shallowRenderer.getRenderOutput()` για να έχετε πρόσβαση στο shallowly rendered αποτέλεσμα.
 
-You can then begin to assert facts about the output.
+Μπορείτε έπειτα να ξεκινήσετε να κάνετε assert γεγονότα σχετικά με το αποτέλεσμα.
