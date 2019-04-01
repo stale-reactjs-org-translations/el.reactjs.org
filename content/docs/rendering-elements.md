@@ -10,7 +10,7 @@ next: components-and-props.html
 
 Elements είναι τα μικρότερα δόκιμα στοιχείων React εφαρμογών.
 
-Ένα element περιγράφει τη θέλεις να δεις στην οθόνη:
+Ένα element περιγράφει τι θέλεις να δεις στην οθόνη:
 
 ```js
 const element = <h1>Hello, world</h1>;
