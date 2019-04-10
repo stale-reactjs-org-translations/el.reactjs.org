@@ -15,13 +15,13 @@ var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
 
 ## Επισκόπηση {#overview}
 
-Το `ReactTestUtils` σας δίνει τη δυνατότητα να test-άρεις εύκολα τα React components χρησιμοποιώντας το testing framework της επιλογής σας. Στο Facebook χρησιμοποιούμε το [Jest](https://facebook.github.io/jest/) για JavaScript testing χωρίς προβλήματα. Μάθετε πως να ξεκινήσετε με το Jest μέσα από το Jest website's [React Tutorial](https://jestjs.io/docs/tutorial-react).
+Το `ReactTestUtils` σας δίνει τη δυνατότητα να κάνετε εύκολα test τα React components χρησιμοποιώντας το testing framework της επιλογής σας. Στο Facebook χρησιμοποιούμε το [Jest](https://facebook.github.io/jest/) για JavaScript testing χωρίς προβλήματα. Μάθετε πως να ξεκινήσετε με το Jest μέσα από το [React Tutorial](https://jestjs.io/docs/tutorial-react) στη σελίδα του Jest.
 
 > Σημείωση:
 >
 > Συνιστούμε τη χρήση του [`react-testing-library`](https://git.io/react-testing-library) το οποίο είναι σχεδιασμένο να επιτρέπει και να ενθαρρύνει το γράψιμο tests τα οποία χρησιμοποιούν τα components με τον ίδιο τρόπο που τα χρησιμοποιούν και οι χρήστες.
 >
-> Εναλλακτικά, το Airbnb έχει ανακοινώση ενα testing utility, το  [Enzyme](https://airbnb.io/enzyme/), το οποίο διευκολύνει το assert, manipulate, and traverse your React Components' output.
+> Εναλλακτικά, το Airbnb έχει ανακοινώσει ενα testing utility, το  [Enzyme](https://airbnb.io/enzyme/), το οποίο διευκολύνει στο assert, manipulate, και traverse του output των React Components.
 
  - [`act()`](#act)
  - [`mockComponent()`](#mockcomponent)
@@ -44,7 +44,7 @@ var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
 
 ### `act()` {#act}
 
-Ετοιμάζει ένα component για assertions, κάνει wrap τον κώδικα που το εμφανίζει και κάνει updates μέσα σε μια κλήση `act()`. Έτσι το test σας εκτελείται παρόμοια με τον τρόπο που το React λειτουργεί στον browser.
+Για να προετοιμάσετε ένα component για assertions, κάντε wrap τον κώδικα που το εμφανίζει και κάνει updates μέσα σε μια κλήση `act()`. Έτσι το test σας εκτελείται παρόμοια με τον τρόπο που το React λειτουργεί στον browser.
 
 >Σημείωση
 >
@@ -83,7 +83,7 @@ class Counter extends React.Component {
 }
 ```
 
-Δείτε πως μπορούμε να το test-άρουμε:
+Δείτε πως μπορούμε να το τεστάρουμε:
 
 ```js{3,20-22,29-31}
 import React from 'react';
@@ -104,7 +104,7 @@ afterEach(() => {
 });
 
 it('can render and update a counter', () => {
-  // Test-άρει το πρώτο render και το componentDidMount
+  // Τεστάρει το πρώτο render και το componentDidMount
   act(() => {
     ReactDOM.render(<Counter />, container);
   });
@@ -135,7 +135,7 @@ mockComponent(
 )
 ```
 
-Περάστε ένα mocked component module σε αυτήν για να της προσθέσετε χρήσιμες μεθόδους που θα της επιτρέψουν να λειτουργήσει σαν ένα dummy React component. Αντί να κάνετε render όπως συνήθως, το component θα εμφανιστεί σαν ένα `<div>` (ή κάποιο άλλο tag εάν του παρέχετε το `mockTagName`) όπου θα περιέχει όλα τα παρεχόμενα children.
+Περάστε ένα mocked component module σε αυτή τη μέθοδο για να της προσθέσετε χρήσιμες μεθόδους που θα της επιτρέψουν να λειτουργήσει σαν ένα dummy React component. Αντί να κάνετε render όπως συνήθως, το component θα εμφανιστεί σαν ένα `<div>` (ή κάποιο άλλο tag εάν του παρέχετε το `mockTagName`) όπου θα περιέχει όλα τα παρεχόμενα children.
 
 > Σημείωση:
 >
@@ -322,7 +322,7 @@ Simulate.{eventName}(
 
 Προσομοιώστε ένα event dispatch σε ένα DOM node με προαιρετική επιλογή του `eventData` event data.
 
-`Simulate` έχει μία μέθοδο [για κάθε event που μπορεί να καταλάβει το React](/docs/events.html#supported-events).
+Το `Simulate` έχει μία μέθοδο [για κάθε event που μπορεί να καταλάβει το React](/docs/events.html#supported-events).
 
 **Κάντε κλικ σε ένα element**
 
