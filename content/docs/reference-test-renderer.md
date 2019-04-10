@@ -13,13 +13,15 @@ import TestRenderer from 'react-test-renderer'; // ES6
 const TestRenderer = require('react-test-renderer'); // ES5 with npm
 ```
 
-## Overview {#overview}
+## Επισκόπηση {#overview}
 
-This package provides a React renderer that can be used to render React components to pure JavaScript objects, without depending on the DOM or a native mobile environment.
+Αυτό το πακέτο παρέχει έναν React renderer ο οποίος
+μπορεί να χρησιμοποιηθεί για να γινουν render React components σε "καθαρά" JavaScript αντικείμενα, χωρίς
+να εξαρτώνται απο το DOM ή απο κάποιο native mobile περιβάλλον.
 
-Essentially, this package makes it easy to grab a snapshot of the platform view hierarchy (similar to a DOM tree) rendered by a React DOM or React Native component without using a browser or [jsdom](https://github.com/tmpvar/jsdom).
+Ουσιαστικά, αυτό το πακέτο καθιστά εύκολο να πάρεις ενα snapshot το view hierarchy της πλατφόρμας (αντίστοιχα με ενα DOM tree) όπως αυτό γίνεται render από ένα React DOM ή React Native component χωρίς τη χρήση browser ή [jsdom](https://github.com/tmpvar/jsdom).
 
-Example:
+Παράδειγμα:
 
 ```javascript
 import TestRenderer from 'react-test-renderer';
@@ -38,9 +40,10 @@ console.log(testRenderer.toJSON());
 //   children: [ 'Facebook' ] }
 ```
 
-You can use Jest's snapshot testing feature to automatically save a copy of the JSON tree to a file and check in your tests that it hasn't changed: [Learn more about it](https://facebook.github.io/jest/blog/2016/07/27/jest-14.html).
+Μπορείς να χρησιμοποιήσεις το Jest's snapshot testing ώστε να σώζεις αυτόματα ένα αντίγραφο του JSON tree σε ένα αρχείο και να ελέγχεις στα τεστς σου πως αυτό δεν έχει αλλάξει: [Μάθε περισσότερα](https://facebook.github.io/jest/blog/2016/07/27/jest-14.html).
 
-You can also traverse the output to find specific nodes and make assertions about them.
+Ακόμα μπορείς να διασχίσεις το output για να βρείς συγκεκριμένους κόμβους και να κάνεις assertions για αυτούς.
+.
 
 ```javascript
 import TestRenderer from 'react-test-renderer';
@@ -94,7 +97,7 @@ expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
 * [`testInstance.parent`](#testinstanceparent)
 * [`testInstance.children`](#testinstancechildren)
 
-## Reference {#reference}
+## Παραπομπή {#reference}
 
 ### `TestRenderer.create()` {#testrenderercreate}
 
@@ -102,7 +105,8 @@ expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
 TestRenderer.create(element, options);
 ```
 
-Create a `TestRenderer` instance with the passed React element. It doesn't use the real DOM, but it still fully renders the component tree into memory so you can make assertions about it. The returned instance has the following methods and properties.
+Δημιούργησε ένα `TestRenderer` instance με το React element παράμετρο. Δε χρησιμοποιεί το πραγματικό DOM, αλλά παρόλαυτα κάνει render το component tree στη μνήμη ώστε να μπορείς να κάνεις assertions για αυτό. Το επιστρεφόμενο instance έχει τις επόμενες μεθόδους και ιδιότητες.
+
 
 ### `testRenderer.toJSON()` {#testrenderertojson}
 
@@ -110,7 +114,7 @@ Create a `TestRenderer` instance with the passed React element. It doesn't use t
 testRenderer.toJSON()
 ```
 
-Return an object representing the rendered tree. This tree only contains the platform-specific nodes like `<div>` or `<View>` and their props, but doesn't contain any user-written components. This is handy for [snapshot testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest).
+Επιστρέφει ενα αντικείμενο που αντιπροσωπευει τo rendered δέντρο. Αυτό το δέντρο περιέχει platform-specific κόμβους όπως το `<div>` και το `<View>` και τα props τους, αλλά δεν περιέχει user-written components. Κάτι το οποίο είναι πολύ χρησιμο για [snapshot testing](https://facebook.github.io/jest/docs/en/snapshot-testing.html#snapshot-testing-with-jest).
 
 ### `testRenderer.toTree()` {#testrenderertotree}
 
@@ -118,7 +122,8 @@ Return an object representing the rendered tree. This tree only contains the pla
 testRenderer.toTree()
 ```
 
-Return an object representing the rendered tree. Unlike `toJSON()`, the representation is more detailed than the one provided by `toJSON()`, and includes the user-written components. You probably don't need this method unless you're writing your own assertion library on top of the test renderer.
+Επιστρέφει ενα αντικείμενο που αντιπροσωπευει τo rendered δέντρο. Εν αντιθέσει με το `toJSON()`, αυτή η απεικόνιση είναι πιο λεπτομερής σε σχέση με αυτή του  `toJSON()`, και περιέχει τα user-written components.
+Πιθανότατα δε χρειάζεστε αυτή την μέθοδο, εκτός και εαν γράφετε τη δικιά σας assertion βιβλιοθήκη κάνοντας χρήση του test renderer.
 
 ### `testRenderer.update()` {#testrendererupdate}
 
@@ -126,7 +131,7 @@ Return an object representing the rendered tree. Unlike `toJSON()`, the represen
 testRenderer.update(element)
 ```
 
-Re-render the in-memory tree with a new root element. This simulates a React update at the root. If the new element has the same type and key as the previous element, the tree will be updated; otherwise, it will re-mount a new tree.
+Re-render το δέντρο που βρίσκεται στη μνήμη με ένα νέο root element. Αυτό προσομοιώνει ενα React update στο root. Αν το νέο element έχει τον ίδιο τυπο και key με το προηγούμενο element, το δέντρο θα γινει update; διαφορετικά, θα γίνει re-mount σε ένα νεο δέντρο.
 
 ### `testRenderer.unmount()` {#testrendererunmount}
 
@@ -134,7 +139,7 @@ Re-render the in-memory tree with a new root element. This simulates a React upd
 testRenderer.unmount()
 ```
 
-Unmount the in-memory tree, triggering the appropriate lifecycle events.
+Unmount το δέντρο που βρίσκεται στη μνήμη, προκαλώντας τα κατάλληλα lifecycle events.
 
 ### `testRenderer.getInstance()` {#testrenderergetinstance}
 
@@ -142,7 +147,7 @@ Unmount the in-memory tree, triggering the appropriate lifecycle events.
 testRenderer.getInstance()
 ```
 
-Return the instance corresponding to the root element, if available. This will not work if the root element is a function component because they don't have instances.
+Επιστρέφει το instance που αντιστοιχεί στο root element, εαν ειναι διαθέσιμο. Δε θα δουλέψει αν το   root element είναι function component επείδη αυτά δεν έχουν instances.
 
 ### `testRenderer.root` {#testrendererroot}
 
@@ -150,7 +155,7 @@ Return the instance corresponding to the root element, if available. This will n
 testRenderer.root
 ```
 
-Returns the root "test instance" object that is useful for making assertions about specific nodes in the tree. You can use it to find other "test instances" deeper below.
+Επιστρέφει το root "test instance" αντικείμενο το οποίο είναι χρησιμο για να κάνεις assertions σχετικά με συγκεκριμένους κόμβους στο δέντρο. Μπορείς να το χρησιμοποιήσεις για να βρείς άλλα "test instances" πιο κάτω στην "ιεραρχία".
 
 ### `testInstance.find()` {#testinstancefind}
 
@@ -158,7 +163,7 @@ Returns the root "test instance" object that is useful for making assertions abo
 testInstance.find(test)
 ```
 
-Find a single descendant test instance for which `test(testInstance)` returns `true`. If `test(testInstance)` does not return `true` for exactly one test instance, it will throw an error.
+Βρες ένα test instance για το οποίο το `test(testInstance)` επιστρέφει `true`. Εάν `test(testInstance)` δεν επιστρέφει `true` για ακριβώς ένα test instance, θα πετάξει error.
 
 ### `testInstance.findByType()` {#testinstancefindbytype}
 
@@ -166,7 +171,7 @@ Find a single descendant test instance for which `test(testInstance)` returns `t
 testInstance.findByType(type)
 ```
 
-Find a single descendant test instance with the provided `type`. If there is not exactly one test instance with the provided `type`, it will throw an error.
+Βρές ένα test instance με τον παρεχόμενο `type`. Εαν δεν υπάρχει ακριβώς ένα test instance με τον παρεχόμενο `type`, θα πετάξει error.
 
 ### `testInstance.findByProps()` {#testinstancefindbyprops}
 
@@ -174,7 +179,7 @@ Find a single descendant test instance with the provided `type`. If there is not
 testInstance.findByProps(props)
 ```
 
-Find a single descendant test instance with the provided `props`. If there is not exactly one test instance with the provided `props`, it will throw an error.
+Βρες ένα test instance με το παρεχόμενο `props`. Αν δεν υπάρχει ενα test instance με το παρεχόμενο `props`, θα πετάξει error.
 
 ### `testInstance.findAll()` {#testinstancefindall}
 
@@ -182,7 +187,7 @@ Find a single descendant test instance with the provided `props`. If there is no
 testInstance.findAll(test)
 ```
 
-Find all descendant test instances for which `test(testInstance)` returns `true`.
+Βρες όλα τα test instances για τα οποία `test(testInstance)` επιστρέφει `true`.
 
 ### `testInstance.findAllByType()` {#testinstancefindallbytype}
 
@@ -190,7 +195,7 @@ Find all descendant test instances for which `test(testInstance)` returns `true`
 testInstance.findAllByType(type)
 ```
 
-Find all descendant test instances with the provided `type`.
+Βρες όλα τα test instances με τον παρεχόμενο `type`.
 
 ### `testInstance.findAllByProps()` {#testinstancefindallbyprops}
 
@@ -198,7 +203,7 @@ Find all descendant test instances with the provided `type`.
 testInstance.findAllByProps(props)
 ```
 
-Find all descendant test instances with the provided `props`.
+Βρες όλα τα test instances με το παρεχόμενο `props`.
 
 ### `testInstance.instance` {#testinstanceinstance}
 
@@ -206,7 +211,7 @@ Find all descendant test instances with the provided `props`.
 testInstance.instance
 ```
 
-The component instance corresponding to this test instance. It is only available for class components, as function components don't have instances. It matches the `this` value inside the given component.
+Το component instance που αντιστοιχεί σε αυτό το test instance. Είναι διαθέσιμο μόνο για class components, καθώς τα function components δεν έχουν instances. Κάνει match με το `this` value μέσα σε ένα component.
 
 ### `testInstance.type` {#testinstancetype}
 
@@ -214,7 +219,7 @@ The component instance corresponding to this test instance. It is only available
 testInstance.type
 ```
 
-The component type corresponding to this test instance. For example, a `<Button />` component has a type of `Button`.
+Το component type που αντιστοιχεί σε αυτό το test instance. Για παράδειγμα, ένα `<Button />` component έχει type `Button`.
 
 ### `testInstance.props` {#testinstanceprops}
 
@@ -222,7 +227,7 @@ The component type corresponding to this test instance. For example, a `<Button 
 testInstance.props
 ```
 
-The props corresponding to this test instance. For example, a `<Button size="small" />` component has `{size: 'small'}` as props.
+Τα props που αντιστοιχούν σε αυτό το test instance. Για παράδειγμα, το `<Button size="small" />` component έχει `{size: 'small'}` σαν props.
 
 ### `testInstance.parent` {#testinstanceparent}
 
@@ -230,7 +235,7 @@ The props corresponding to this test instance. For example, a `<Button size="sma
 testInstance.parent
 ```
 
-The parent test instance of this test instance.
+Το test instance του πατέρα για αυτό το test instance.
 
 ### `testInstance.children` {#testinstancechildren}
 
@@ -238,13 +243,13 @@ The parent test instance of this test instance.
 testInstance.children
 ```
 
-The children test instances of this test instance.
+Τα test instances των παιδιών για αυτό το test instance.
 
-## Ideas {#ideas}
+## Ιδέες {#ideas}
 
-You can pass `createNodeMock` function to `TestRenderer.create` as the option, which allows for custom mock refs.
-`createNodeMock` accepts the current element and should return a mock ref object.
-This is useful when you test a component that relies on refs.
+Μπορείς να περάσεις μια `createNodeMock` συνάρτηση στο `TestRenderer.create` σαν μια επιλογή, η οποία επιτρέπει custom mock refs.
+Το `createNodeMock` δέχεται το παρόν element και πρέπει να επιστρέψει ένα mock ref αντικείμενο.
+Αυτό ειναι χρησιμο όταν θες να τεστάρεις ενα component που βασίζεται σε refs.
 
 ```javascript
 import TestRenderer from 'react-test-renderer';
