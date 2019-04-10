@@ -344,6 +344,6 @@ ReactTestUtils.Simulate.keyDown(node, {key: "Enter", keyCode: 13, which: 13});
 
 > Σημείωση
 >
-> Θα χρειαστεί να παρέχετε κάθε event property που χρησιμοποιείτε στο component (π.χ. keyCode, which, etc...) καθώς το React δεν τα δημιουργεί αυτά για εσάς.
+> Θα χρειαστεί να παρέχετε κάθε event property που χρησιμοποιείτε στο component (π.χ. keyCode, which, etc...) καθώς το React δεν τα δημιουργεί για εσάς.
 
 * * *
