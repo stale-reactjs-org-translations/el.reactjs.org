@@ -1,6 +1,6 @@
 ---
 id: test-utils
-title: Test Utilities
+title: Test Εργαλεία
 permalink: docs/test-utils.html
 layout: docs
 category: Reference
@@ -13,15 +13,15 @@ import ReactTestUtils from 'react-dom/test-utils'; // ES6
 var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
 ```
 
-## Overview {#overview}
+## Επισκόπηση {#overview}
 
-`ReactTestUtils` makes it easy to test React components in the testing framework of your choice. At Facebook we use [Jest](https://facebook.github.io/jest/) for painless JavaScript testing. Learn how to get started with Jest through the Jest website's [React Tutorial](https://jestjs.io/docs/tutorial-react).
+Το `ReactTestUtils` σας δίνει τη δυνατότητα να κάνετε εύκολα test τα React components χρησιμοποιώντας το testing framework της επιλογής σας. Στο Facebook χρησιμοποιούμε το [Jest](https://facebook.github.io/jest/) για JavaScript testing χωρίς προβλήματα. Μάθετε πως να ξεκινήσετε με το Jest μέσα από το [React Tutorial](https://jestjs.io/docs/tutorial-react) στη σελίδα του Jest.
 
-> Note:
+> Σημείωση:
 >
-> We recommend using [`react-testing-library`](https://git.io/react-testing-library) which is designed to enable and encourage writing tests that use your components as the end users do.
+> Συνιστούμε τη χρήση του [`react-testing-library`](https://git.io/react-testing-library) το οποίο είναι σχεδιασμένο να επιτρέπει και να ενθαρρύνει το γράψιμο tests τα οποία χρησιμοποιούν τα components με τον ίδιο τρόπο που τα χρησιμοποιούν και οι χρήστες.
 >
-> Alternatively, Airbnb has released a testing utility called [Enzyme](https://airbnb.io/enzyme/), which makes it easy to assert, manipulate, and traverse your React Components' output.
+> Εναλλακτικά, το Airbnb έχει ανακοινώσει ενα testing utility, το  [Enzyme](https://airbnb.io/enzyme/), το οποίο διευκολύνει στο assert, manipulate, και traverse του output των React Components.
 
  - [`act()`](#act)
  - [`mockComponent()`](#mockcomponent)
@@ -40,17 +40,17 @@ var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
  - [`renderIntoDocument()`](#renderintodocument)
  - [`Simulate`](#simulate)
 
-## Reference {#reference}
+## Παραπομπές {#reference}
 
 ### `act()` {#act}
 
-To prepare a component for assertions, wrap the code rendering it and performing updates inside an `act()` call. This makes your test run closer to how React works in the browser.
+Για να προετοιμάσετε ένα component για assertions, κάντε wrap τον κώδικα που το εμφανίζει και κάνει updates μέσα σε μια κλήση `act()`. Έτσι το test σας εκτελείται παρόμοια με τον τρόπο που το React λειτουργεί στον browser.
 
->Note
+>Σημείωση
 >
->If you use `react-test-renderer`, it also provides an `act` export that behaves the same way.
+>Αν χρησιμοποιείτε το `react-test-renderer`, αυτό περιέχει μια `act` η οποία συμπεριφέρεται με τον ίδιο τρόπο.
 
-For example, let's say we have this `Counter` component:
+Για παράδειγμα, ας υποθέσουμε πως έχουμε το `Counter` component:
 
 ```js
 class Counter extends React.Component {
@@ -60,10 +60,10 @@ class Counter extends React.Component {
     this.handleClick = this.handleClick.bind(this);
   }
   componentDidMount() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Κάνατε κλικ ${this.state.count} φορές`;
   }
   componentDidUpdate() {
-    document.title = `You clicked ${this.state.count} times`;
+    document.title = `Κάνατε κλικ ${this.state.count} φορές`;
   }
   handleClick() {
     this.setState(state => ({
@@ -73,9 +73,9 @@ class Counter extends React.Component {
   render() {
     return (
       <div>
-        <p>You clicked {this.state.count} times</p>
+        <p>Κάνατε κλικ {this.state.count} φορές</p>
         <button onClick={this.handleClick}>
-          Click me
+          Πάτησε με
         </button>
       </div>
     );
@@ -83,7 +83,7 @@ class Counter extends React.Component {
 }
 ```
 
-Here is how we can test it:
+Δείτε πως μπορούμε να το τεστάρουμε:
 
 ```js{3,20-22,29-31}
 import React from 'react';
@@ -104,7 +104,7 @@ afterEach(() => {
 });
 
 it('can render and update a counter', () => {
-  // Test first render and componentDidMount
+  // Τεστάρει το πρώτο render και το componentDidMount
   act(() => {
     ReactDOM.render(<Counter />, container);
   });
@@ -113,16 +113,16 @@ it('can render and update a counter', () => {
   expect(label.textContent).toBe('You clicked 0 times');
   expect(document.title).toBe('You clicked 0 times');
 
-  // Test second render and componentDidUpdate
+  // Test-άρει το δεύτερο render και το componentDidUpdate
   act(() => {
     button.dispatchEvent(new MouseEvent('click', {bubbles: true}));
   });
-  expect(label.textContent).toBe('You clicked 1 times');
-  expect(document.title).toBe('You clicked 1 times');
+  expect(label.textContent).toBe('Κάνατε κλικ 1 φορά');
+  expect(document.title).toBe('Κάνατε κλικ 1 φορά');
 });
 ```
 
-Don't forget that dispatching DOM events only works when the DOM container is added to the `document`. You can use a helper like [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) to reduce the boilerplate code.
+Μη ξεχνάτε πως το dispatching των DOM events λειτουργεί μόνο όταν το DOM container έχει προστεθεί στο `document`. Μπορείτε να χρησιμοποιήσετε μια βοηθητική βιβλιοθήκη, την [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) για να μειώσετε τον boilerplate κώδικα που θα χρειαστεί να γράψετε.
 
 * * *
 
@@ -135,11 +135,11 @@ mockComponent(
 )
 ```
 
-Pass a mocked component module to this method to augment it with useful methods that allow it to be used as a dummy React component. Instead of rendering as usual, the component will become a simple `<div>` (or other tag if `mockTagName` is provided) containing any provided children.
+Περάστε ένα mocked component module σε αυτή τη μέθοδο για να της προσθέσετε χρήσιμες μεθόδους που θα της επιτρέψουν να λειτουργήσει σαν ένα dummy React component. Αντί να κάνετε render όπως συνήθως, το component θα εμφανιστεί σαν ένα `<div>` (ή κάποιο άλλο tag εάν του παρέχετε το `mockTagName`) όπου θα περιέχει όλα τα παρεχόμενα children.
 
-> Note:
+> Σημείωση:
 >
-> `mockComponent()` is a legacy API. We recommend using [shallow rendering](/docs/shallow-renderer.html) or [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) instead.
+> Το `mockComponent()` είναι ένα legacy API. Συνιστούμε να χρησιμοποιήσετε το [shallow rendering](/docs/shallow-renderer.html) ή το [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock).
 
 * * *
 
@@ -149,7 +149,7 @@ Pass a mocked component module to this method to augment it with useful methods 
 isElement(element)
 ```
 
-Returns `true` if `element` is any React element.
+Επιστρέφει `true` εάν το `element` είναι κάποιο React element.
 
 * * *
 
@@ -162,7 +162,7 @@ isElementOfType(
 )
 ```
 
-Returns `true` if `element` is a React element whose type is of a React `componentClass`.
+Επιστρέφει `true` εάν το `element` είναι ένα React element με τύπο React `componentClass`.
 
 * * *
 
@@ -172,7 +172,7 @@ Returns `true` if `element` is a React element whose type is of a React `compone
 isDOMComponent(instance)
 ```
 
-Returns `true` if `instance` is a DOM component (such as a `<div>` or `<span>`).
+Επιστρέφει `true` εάν το `instance` είναι ένα DOM component (όπως για παράδειγμα `<div>` ή `<span>`).
 
 * * *
 
@@ -182,7 +182,7 @@ Returns `true` if `instance` is a DOM component (such as a `<div>` or `<span>`).
 isCompositeComponent(instance)
 ```
 
-Returns `true` if `instance` is a user-defined component, such as a class or a function.
+Επιστρέφει `true` εάν το `instance` είναι ένα component που έχει ορίσει ο χρήστης, όπως ένα class ή function component.
 
 * * *
 
@@ -195,7 +195,7 @@ isCompositeComponentWithType(
 )
 ```
 
-Returns `true` if `instance` is a component whose type is of a React `componentClass`.
+Επιστρέφει `true` εάν το `instance` είναι ένα component με τύπο React `componentClass`.
 
 * * *
 
@@ -208,7 +208,7 @@ findAllInRenderedTree(
 )
 ```
 
-Traverse all components in `tree` and accumulate all components where `test(component)` is `true`. This is not that useful on its own, but it's used as a primitive for other test utils.
+Διασχίζει όλα τα components στο `tree` και συλλέγει όλα τα components όπου το `test(component)` είναι `true`. Από μόνο του αυτό δεν είναι πολύ χρήσιμο, αλλά χρησιμοποιείται σαν βάση για άλλα test εργαλεία.
 
 * * *
 
@@ -221,7 +221,7 @@ scryRenderedDOMComponentsWithClass(
 )
 ```
 
-Finds all DOM elements of components in the rendered tree that are DOM components with the class name matching `className`.
+Βρίσκει όλα τα DOM elements των components στο rendered tree τα οποία είναι DOM components με όνομα κλάσης που να ταιριάζει στο `className`.
 
 * * *
 
@@ -234,7 +234,7 @@ findRenderedDOMComponentWithClass(
 )
 ```
 
-Like [`scryRenderedDOMComponentsWithClass()`](#scryrendereddomcomponentswithclass) but expects there to be one result, and returns that one result, or throws exception if there is any other number of matches besides one.
+Σαν το [`scryRenderedDOMComponentsWithClass()`](#scryrendereddomcomponentswithclass) αλλά περιμένει να υπάρχει ένα αποτέλεσμα, το οποίο και επιστρέφει, ή πετάει exception εάν υπάρχει οποιοσδήποτε άλλος αριθμός εκτός του ένα.
 
 * * *
 
@@ -247,7 +247,7 @@ scryRenderedDOMComponentsWithTag(
 )
 ```
 
-Finds all DOM elements of components in the rendered tree that are DOM components with the tag name matching `tagName`.
+Βρίσκει όλα τα DOM elements των components στο rendered tree τα οποία είναι DOM components με tag name που να ταιριάζει στο `tagName`.
 
 * * *
 
@@ -260,7 +260,7 @@ findRenderedDOMComponentWithTag(
 )
 ```
 
-Like [`scryRenderedDOMComponentsWithTag()`](#scryrendereddomcomponentswithtag) but expects there to be one result, and returns that one result, or throws exception if there is any other number of matches besides one.
+Όπως το  [`scryRenderedDOMComponentsWithTag()`](#scryrendereddomcomponentswithtag) αλλά περιμένει να υπάρχει ένα αποτέλεσμα, το οποίο και επιστρέφει, ή πετάει exception εάν υπάρχει οποιοσδήποτε άλλος αριθμός εκτός του ένα.
 
 * * *
 
@@ -273,7 +273,7 @@ scryRenderedComponentsWithType(
 )
 ```
 
-Finds all instances of components with type equal to `componentClass`.
+Βρίσκει όλα τα instances των components με τύπο ίδιο με αυτό του `componentClass`.
 
 * * *
 
@@ -286,7 +286,7 @@ findRenderedComponentWithType(
 )
 ```
 
-Same as [`scryRenderedComponentsWithType()`](#scryrenderedcomponentswithtype) but expects there to be one result and returns that one result, or throws exception if there is any other number of matches besides one.
+Όπως το [`scryRenderedComponentsWithType()`](#scryrenderedcomponentswithtype)  αλλά περιμένει να υπάρχει ένα αποτέλεσμα, το οποίο και επιστρέφει, ή πετάει exception εάν υπάρχει οποιοσδήποτε άλλος αριθμός εκτός του ένα.
 
 ***
 
@@ -296,20 +296,20 @@ Same as [`scryRenderedComponentsWithType()`](#scryrenderedcomponentswithtype) bu
 renderIntoDocument(element)
 ```
 
-Render a React element into a detached DOM node in the document. **This function requires a DOM.** It is effectively equivalent to:
+Έμφανίζει ένα React element σε ένα detached DOM node στο document. **This function requires a DOM.** Είναι αντίστοιχο με το:
 
 ```js
 const domContainer = document.createElement('div');
 ReactDOM.render(element, domContainer);
 ```
 
-> Note:
+> Σημείωση:
 >
-> You will need to have `window`, `window.document` and `window.document.createElement` globally available **before** you import `React`. Otherwise React will think it can't access the DOM and methods like `setState` won't work.
+> Θα χρειαστείτε το `window`, το `window.document` και το `window.document.createElement` globally διαθέσιμα **πριν** κάνετε import το `React`. Διαφορετικά το React θα πιστέψει πως δεν έχει πρόσβαση στο DOM και μέθοδοι όπως το `setState` δε θα λειτουργούν.
 
 * * *
 
-## Other Utilities {#other-utilities}
+## Άλλα εργαλεία {#other-utilities}
 
 ### `Simulate` {#simulate}
 
@@ -320,11 +320,11 @@ Simulate.{eventName}(
 )
 ```
 
-Simulate an event dispatch on a DOM node with optional `eventData` event data.
+Προσομοιώστε ένα event dispatch σε ένα DOM node με προαιρετική επιλογή του `eventData` event data.
 
-`Simulate` has a method for [every event that React understands](/docs/events.html#supported-events).
+Το `Simulate` έχει μία μέθοδο [για κάθε event που μπορεί να καταλάβει το React](/docs/events.html#supported-events).
 
-**Clicking an element**
+**Κάντε κλικ σε ένα element**
 
 ```javascript
 // <button ref={(node) => this.button = node}>...</button>
@@ -332,7 +332,7 @@ const node = this.button;
 ReactTestUtils.Simulate.click(node);
 ```
 
-**Changing the value of an input field and then pressing ENTER.**
+**Αλλάξτε την τιμή ενός input field και ακολούθως πατήστε ENTER.**
 
 ```javascript
 // <input ref={(node) => this.textInput = node} />
@@ -342,8 +342,8 @@ ReactTestUtils.Simulate.change(node);
 ReactTestUtils.Simulate.keyDown(node, {key: "Enter", keyCode: 13, which: 13});
 ```
 
-> Note
+> Σημείωση
 >
-> You will have to provide any event property that you're using in your component (e.g. keyCode, which, etc...) as React is not creating any of these for you.
+> Θα χρειαστεί να παρέχετε κάθε event property που χρησιμοποιείτε στο component (π.χ. keyCode, which, etc...) καθώς το React δεν τα δημιουργεί για εσάς.
 
 * * *
