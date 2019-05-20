@@ -11,8 +11,8 @@ permalink: docs/javascript-environment-requirements.html
 Ένα polyfilled περιβάλλον για το React 16 με χρήση του core-js που να υποστηρίζει παλιότερους browsers ενδέχεται να μοιάζει κάπως έτσι :
 
 ```js
-import 'core-js/es6/map';
-import 'core-js/es6/set';
+import 'core-js/es/map';
+import 'core-js/es/set';
 
 import React from 'react';
 import ReactDOM from 'react-dom';
