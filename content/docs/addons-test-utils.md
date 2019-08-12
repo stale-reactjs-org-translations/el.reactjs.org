@@ -122,7 +122,13 @@ it('can render and update a counter', () => {
 });
 ```
 
+<<<<<<< HEAD
 Μη ξεχνάτε πως το dispatching των DOM events λειτουργεί μόνο όταν το DOM container έχει προστεθεί στο `document`. Μπορείτε να χρησιμοποιήσετε μια βοηθητική βιβλιοθήκη, την [`react-testing-library`](https://github.com/kentcdodds/react-testing-library) για να μειώσετε τον boilerplate κώδικα που θα χρειαστεί να γράψετε.
+=======
+- Don't forget that dispatching DOM events only works when the DOM container is added to the `document`. You can use a library like [React Testing Library](https://testing-library.com/react) to reduce the boilerplate code.
+
+- The [`recipes`](/docs/recipes.html) document contains more details on how `act()` behaves, with examples and usage.
+>>>>>>> ddbd064d41d719f9ec0c2f6a4227f797a5828310
 
 * * *
 
@@ -139,7 +145,11 @@ mockComponent(
 
 > Σημείωση:
 >
+<<<<<<< HEAD
 > Το `mockComponent()` είναι ένα legacy API. Συνιστούμε να χρησιμοποιήσετε το [shallow rendering](/docs/shallow-renderer.html) ή το [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock).
+=======
+> `mockComponent()` is a legacy API. We recommend using [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) instead.
+>>>>>>> ddbd064d41d719f9ec0c2f6a4227f797a5828310
 
 * * *
 
