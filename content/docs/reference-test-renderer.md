@@ -106,8 +106,12 @@ expect(testInstance.findByProps({className: "sub"}).children).toEqual(['Sub']);
 TestRenderer.create(element, options);
 ```
 
+<<<<<<< HEAD
 Δημιούργησε ένα `TestRenderer` instance με το React element παράμετρο. Δε χρησιμοποιεί το πραγματικό DOM, αλλά παρόλαυτα κάνει render το component tree στη μνήμη ώστε να μπορείς να κάνεις assertions για αυτό. Το επιστρεφόμενο instance έχει τις επόμενες μεθόδους και ιδιότητες.
 
+=======
+Create a `TestRenderer` instance with the passed React element. It doesn't use the real DOM, but it still fully renders the component tree into memory so you can make assertions about it. Returns a [TestRenderer instance](#testrenderer-instance).
+>>>>>>> de497e250340ff597ce4964279369f16315b8b4b
 
 ### `TestRenderer.act()` {#testrendereract}
 
