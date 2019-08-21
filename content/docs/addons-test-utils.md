@@ -127,8 +127,12 @@ it('can render and update a counter', () => {
 =======
 - Don't forget that dispatching DOM events only works when the DOM container is added to the `document`. You can use a library like [React Testing Library](https://testing-library.com/react) to reduce the boilerplate code.
 
+<<<<<<< HEAD
 - The [`recipes`](/docs/recipes.html) document contains more details on how `act()` behaves, with examples and usage.
 >>>>>>> ddbd064d41d719f9ec0c2f6a4227f797a5828310
+=======
+- The [`recipes`](/docs/testing-recipes.html) document contains more details on how `act()` behaves, with examples and usage.
+>>>>>>> de497e250340ff597ce4964279369f16315b8b4b
 
 * * *
 
