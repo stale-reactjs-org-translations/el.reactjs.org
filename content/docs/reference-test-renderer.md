@@ -157,8 +157,12 @@ testRenderer.toJSON()
 testRenderer.toTree()
 ```
 
+<<<<<<< HEAD
 Επιστρέφει ενα αντικείμενο που αντιπροσωπευει τo rendered tree. Εν αντιθέσει με το `toJSON()`, αυτή η απεικόνιση είναι πιο λεπτομερής σε σχέση με αυτή του  `toJSON()`, και περιέχει τα user-written components. Πιθανότατα δε χρειάζεστε αυτή την μέθοδο, εκτός κι αν γράφετε τη δικιά σας assertion βιβλιοθήκη κάνοντας χρήση του test renderer.
 Πιθανότατα δε χρειάζεστε αυτή την μέθοδο, εκτός και εαν γράφετε τη δικιά σας assertion βιβλιοθήκη κάνοντας χρήση του test renderer.
+=======
+Return an object representing the rendered tree. The representation is more detailed than the one provided by `toJSON()`, and includes the user-written components. You probably don't need this method unless you're writing your own assertion library on top of the test renderer.
+>>>>>>> 941f54180ef5e652221f54ef6d1f6f2e9e063597
 
 ### `testRenderer.update()` {#testrendererupdate}
 
