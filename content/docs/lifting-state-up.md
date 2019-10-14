@@ -324,7 +324,7 @@ class Calculator extends React.Component {
 
 Εάν υπάρχει κάτι το οποίο μπορεί να υπολογιστεί είτε από τα props είτε από το state, τότε δεν χρειάζεται να σώζεται στο state. Για παράδειγμα, αντί να σώζεται το `celsiusValue` και το `fahrenheitValue`, αποθηκεύουμε απλά την τελευταία τιμή του `temperature` και του `scale`. Η τιμή του άλλου input μπορεί πάντα να υπολογιστεί από αυτά τα δύο μέσα στη `render()` μέθοδο. Αυτό μας επιτρέπει να καθαρίσουμε ή να στρογγυλοποίησουμε τη τιμή του άλλου πεδίου με ακρίβεια.
 
-Όταν βλέπετε ότι πηγαίνει κάτι λάθος με το UI, μπορείτε να χρησιμοποιείτε τα [React Developer Tools](https://github.com/facebook/react-devtools) έτσι ώστε να εντοπίζετε τα props και να ανέβετε στο δέντρο των components μέχρις ότου βρείτε το υπεύθυνο component για την ανανέωση του state. Αυτό σας επιτρέπει να εντοπίσετε τα σφάλματα στην πηγή τους:
+Όταν βλέπετε ότι πηγαίνει κάτι λάθος με το UI, μπορείτε να χρησιμοποιείτε τα [React Developer Tools](https://github.com/facebook/react/tree/master/packages/react-devtools) έτσι ώστε να εντοπίζετε τα props και να ανέβετε στο δέντρο των components μέχρις ότου βρείτε το υπεύθυνο component για την ανανέωση του state. Αυτό σας επιτρέπει να εντοπίσετε τα σφάλματα στην πηγή τους:
 
 <img src="../images/docs/react-devtools-state.gif" alt="Monitoring State in React DevTools" max-width="100%" height="100%">
 
