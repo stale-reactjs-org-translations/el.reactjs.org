@@ -182,4 +182,8 @@ const element = {
 
 >**Tip:**
 >
+<<<<<<< HEAD
 >Προτείνουμε τη χρήση του ["Babel" language definition](https://babeljs.io/docs/editors) για τον editor της επιλογής σας, ώστε ο κώδικας ES6 και JSX να επισημαίνονται σωστά. Αυτή η ιστοσελίδα χρησιμοποιεί το συμβατό color scheme [Oceanic Next](https://labs.voronianski.com/oceanic-next-color-scheme/).
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
