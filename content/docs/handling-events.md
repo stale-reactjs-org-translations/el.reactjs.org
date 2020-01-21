@@ -56,11 +56,7 @@ function ActionLink() {
 
 Εδώ το `e` είναι ένα synthetic event. Το React ορίζει αυτά τα synthetic events σύμφωνα με το [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), οπότε δεν χρειάζεται να ανησυχείτε για τη συμβατότητα μεταξύ των browsers. Δείτε τον οδηγό αναφοράς του [`SyntheticEvent`](/docs/events.html) για να μάθετε περισσότερα.
 
-<<<<<<< HEAD
 Όταν χρησιμοποιείτε το React, γενικά δεν θα χρειαστεί να καλείτε το `addEventListener` για να προσθέσετε listeners σε ένα DOM element μετά τη δημιουργία του. Αντί για αυτό, απλά προσθέστε ένα listener όταν το element γίνεται αρχικά rendered.
-=======
-When using React, you generally don't need to call `addEventListener` to add listeners to a DOM element after it is created. Instead, just provide a listener when the element is initially rendered.
->>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
 
 Όταν ορίζετε ένα component χρησιμοποιώντας μια [ES6 κλάση](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Classes), ένα κοινό μοτίβο για ένα event handler είναι να ορίζεται ως μια μέθοδος της κλάσης. Για παράδειγμα αυτό το `Toggle` component κάνει render ένα button που αφήνει τον χρήστη να κάνει εναλλαγή μεταξύ των "ON" και "OFF" states:
 
@@ -146,11 +142,7 @@ class LoggingButton extends React.Component {
 
 ## Περνώντας Arguments σε Event Handlers {#passing-arguments-to-event-handlers}
 
-<<<<<<< HEAD
 Μέσα σε ένα loop είναι κοινό να θέλετε να περάσετε μια επιπλέον παράμετρο σε ένα event handler. Για παράδειγμα, αν το `id` είναι το row ID, καθένα από τα παρακάτω θα λειτουργούσε:
-=======
-Inside a loop, it is common to want to pass an extra parameter to an event handler. For example, if `id` is the row ID, either of the following would work:
->>>>>>> 99a18287c163e328f87709cb224742ccac3e113a
 
 ```js
 <button onClick={(e) => this.deleteRow(id, e)}>Delete Row</button>
