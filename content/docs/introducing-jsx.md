@@ -182,4 +182,4 @@ const element = {
 
 >**Tip:**
 >
->Προτείνουμε τη χρήση του ["Babel" language definition](https://babeljs.io/docs/editors) για τον editor της επιλογής σας, ώστε ο κώδικας ES6 και JSX να επισημαίνονται σωστά. Αυτή η ιστοσελίδα χρησιμοποιεί το συμβατό color scheme [Oceanic Next](https://github.com/voronianski/oceanic-next-color-scheme).
+>Προτείνουμε τη χρήση του ["Babel" language definition](https://babeljs.io/docs/editors) για τον editor της επιλογής σας, ώστε ο κώδικας ES6 και JSX να επισημαίνονται σωστά.
