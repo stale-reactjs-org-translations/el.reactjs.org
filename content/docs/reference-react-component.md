@@ -506,7 +506,7 @@ UNSAFE_componentWillUpdate(nextProps, nextState)
 ### `setState()` {#setstate}
 
 ```javascript
-setState(updater[, callback])
+setState(updater, [callback])
 ```
 
 `setState()` κάνει enqueue τις αλλαγές στο state του component και ενημερώνει το React πως αυτό το component και τα παιδια του χρειάζεται να γινει re-rendered με το ανανεωμένο state. Αυτή είναι η κύρια μέθοδος που χρησιμοποιείτε για να κάνετε update το user interface σε απόκριση των event handlers και απαντησεις απο servers.
