@@ -34,8 +34,12 @@ const element = <h1>Hello, world</h1>;
 
 Οι εφαρμογές χτισμένες με μόνο React συνήθως έχουν ένα μοναδικό ριζικό DOM node. Άμα ενσωματώνεις React σε μια υπάρχουσα εφαρμογή, μπορείς να έχεις όσα πολλά απομονωμένα ριζικά DOM nodes που θέλεις.
 
+<<<<<<< HEAD
 Να κανείς render ένα React element σε ένα ριζικό DOM node, να τα περάσεις στο
 `ReactDOM.render()`:
+=======
+To render a React element into a root DOM node, pass both to [`ReactDOM.render()`](/docs/react-dom.html#render):
+>>>>>>> f81b909ce97dc253998a192f367551cb2b40d66f
 
 `embed:rendering-elements/render-an-element.js`
 
@@ -47,7 +51,11 @@ const element = <h1>Hello, world</h1>;
 
 Ta React elements είναι [αμετάβλητα](https://en.wikipedia.org/wiki/Immutable_object). Όταν δημουργείς ένα element, δεν μπορείς να αλλάξεις τα παιδιά ή τα χαρακτηριστικά του. Ένα element είναι σαν ένα ενιαίο πλαίσιο σε μια ταινία: εκπροσωπεί το UI σε μια συγκεκριμένη χρονική στιγμή.
 
+<<<<<<< HEAD
 Με τις γνώσεις μας μέχρι στιγμής, ο μόνος τρόπος να ενημερώσουμε το UI είναι να δημιουρήσουμε ένα καινούργιο element, και να δοθεί στο `ReactDOM.render()`.
+=======
+With our knowledge so far, the only way to update the UI is to create a new element, and pass it to [`ReactDOM.render()`](/docs/react-dom.html#render).
+>>>>>>> f81b909ce97dc253998a192f367551cb2b40d66f
 
 Σκεφτείτε αυτό το παράδειγμα με χρονομετρημένο ρολόι:
 
@@ -55,11 +63,19 @@ Ta React elements είναι [αμετάβλητα](https://en.wikipedia.org/wik
 
 [Δοκιμάστε το στο CodePen](codepen://rendering-elements/update-rendered-element)
 
+<<<<<<< HEAD
 Αυτό καλεί `ReactDOM.render()` κάθε δευτερόλεπτο από μια [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) επανάκληση.
+=======
+It calls [`ReactDOM.render()`](/docs/react-dom.html#render) every second from a [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) callback.
+>>>>>>> f81b909ce97dc253998a192f367551cb2b40d66f
 
 >**Σημείωση**
 >
+<<<<<<< HEAD
 >Στη πρακτική, οι περισότερες εφαρμογές React καλούν `ReactDOM.render()` μόνο μια φορά. Στα επόμενα τμήματα, θα μάθουμε πώς αυτός ο κώδικας γίνεται εγκλωβισμένος σε [stateful components](/docs/state-and-lifecycle.html).
+=======
+>In practice, most React apps only call [`ReactDOM.render()`](/docs/react-dom.html#render) once. In the next sections we will learn how such code gets encapsulated into [stateful components](/docs/state-and-lifecycle.html).
+>>>>>>> f81b909ce97dc253998a192f367551cb2b40d66f
 >
 >Σας προτείνουμε να μην παραλείψετε θέματα επειδή βασίζονται ο ένας στον άλλο.
 
@@ -73,4 +89,8 @@ Ta React elements είναι [αμετάβλητα](https://en.wikipedia.org/wik
 
 Αν και δημιουργούμε ένα στοιχείο περιγράφοντας ολόκληρο το δέντρο του UI σε κάθε "τίκ", μόνο το text node του οποίου τα περιεχόμενα έχουν αλλάξει ενημερώνονται από το React DOM.
 
+<<<<<<< HEAD
 Με βάση την εμπειρία μας, όταν σκέφτεστε πως το UI πρέπει να εμφανίζεται σε μια οποιαδήποτε στιγμή αντί για το πως πρέπει να αλλάζει με την πάροδο του χρόνου καταφέρνει να εξαλείψει μια ολόκληρη κατηγορία σφαλμάτων.
+=======
+In our experience, thinking about how the UI should look at any given moment, rather than how to change it over time, eliminates a whole class of bugs.
+>>>>>>> f81b909ce97dc253998a192f367551cb2b40d66f
