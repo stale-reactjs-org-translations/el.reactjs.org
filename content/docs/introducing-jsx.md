@@ -178,7 +178,7 @@ const element = {
 
 Αυτά τα objects ονομάζονται "React elements". Μπορείτε να τα σκεφτείτε σαν περιγραφές του τι θα θέλατε να δείτε στην οθόνη. Το React διαβάζει αυτά τα objects και τα χρησιμοποιεί για να κατασκευάσει το DOM και να το ενημερώνει.
 
-Θα διευρύνουμε το rendering των React elements στο DOM στην επόμενη ενότητα.
+Θα διευρύνουμε το rendering των React elements στο DOM στην [επόμενη ενότητα](/docs/rendering-elements.html).
 
 >**Tip:**
 >
