@@ -44,11 +44,7 @@ class Welcome extends React.Component {
 
 Τα παραπάνω δύο components είναι ισοδύναμα από την άποψη του React.
 
-<<<<<<< HEAD
-Οι κλάσεις έχουν κάποια επιπλέον χαρακτηριστικά που θα συζητήσουμε στις [επόμενες ενότητες](/docs/state-and-lifecycle.html). Μέχρι τότε, θα χρησιμοποιήσουμε function components για τη συνοπτικότητά τους.
-=======
-Function and Class components both have some additional features that we will discuss in the [next sections](/docs/state-and-lifecycle.html).
->>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
+Οι συναρτήσεις και οι κλάσεις έχουν κάποια επιπλέον χαρακτηριστικά που θα συζητήσουμε στις [επόμενες ενότητες](/docs/state-and-lifecycle.html).
 
 ## Κάνοντας render ένα Component {#rendering-a-component}
 
@@ -64,11 +60,7 @@ const element = <div />;
 const element = <Welcome name="Sara" />;
 ```
 
-<<<<<<< HEAD
-Όταν το React βλέπει ένα element που αντιπροσωπεύει ένα component καθορισμένο από το χρήστη, μεταβιβάζει τα JSX attributes σε αυτό το component ως ένα μόνο object. Ονομάζουμε αυτό το αντικείμενο "props".
-=======
-When React sees an element representing a user-defined component, it passes JSX attributes and children to this component as a single object. We call this object "props".
->>>>>>> fb382ccb13e30e0d186b88ec357bb51e91de6504
+Όταν το React βλέπει ένα element που αντιπροσωπεύει ένα component καθορισμένο από το χρήστη, μεταβιβάζει τα JSX attributes και τα children σε αυτό το component ως ένα μόνο object. Ονομάζουμε αυτό το αντικείμενο "props".
 
 Για παράδειγμα, αυτός ο κώδικας κάνει render "Hello, Sara" στη σελίδα:
 
