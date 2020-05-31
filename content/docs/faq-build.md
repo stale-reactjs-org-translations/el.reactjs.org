@@ -6,27 +6,27 @@ layout: docs
 category: FAQ
 ---
 
-### Do I need to use JSX with React? {#do-i-need-to-use-jsx-with-react}
+### Πρέπει να χρησιμοποιήσω το JSX με το React; {#do-i-need-to-use-jsx-with-react}
 
-No! Check out ["React Without JSX"](/docs/react-without-jsx.html) to learn more.
+Οχι! Ρίξτε μια ματιά στο ["React Without JSX"](/docs/react-without-jsx.html) για να μάθετε περισσότερα.
 
-### Do I need to use ES6 (+) with React? {#do-i-need-to-use-es6--with-react}
+### Χρειάζεται να χρησιμοποιήσω το ES6 (+) με το React; {#do-i-need-to-use-es6--with-react}
 
-No! Check out ["React Without ES6"](/docs/react-without-es6.html) to learn more.
+Οχι! Ρίξτε μια ματιά στο ["React Without ES6"](/docs/react-without-es6.html) για να μάθετε περισσότερα.
 
-### How can I write comments in JSX? {#how-can-i-write-comments-in-jsx}
+### Πώς μπορώ να γράψω σχόλια στο JSX; {#how-can-i-write-comments-in-jsx}
 
 ```jsx
 <div>
-  {/* Comment goes here */}
+  {/* Τα σχόλια πάνε εδώ */}
   Hello, {name}!
 </div>
 ```
 
 ```jsx
 <div>
-  {/* It also works 
-  for multi-line comments. */}
+  {/* Λειτουργεί επίσης
+   για σχόλια πολλαπλών γραμμών. */}
   Hello, {name}! 
 </div>
 ```
