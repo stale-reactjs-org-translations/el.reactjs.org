@@ -8,38 +8,38 @@ prev: add-react-to-a-website.html
 next: cdn-links.html
 ---
 
-Use an integrated toolchain for the best user and developer experience.
+Χρησιμοποιήστε ένα ενσωματωμένο toolchain για την καλύτερη εμπειρία για χρήστες και προγραμματιστές.
 
-This page describes a few popular React toolchains which help with tasks like:
+Σε αυτήν τη σελίδα, περιγράφονται μερικά δημοφιλή React toolchains που μπορούν να βοηθήσουν σε εργασίες όπως:
 
-* Scaling to many files and components.
-* Using third-party libraries from npm.
-* Detecting common mistakes early.
-* Live-editing CSS and JS in development.
-* Optimizing the output for production.
+* Κλιμάκωση σε πολλά αρχεία και components.
+* Χρήση βιβλιοθηκών τρίτων από το npm.
+* Εντοπισμός συνηθισμένων σφαλμάτων σε αρχικό στάδιο.
+* Ζωντανή επεξεργασία CSS και JS στον προγραμματισμό.
+* Βελτιστοποίηση του αποτελέσματος για παραγωγή.
 
-The toolchains recommended on this page **don't require configuration to get started**.
+Τα toolchains που συνιστώνται σε αυτήν τη σελίδα **δεν απαιτούν διαμόρφωση για να ξεκινήσετε**.
 
-## You Might Not Need a Toolchain {#you-might-not-need-a-toolchain}
+## Ίσως να μη χρειάζεστε ένα toolchain {#you-might-not-need-a-toolchain}
 
-If you don't experience the problems described above or don't feel comfortable using JavaScript tools yet, consider [adding React as a plain `<script>` tag on an HTML page](/docs/add-react-to-a-website.html), optionally [with JSX](/docs/add-react-to-a-website.html#optional-try-react-with-jsx).
+Εάν δεν αντιμετωπίζετε τα προβλήματα που περιγράφονται παραπάνω ή αν δεν είστε ακόμη εξοικειωμένος με τη χρήση των εργαλείων της JavaScript, εξετάστε το ενδεχόμενο [προσθήκης του React ως απλό `<script>` tag σε μια σελίδα HTML](/docs/add-react-to-a-website.html), προαιρετικά [με το JSX](/docs/add-react-to-a-website.html#optional-try-react-with-jsx).
 
-This is also **the easiest way to integrate React into an existing website.** You can always add a larger toolchain if you find it helpful!
+Αυτός είναι, επίσης, **ο ευκολότερος τρόπος ενσωμάτωσης του React σε έναν υπάρχοντα ιστότοπο.** Μπορείτε πάντα να προσθέσετε ένα μεγαλύτερο toolchain, εφόσον το βρείτε χρήσιμο!
 
-## Recommended Toolchains {#recommended-toolchains}
+## Συνιστώμενα toolchains {#recommended-toolchains}
 
-The React team primarily recommends these solutions:
+Η ομάδα του React συνιστά κατά κύριο λόγο τις ακόλουθες λύσεις:
 
-- If you're **learning React** or **creating a new [single-page](/docs/glossary.html#single-page-application) app,** use [Create React App](#create-react-app).
-- If you're building a **server-rendered website with Node.js,** try [Next.js](#nextjs).
-- If you're building a **static content-oriented website,** try [Gatsby](#gatsby).
-- If you're building a **component library** or **integrating with an existing codebase**, try [More Flexible Toolchains](#more-flexible-toolchains).
+- Εάν **μαθαίνετε το React** ή **δημιουργείτε μια νέα εφαρμογή [single-page](/docs/glossary.html#single-page-application),** χρησιμοποιήστε το [Create React App](#create-react-app).
+- Εάν χρησιμοποιείτε έναν **server-rendered ιστότοπο με Node.js,** δοκιμάστε το [Next.js](#nextjs).
+- Εάν δημιουργείτε έναν **στατικό ιστότοπο με προσανατολισμό στο περιεχόμενο,** δοκιμάστε το [Gatsby](#gatsby).
+- Εάν δημιουργείτε μια **βιβλιοθήκη component** ή **πραγματοποιείτε ενσωμάτωση με υπάρχον codebase**, δοκιμάστε [πιο ευέλικτα toolchains](#more-flexible-toolchains).
 
-### Create React App {#create-react-app}
+### Create React App (CRA) {#create-react-app}
 
-[Create React App](https://github.com/facebookincubator/create-react-app) is a comfortable environment for **learning React**, and is the best way to start building **a new [single-page](/docs/glossary.html#single-page-application) application** in React.
+Το [Create React App](https://github.com/facebookincubator/create-react-app) είναι ένα άνετο περιβάλλον για την **εκμάθηση του React** και αποτελεί τον καλύτερο τρόπο για να ξεκινήσετε τη δημιουργία **μιας νέας εφαρμογής [single-page](/docs/glossary.html#single-page-application)** στο React.
 
-It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have Node >= 8.10 and npm >= 5.6 on your machine. To create a project, run:
+Ρυθμίζει το περιβάλλον προγραμματισμού έτσι ώστε να μπορείτε να χρησιμοποιήσετε τα πιο πρόσφατα features της JavaScript, παρέχει μια θετική εμπειρία για τον προγραμματιστή και βελτιστοποιεί την εφαρμογή σας για παραγωγή. Θα χρειαστεί να έχετε στο μηχάνημά σας τα Node >= 8.10 και npm >= 5.6. Για τη δημιουργία ενός project, εκτελέστε:
 
 ```bash
 npx create-react-app my-app
@@ -47,46 +47,46 @@ cd my-app
 npm start
 ```
 
->Note
+>Σημείωση
 >
->`npx` on the first line is not a typo -- it's a [package runner tool that comes with npm 5.2+](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
+>Το `npx` στην πρώτη σειρά δεν είναι ορθογραφικό λάθος. Είναι ένα [package runner tool που συνοδεύει το npm 5.2+](https://medium.com/@maybekatz/introducing-npx-an-npm-package-runner-55f7d4bd282b).
 
-Create React App doesn't handle backend logic or databases; it just creates a frontend build pipeline, so you can use it with any backend you want. Under the hood, it uses [Babel](https://babeljs.io/) and [webpack](https://webpack.js.org/), but you don't need to know anything about them.
+Το Create React App δεν διαχειρίζεται τη λογική backend ούτε βάσεις δεδομένων. Απλώς δημιουργεί ένα frontend build pipeline που μπορείτε να το χρησιμοποιήσετε με όποιο backend θέλετε. Στο παρασκήνιο, χρησιμοποιεί το [Babel](https://babeljs.io/) και το [webpack](https://webpack.js.org/), αλλά δεν χρειάζεται να γνωρίζετε κάτι για αυτά.
 
-When you're ready to deploy to production, running `npm run build` will create an optimized build of your app in the `build` folder. You can learn more about Create React App [from its README](https://github.com/facebookincubator/create-react-app#create-react-app--) and the [User Guide](https://facebook.github.io/create-react-app/).
+Όταν είστε έτοιμος να κάνετε deploy με σκοπό την παραγωγή, η εκτέλεση της εντολής `npm run build` θα δημιουργήσει ένα βελτιστοποιημένο build της εφαρμογής σας στον φάκελο `build`. Μπορείτε να μάθετε περισσότερα σχετικά με το Create React App [από το αρχείο README](https://github.com/facebookincubator/create-react-app#create-react-app--) και τον [οδηγό χρήσης](https://facebook.github.io/create-react-app/) του.
 
 ### Next.js {#nextjs}
 
-[Next.js](https://nextjs.org/) is a popular and lightweight framework for **static and server‑rendered applications** built with React. It includes **styling and routing solutions** out of the box, and assumes that you're using [Node.js](https://nodejs.org/) as the server environment.
+Το [Next.js](https://nextjs.org/) είναι ένα δημοφιλές και ελαφρύ framework για **στατικές εφαρμογές και εφαρμογές server‑rendered** που έχουν δημιουργηθεί με το React. Περιλαμβάνει άμεσες **λύσεις στυλιστικής διαμόρφωσης και routing** και θεωρεί ως δεδομένο ότι χρησιμοποιείτε το [Node.js](https://nodejs.org/) ως περιβάλλον server.
 
-Learn Next.js from [its official guide](https://nextjs.org/learn/).
+Για την εκμάθηση του Next.js, ανατρέξτε στον [επίσημο οδηγό του](https://nextjs.org/learn/).
 
 ### Gatsby {#gatsby}
 
-[Gatsby](https://www.gatsbyjs.org/) is the best way to create **static websites** with React. It lets you use React components, but outputs pre-rendered HTML and CSS to guarantee the fastest load time.
+Το [Gatsby](https://www.gatsbyjs.org/) είναι ο καλύτερος τρόπος δημιουργίας **στατικών ιστότοπων** με το React. Σας επιτρέπει να χρησιμοποιήσετε React components, αλλά εξάγει pre-rendered HTML και CSS με σκοπό τη διασφάλιση του ταχύτερου χρόνου φόρτωσης.
 
-Learn Gatsby from [its official guide](https://www.gatsbyjs.org/docs/) and a [gallery of starter kits](https://www.gatsbyjs.org/docs/gatsby-starters/).
+Για την εκμάθηση του Gatsby, ανατρέξτε στον [επίσημο οδηγό του](https://www.gatsbyjs.org/docs/) και μια [συλλογή από starter kits](https://www.gatsbyjs.org/docs/gatsby-starters/).
 
-### More Flexible Toolchains {#more-flexible-toolchains}
+### Πιο ευέλικτα toolchains {#more-flexible-toolchains}
 
-The following toolchains offer more flexibility and choice. We recommend them to more experienced users:
+Τα παρακάτω toolchains προσφέρουν μεγαλύτερη ευελιξία και περισσότερες επιλογές. Τα προτείνουμε για τους πιο έμπειρους χρήστες:
 
-- **[Neutrino](https://neutrinojs.org/)** combines the power of [webpack](https://webpack.js.org/) with the simplicity of presets, and includes a preset for [React apps](https://neutrinojs.org/packages/react/) and [React components](https://neutrinojs.org/packages/react-components/).
+- Το **[Neutrino](https://neutrinojs.org/)** συνδυάζει τη δύναμη του [webpack](https://webpack.js.org/) με την απλότητα των presets και περιλαμβάνει ένα preset για [εφαρμογές React](https://neutrinojs.org/packages/react/) και [React components](https://neutrinojs.org/packages/react-components/).
 
-- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
+- Το **[Parcel](https://parceljs.org/)** είναι ένα γρήγορο bundler διαδικτυακών εφαρμογών που δεν απαιτεί καμία διαμόρφωση και [λειτουργεί με το React](https://parceljs.org/recipes.html#react).
 
-- **[Razzle](https://github.com/jaredpalmer/razzle)** is a server-rendering framework that doesn't require any configuration, but offers more flexibility than Next.js.
+- Το **[Razzle](https://github.com/jaredpalmer/razzle)** είναι ένα server-rendering framework που δεν απαιτεί καμία διαμόρφωση, αλλά προσφέρει μεγαλύτερη ευελιξία από το Next.js.
 
-## Creating a Toolchain from Scratch {#creating-a-toolchain-from-scratch}
+## Δημιουργία ενός toolchain από μηδενική βάση {#creating-a-toolchain-from-scratch}
 
-A JavaScript build toolchain typically consists of:
+Ένα build toolchain της JavaScript συνήθως αποτελείται από:
 
-* A **package manager**, such as [Yarn](https://yarnpkg.com/) or [npm](https://www.npmjs.com/). It lets you take advantage of a vast ecosystem of third-party packages, and easily install or update them.
+* Ένα **package manager**, όπως το [Yarn](https://yarnpkg.com/) ή το [npm](https://www.npmjs.com/). Επιτρέπει την αξιοποίηση του διευρυμένου οικοσυστήματος των packages τρίτων και την εύκολη εγκατάσταση ή ενημέρωσή τους.
 
-* A **bundler**, such as [webpack](https://webpack.js.org/) or [Parcel](https://parceljs.org/). It lets you write modular code and bundle it together into small packages to optimize load time.
+* Ένα **bundler**, όπως το [webpack](https://webpack.js.org/) ή το [Parcel](https://parceljs.org/). Σας δίνει τη δυνατότητα να γράφετε modular κώδικα κα να τον ομαδοποιείτε σε μικρά packages με σκοπό τη βελτιστοποίηση του χρόνου φόρτωσης.
 
-* A **compiler** such as [Babel](https://babeljs.io/). It lets you write modern JavaScript code that still works in older browsers.
+* Ένα **compiler** όπως το [Babel](https://babeljs.io/). Σας δίνει τη δυνατότητα να γράφετε κώδικα σε σύγχρονη JavaScript, ο οποίος εξακολουθεί να λειτουργεί σε παλαιότερα προγράμματα περιήγησης.
 
-If you prefer to set up your own JavaScript toolchain from scratch, [check out this guide](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658) that re-creates some of the Create React App functionality.
+Εάν προτιμάτε να δημιουργήσετε το δικό σας JavaScript toolchain από μηδενική βάση, [ανατρέξτε σε αυτόν τον οδηγό](https://blog.usejournal.com/creating-a-react-app-from-scratch-f3c693b84658), ο οποίος αναδημιουργεί μερικές από τις λειτουργίες του Create React App.
 
-Don't forget to ensure your custom toolchain [is correctly set up for production](/docs/optimizing-performance.html#use-the-production-build).
+Μην παραλείψετε να διασφαλίσετε ότι το εξατομικευμένο toolchain σας [έχει ρυθμιστεί σωστά για παραγωγή](/docs/optimizing-performance.html#use-the-production-build).
