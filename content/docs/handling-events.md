@@ -8,7 +8,11 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
+<<<<<<< HEAD
 Η διαχείριση των events με τα React elements είναι παρόμοια με τη διαχείριση των events στα DOM elements. Υπάρχουν μερικές διαφορές στο συντακτικό:
+=======
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+>>>>>>> 87dcdbedc36b8d53b4d0d0d36f078924582357f0
 
 * Στο React τα events ονομάζονται χρησιμοποιώντας camelCase, αντί για lowercase.
 * Με το JSX περνάτε μια συνάρτηση ως event handler, αντί για ένα string.
@@ -130,7 +134,7 @@ class LoggingButton extends React.Component {
   render() {
     // Αυτή η σύνταξη εξασφαλίζει ότι το `this` είναι bound στο handleClick
     return (
-      <button onClick={(e) => this.handleClick(e)}>
+      <button onClick={() => this.handleClick()}>
         Click me
       </button>
     );
