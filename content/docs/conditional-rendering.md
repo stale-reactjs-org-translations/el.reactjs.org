@@ -122,7 +122,11 @@ ReactDOM.render(
 
 ### If σε μια γραμμή με το λογικό Οperator && {#inline-if-with-logical--operator}
 
+<<<<<<< HEAD
 Μπορείτε να [ενσωματώσετε οποιεσδήποτε εκφράσεις μέσα στο JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) περικλείοντας τα σε άγκιστρα. Αυτό περιλαμβάνει τον λογικό operator της JavaScript `&&`. Μπορεί να είναι βολικό για να συμπεριλάβει υπό συνθήκη ένα component:
+=======
+You may [embed expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+>>>>>>> 25cc703d1f23f1782ff96c5c7882a806f8741ec4
 
 ```js{6-10}
 function Mailbox(props) {
@@ -176,11 +180,10 @@ render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (
     <div>
-      {isLoggedIn ? (
-        <LogoutButton onClick={this.handleLogoutClick} />
-      ) : (
-        <LoginButton onClick={this.handleLoginClick} />
-      )}
+      {isLoggedIn
+        ? <LogoutButton onClick={this.handleLogoutClick} />
+        : <LoginButton onClick={this.handleLoginClick} />
+      }
     </div>
   );
 }
