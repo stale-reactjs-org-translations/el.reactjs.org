@@ -35,7 +35,7 @@ const element = <h1>Hello, world</h1>;
 Οι εφαρμογές χτισμένες με μόνο React συνήθως έχουν ένα μοναδικό ριζικό DOM node. Άμα ενσωματώνεις React σε μια υπάρχουσα εφαρμογή, μπορείς να έχεις όσα πολλά απομονωμένα ριζικά DOM nodes που θέλεις.
 
 Να κανείς render ένα React element σε ένα ριζικό DOM node, να τα περάσεις στο
-`ReactDOM.render()`:
+[`ReactDOM.render()`](/docs/react-dom.html#render):
 
 `embed:rendering-elements/render-an-element.js`
 
@@ -47,7 +47,7 @@ const element = <h1>Hello, world</h1>;
 
 Ta React elements είναι [αμετάβλητα](https://en.wikipedia.org/wiki/Immutable_object). Όταν δημουργείς ένα element, δεν μπορείς να αλλάξεις τα παιδιά ή τα χαρακτηριστικά του. Ένα element είναι σαν ένα ενιαίο πλαίσιο σε μια ταινία: εκπροσωπεί το UI σε μια συγκεκριμένη χρονική στιγμή.
 
-Με τις γνώσεις μας μέχρι στιγμής, ο μόνος τρόπος να ενημερώσουμε το UI είναι να δημιουρήσουμε ένα καινούργιο element, και να δοθεί στο `ReactDOM.render()`.
+Με τις γνώσεις μας μέχρι στιγμής, ο μόνος τρόπος να ενημερώσουμε το UI είναι να δημιουρήσουμε ένα καινούργιο element, και να δοθεί στο [`ReactDOM.render()`](/docs/react-dom.html#render).
 
 Σκεφτείτε αυτό το παράδειγμα με χρονομετρημένο ρολόι:
 
@@ -55,11 +55,11 @@ Ta React elements είναι [αμετάβλητα](https://en.wikipedia.org/wik
 
 [Δοκιμάστε το στο CodePen](codepen://rendering-elements/update-rendered-element)
 
-Αυτό καλεί `ReactDOM.render()` κάθε δευτερόλεπτο από μια [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) επανάκληση.
+Αυτό καλεί [`ReactDOM.render()`](/docs/react-dom.html#render) κάθε δευτερόλεπτο από μια [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) επανάκληση.
 
 >**Σημείωση**
 >
->Στη πρακτική, οι περισότερες εφαρμογές React καλούν `ReactDOM.render()` μόνο μια φορά. Στα επόμενα τμήματα, θα μάθουμε πώς αυτός ο κώδικας γίνεται εγκλωβισμένος σε [stateful components](/docs/state-and-lifecycle.html).
+>Στη πρακτική, οι περισότερες εφαρμογές React καλούν [`ReactDOM.render()`](/docs/react-dom.html#render) μόνο μια φορά. Στα επόμενα τμήματα, θα μάθουμε πώς αυτός ο κώδικας γίνεται εγκλωβισμένος σε [stateful components](/docs/state-and-lifecycle.html).
 >
 >Σας προτείνουμε να μην παραλείψετε θέματα επειδή βασίζονται ο ένας στον άλλο.
 
@@ -73,4 +73,4 @@ Ta React elements είναι [αμετάβλητα](https://en.wikipedia.org/wik
 
 Αν και δημιουργούμε ένα στοιχείο περιγράφοντας ολόκληρο το δέντρο του UI σε κάθε "τίκ", μόνο το text node του οποίου τα περιεχόμενα έχουν αλλάξει ενημερώνονται από το React DOM.
 
-Με βάση την εμπειρία μας, όταν σκέφτεστε πως το UI πρέπει να εμφανίζεται σε μια οποιαδήποτε στιγμή αντί για το πως πρέπει να αλλάζει με την πάροδο του χρόνου καταφέρνει να εξαλείψει μια ολόκληρη κατηγορία σφαλμάτων.
+Με βάση την εμπειρία μας, όταν σκέφτεστε πως το UI πρέπει να εμφανίζεται σε μια οποιαδήποτε στιγμή, αντί για το πως πρέπει να αλλάζει με την πάροδο του χρόνου, καταφέρνει να εξαλείψει μια ολόκληρη κατηγορία σφαλμάτων.
