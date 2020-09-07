@@ -233,7 +233,11 @@ function Comment(props) {
 
 [Δοκιμάστε το στο CodePen](codepen://components-and-props/extracting-components-continued)
 
+<<<<<<< HEAD
 Η εξαγωγή των components ίσως μοιάζει αρχικά με εργασία, αλλά μια παλέτα επαναχρησιμοποιούμενων components αποδίδει σε μεγαλύτερες εφαρμογές. Ένας καλός κανόνας είναι ότι εαν ένα μέρος του UI σας χρησιμοποιείται αρκετές φορές (`Button`, `Panel`, `Avatar`), ή είναι αρκετά σύνθετο από μόνο του (`App`, `FeedStory`, `Comment`), είναι ένας καλός υποψήφιος να είναι ένα επαναχρησιμοποιήσιμο component.
+=======
+Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be extracted to a separate component.
+>>>>>>> 657658aa1f19c65e35055ddca4452c98d569552f
 
 ## Τα Props είναι Read-Only {#props-are-read-only}
 
