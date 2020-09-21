@@ -280,9 +280,13 @@ shouldComponentUpdate(nextProps, nextState)
 static getDerivedStateFromProps(props, state)
 ```
 
+<<<<<<< HEAD
 Το `getDerivedStateFromProps` καλείται ακριβώς πριν να κληθεί η render μέθοδος, τόσο στο initial mount αλλά και στα επόμενα updates. Πρέπει να επιστρέψει ενα αντικείμενο για να κάνει update το state, ή null για να μην κάνει update τίποτα.
 
 Αυτή η μέθοδος υπάρχει για [σπάνιες περιπτωσεις](/blog/2018/06/07/you-probably-dont-need-derived-state.html#when-to-use-derived-state) όπου το  state βασίζεται σε αλλαγές στα props κατά το πέρασμα του χρόνου. Για παράδειγμα, μπορεί να αποδειχθεί βολικό για την υλοποίηση ενος `<Transition>` component το οποίο συγκρίνει τα προηγουμενα με τα επόμενα children για να αποφασίσει ποια θα κάνει animate in και out.
+=======
+`getDerivedStateFromProps` is invoked right before calling the render method, both on the initial mount and on subsequent updates. It should return an object to update the state, or `null` to update nothing.
+>>>>>>> 1becaff62ae228d909b83ef6d08f48c01660300f
 
 Το deriving του state οδηγεί σε verbose κώδικα και κάνει τα components δυσνόητα.
 [Σιγουρευτείτε πως είστε εξοικοιωμένοι με πιο απλές λύσεις:](/blog/2018/06/07/you-probably-dont-need-derived-state.html)
@@ -595,7 +599,11 @@ component.forceUpdate(callback)
 
 ### `defaultProps` {#defaultprops}
 
+<<<<<<< HEAD
 `defaultProps` can be defined as a property on the component class itself, to set the default props for the class. This is used for undefined props, but not for null props. Για παράδειγμα:
+=======
+`defaultProps` can be defined as a property on the component class itself, to set the default props for the class. This is used for `undefined` props, but not for `null` props. For example:
+>>>>>>> 1becaff62ae228d909b83ef6d08f48c01660300f
 
 ```js
 class CustomButton extends React.Component {
@@ -615,7 +623,11 @@ CustomButton.defaultProps = {
   }
 ```
 
+<<<<<<< HEAD
 Εαν `props.color` εχει σεταριστεί στη τιμη null, τότε θα παραμείνει null:
+=======
+If `props.color` is set to `null`, it will remain `null`:
+>>>>>>> 1becaff62ae228d909b83ef6d08f48c01660300f
 
 ```js
   render() {
