@@ -10,9 +10,15 @@ category: Reference
 
 ## Επισκόπηση {#overview}
 
+<<<<<<< HEAD
 Οι event handlers θα λάβουν instances του `SyntheticEvent`, ένα cross-browser wrapper γυρω απο το native event του browser. Έχει το ιδιο interface με το native event του browser, συμπεριλαμβανομένου του `stopPropagation()` και του `preventDefault()`, με τη διαφορά πως τα events αυτά έχουν ακριβώς την ιδια συμπεριφορά σε ολους τους browsers.
 
 Εαν για κάποιο λογο χρειάζεστε το event του browser, απλώς χρησιμοποιήστε το `nativeEvent` attribute για να το πάρετε. Κάθε `SyntheticEvent` αντικείμενο έχει τα ακόλουθα attributes:
+=======
+Your event handlers will be passed instances of `SyntheticEvent`, a cross-browser wrapper around the browser's native event. It has the same interface as the browser's native event, including `stopPropagation()` and `preventDefault()`, except the events work identically across all browsers. 
+
+If you find that you need the underlying browser event for some reason, simply use the `nativeEvent` attribute to get it. The synthetic events are different from, and do not map directly to, the browser's native events. For example in `onMouseLeave` `event.nativeEvent` will point to a `mouseout` event. The specific mapping is not part of the public API and may change at any time. Every `SyntheticEvent` object has the following attributes:
+>>>>>>> 32e3c7a6f92cb6580eb38c047960805d5998c2ec
 
 ```javascript
 boolean bubbles
