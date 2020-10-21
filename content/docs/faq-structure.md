@@ -6,13 +6,13 @@ layout: docs
 category: FAQ
 ---
 
-### Is there a recommended way to structure React projects? {#is-there-a-recommended-way-to-structure-react-projects}
+### Υπάρχει κάποιος προτεινόμενος τρόπος δομής των React projects; {#is-there-a-recommended-way-to-structure-react-projects}
 
-React doesn't have opinions on how you put files into folders. That said there are a few common approaches popular in the ecosystem you may want to consider.
+Το React δεν έχει απόψεις για το πώς βάζετε τα αρχεία σε φακέλους. Ωστόσο, υπάρχουν μερικές κοινές προσεγγίσεις που είναι δημοφιλείς στο οικοσύστημα τις οποίες ίσως θέλετε να λάβετε υπόψη.
 
-#### Grouping by features or routes {#grouping-by-features-or-routes}
+#### Ομαδοποίηση κατά χαρακτηριστικά ή διαδρομές {#grouping-by-features-or-routes}
 
-One common way to structure projects is locate CSS, JS, and tests together inside folders grouped by feature or route.
+Ένας κοινός τρόπος για τη δομή των project είναι να τοποθετήσετε τα CSS, JS και tests μαζί σε φακέλους ομαδοποιημένους ανά χαρακτηριστικό ή διαδρομή.
 
 ```
 common/
@@ -35,11 +35,11 @@ profile/
   ProfileAPI.js
 ```
 
-The definition of a "feature" is not universal, and it is up to you to choose the granularity. If you can't come up with a list of top-level folders, you can ask the users of your product what major parts it consists of, and use their mental model as a blueprint.
+Ο ορισμός του "χαρακτηριστικού" δεν είναι καθολικός και εξαρτάται από εσάς να επιλέξετε την ευαισθησία. Εάν δεν μπορείτε να βρείτε μια λίστα φακέλων ανώτερου επιπέδου, μπορείτε να ρωτήσετε τους χρήστες του προϊόντος σας από ποια βασικά μέρη αποτελείται, και να χρησιμοποιήσετε το νοητικό τους μοντέλο ως προσχέδιο.
 
-#### Grouping by file type {#grouping-by-file-type}
+#### Ομαδοποίηση κατά τύπο αρχείου {#grouping-by-file-type}
 
-Another popular way to structure projects is to group similar files together, for example:
+Ένας άλλος δημοφιλής τρόπος δομής των project είναι η ομαδοποίηση παρόμοιων αρχείων, για παράδειγμα:
 
 ```
 api/
@@ -59,16 +59,16 @@ components/
   ProfileHeader.css
 ```
 
-Some people also prefer to go further, and separate components into different folders depending on their role in the application. For example, [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) is a design methodology built on this principle. Remember that it's often more productive to treat such methodologies as helpful examples rather than strict rules to follow.
+Μερικοί προτιμούν επίσης να χωρίσουν τα components σε διαφορετικούς φακέλους ανάλογα με το ρόλο τους στην εφαρμογή. Για παράδειγμα, το [Atomic Design](http://bradfrost.com/blog/post/atomic-web-design/) είναι μια μεθοδολογία σχεδιασμού που βασίζεται σε αυτήν την αρχή. Να θυμάστε ότι είναι συχνά πιο παραγωγικό να αντιμετωπίζετε τέτοιες μεθοδολογίες ως χρήσιμα παραδείγματα, παρά αυστηρούς κανόνες που πρέπει να ακολουθήσετε.
 
-#### Avoid too much nesting {#avoid-too-much-nesting}
+#### Αποφύγετε την υπερβολική εμφώλευση  {#avoid-too-much-nesting}
 
-There are many pain points associated with deep directory nesting in JavaScript projects. It becomes harder to write relative imports between them, or to update those imports when the files are moved. Unless you have a very compelling reason to use a deep folder structure, consider limiting yourself to a maximum of three or four nested folders within a single project. Of course, this is only a recommendation, and it may not be relevant to your project.
+Υπάρχουν πολλά προβληµατικά σηµεία που σχετίζονται με εμφωλευμένους καταλόγους σε JavaScript projects. Γίνεται πιο δύσκολο να γράψετε relative imports μεταξύ τους ή να ενημερώσετε αυτά τα imports κατά τη μετακίνηση των αρχείων. Εκτός αν έχετε πολύ επιτακτικό λόγο να χρησιμοποιήσετε μια εμφωλευμένη δομή φακέλων, σκεφτείτε να περιοριστείτε σε τρεις ή τέσσερις ένθετους φακέλους το πολύ σε ένα project. Φυσικά, αυτή είναι μόνο μια πρόταση και ενδέχεται να μην σχετίζεται με το project σας.
 
-#### Don't overthink it {#dont-overthink-it}
+#### Μην το σκέφτεστε υπερβολικά {#dont-overthink-it}
 
-If you're just starting a project, [don't spend more than five minutes](https://en.wikipedia.org/wiki/Analysis_paralysis) on choosing a file structure. Pick any of the above approaches (or come up with your own) and start writing code! You'll likely want to rethink it anyway after you've written some real code.
+Εάν ξεκινάτε τώρα ένα project, [μην δαπανήσετε περισσότερα από πέντε λεπτά](https://en.wikipedia.org/wiki/Analysis_paralysis) για την επιλογή της δομής των αρχείων. Διαλέξτε οποιαδήποτε από τις παραπάνω προσεγγίσεις (ή βρείτε τις δικές σας) και ξεκινήστε να γράφετε κώδικα! Ενδεχομένως να θέλετε να το ξανασκεφτείτε ούτως ή άλλως, αφού γράψετε κάποια ποσότητα κώδικα.
 
-If you feel completely stuck, start by keeping all files in a single folder. Eventually it will grow large enough that you will want to separate some files from the rest. By that time you'll have enough knowledge to tell which files you edit together most often. In general, it is a good idea to keep files that often change together close to each other. This principle is called "colocation".
+Εάν αισθάνεστε να έχετε κολλήσει, ξεκινήστε διατηρώντας όλα τα αρχεία σε έναν φάκελο. Τελικά θα μεγαλώσει αρκετά ώστε να θέλετε να διαχωρίσετε ορισμένα αρχεία από τα υπόλοιπα. Μέχρι τότε θα γνωρίζετε αρκετά ώστε να πείτε ποια αρχεία επεξεργάζεστε πιο συχνά μαζί. Γενικά, είναι καλή ιδέα να διατηρείτε αρχεία που αλλάζουν συχνά μαζί, κοντά το ένα στο άλλο. Αυτή η αρχή ονομάζεται "colocation".
 
-As projects grow larger, they often use a mix of both of the above approaches in practice. So choosing the "right" one in the beginning isn't very important.
+Καθώς τα projects μεγαλώνουν, συχνά χρησιμοποιούν μία μίξη και των δύο παραπάνω προσεγγίσεων στην πράξη. Επομένως, η επιλογή του "σωστού" στην αρχή δεν είναι και πολύ σημαντική.
