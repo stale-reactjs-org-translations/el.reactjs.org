@@ -4,11 +4,11 @@ title: React Without JSX
 permalink: docs/react-without-jsx.html
 ---
 
-JSX is not a requirement for using React. Using React without JSX is especially convenient when you don't want to set up compilation in your build environment.
+Το JSX δεν αποτελεί βασική προϋπόθεση για τη χρήση του React. Η χρήση του React χωρίς JSX είναι ιδιαίτερα βολική όταν δεν θέλετε να ρυθμίσετε τη συλλογή στο περιβάλλον κατασκευής σας (build environment).
 
-Each JSX element is just syntactic sugar for calling `React.createElement(component, props, ...children)`. So, anything you can do with JSX can also be done with just plain JavaScript.
+Κάθε στοιχείο JSX είναι απλά ένα χαρακτηριστικό (syntactic sugar) για να χρησιμοποιήσουμε το `React.createElement(component, props, ...children)`. Έτσι, οτιδήποτε μπορείτε να κάνετε με το JSX μπορεί επίσης να γίνει με την χρήση απλής JavaScript.
 
-For example, this code written with JSX:
+Για παράδειγμα, αυτός ο κωδικός γραμμένος με JSX:
 
 ```js
 class Hello extends React.Component {
@@ -23,7 +23,7 @@ ReactDOM.render(
 );
 ```
 
-can be compiled to this code that does not use JSX:
+μπορεί να "μεταφραστεί" σε αυτόν τον κώδικα που δεν χρησιμοποιεί JSX:
 
 ```js
 class Hello extends React.Component {
@@ -38,11 +38,11 @@ ReactDOM.render(
 );
 ```
 
-If you're curious to see more examples of how JSX is converted to JavaScript, you can try out [the online Babel compiler](babel://jsx-simple-example).
+Αν είστε περίεργοι να δείτε περισσότερα παραδείγματα για το πώς το JSX μετατρέπεται σε JavaScript, μπορείτε να δοκιμάσετε [τον online Babel compiler](babel://jsx-simple-example).
 
-The component can either be provided as a string, as a subclass of `React.Component`, or a plain function.
+Το component μπορεί να παρέχεται ως string, ως ένα subclass του `React.Component`, ή ως μία απλή συνάρτηση.
 
-If you get tired of typing `React.createElement` so much, one common pattern is to assign a shorthand:
+Εάν έχετε κουραστεί να πληκτρολογείτε το `React.createElement` τόσο πολύ, ένα κοινό μοτίβο (pattern) είναι να το εκχωρήσετε (assign) σε μια συντομογραφία (shorthand):
 
 ```js
 const e = React.createElement;
@@ -53,7 +53,7 @@ ReactDOM.render(
 );
 ```
 
-If you use this shorthand form for `React.createElement`, it can be almost as convenient to use React without JSX.
+Εάν χρησιμοποιείτε αυτήν τη "σύντομη φόρμα" (shorthand form) για το `React.createElement`, μπορεί να είναι εξίσου βολικό να χρησιμοποιήσετε το React χωρίς JSX
 
-Alternatively, you can refer to community projects such as [`react-hyperscript`](https://github.com/mlmorg/react-hyperscript) and [`hyperscript-helpers`](https://github.com/ohanhi/hyperscript-helpers) which offer a terser syntax.
+Εναλλακτικά, μπορείτε να αναφερθείτε σε κοινοτικά (community) έργα (projects), όπως [`react-hyperscript`](https://github.com/mlmorg/react-hyperscript) και [`hyperscript-helpers`](https://github.com/ohanhi/hyperscript-helpers) όπου προσφέρουν πιο σύνθετη σύνταξη.
 
