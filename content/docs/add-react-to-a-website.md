@@ -52,10 +52,17 @@ next: create-a-new-react-app.html
 ```html{5,6,9}
   <!-- ... άλλη HTML ... -->
 
+<<<<<<< HEAD
   <!-- Φόρτωση του React. -->
   <!-- Σημείωση: Όταν κάνετε deploy, αντικαταστήστε το "development.js" με το "production.min.js". -->
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+=======
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+>>>>>>> 30baecf59de28a8cd3c91a2cd878e3822f864061
 
   <!-- Φόρτωση του React component μας. -->
   <script src="like_button.js"></script>
@@ -84,7 +91,11 @@ const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
 ```
 
+<<<<<<< HEAD
 Αυτές οι δύο σειρές κώδικα εντοπίζουν το `<div>` που προσθέσαμε στην HTML μας στο 1ο βήμα και, έπειτα, εμφανίζουν εντός του το React component μας με το κουμπί "Μου αρέσει". 
+=======
+These two lines of code find the `<div>` we added to our HTML in the first step, and then display our "Like" button React component inside of it.
+>>>>>>> 30baecf59de28a8cd3c91a2cd878e3822f864061
 
 ### Αυτό ήταν όλο! {#thats-it}
 
@@ -115,8 +126,8 @@ ReactDOM.render(e(LikeButton), domContainer);
 Εάν έχετε ήδη ελαχιστοποιήσει τα application scripts, **ο ιστότοπός σας θα είναι έτοιμος για παραγωγή**, εφόσον διασφαλίσετε ότι η deployed HTML φορτώνει τις εκδόσεις του React με κατάληξη `production.min.js`:
 
 ```js
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 Εάν δεν περιλαμβάνετε ένα βήμα ελαχιστοποίησης για τα scripts σας, [εδώ μπορείτε να βρείτε έναν τρόπο για να δημιουργήσετε ένα](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3).
@@ -184,7 +195,7 @@ return (
 Δημιουργήστε έναν φάκελο με την ονομασία `src` και εκτελέστε αυτήν την εντολή τερματικού:
 
 ```
-npx babel --watch src --out-dir . --presets react-app/prod 
+npx babel --watch src --out-dir . --presets react-app/prod
 ```
 
 >Σημείωση
