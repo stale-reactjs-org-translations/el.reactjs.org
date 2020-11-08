@@ -5,13 +5,13 @@ permalink: docs/hooks-intro.html
 next: hooks-overview.html
 ---
 
-*Hooks* are a new addition in React 16.8. They let you use state and other React features without writing a class.
+Τα *Hooks* είναι η νέα προσθήκη στο React 16.8. Σας δίνουν τη δυνατότητα να χρησιμοποιήσετε το state και άλλα features του React χωρίς να χρειαστεί να γράψετε κάποιο class.
 
 ```js{4,5}
 import React, { useState } from 'react';
 
 function Example() {
-  // Declare a new state variable, which we'll call "count"
+  // Δηλώστε μια νέα μεταβλητή state, την οποία ονομάζουμε "count"
   const [count, setCount] = useState(0);
 
   return (
@@ -25,87 +25,87 @@ function Example() {
 }
 ```
 
-This new function `useState` is the first "Hook" we'll learn about, but this example is just a teaser. Don't worry if it doesn't make sense yet!
+Αυτό το νέο function `useState` είναι το πρώτο «Hook» που θα μάθουμε, αλλά αυτό το παράδειγμα έχει ως σκοπό να σας δώσει απλώς μια ιδέα για τη συνέχεια. Μην ανησυχείτε αν δεν το καταλαβαίνετε τώρα!
 
-**You can start learning Hooks [on the next page](/docs/hooks-overview.html).** On this page, we'll continue by explaining why we're adding Hooks to React and how they can help you write great applications.
+**Μπορείτε να αρχίσετε να μαθαίνετε τα Hooks [στην επόμενη σελίδα](/docs/hooks-overview.html).** Σε αυτήν τη σελίδα, θα εξηγήσουμε γιατί προσθέσαμε τα Hooks στο React και πώς μπορούν να σας βοηθήσουν να γράψετε εξαιρετικές εφαρμογές.
 
->Note
+>Σημείωση
 >
->React 16.8.0 is the first release to support Hooks. When upgrading, don't forget to update all packages, including React DOM.
->React Native supports Hooks since [the 0.59 release of React Native](https://facebook.github.io/react-native/blog/2019/03/12/releasing-react-native-059).
+>Το React 16.8.0 είναι η πρώτη έκδοση που υποστηρίζει τα Hooks. Όταν κάνετε αναβάθμιση, μην παραλείψετε να ενημερώσετε όλα τα packages, συμπεριλαμβανομένου του React DOM.
+>Το React Native υποστηρίζει τα Hooks από [την έκδοση 0.59 του React Native](https://facebook.github.io/react-native/blog/2019/03/12/releasing-react-native-059).
 
-## Video Introduction {#video-introduction}
+## Βίντεο παρουσίασης {#video-introduction}
 
-At React Conf 2018, Sophie Alpert and Dan Abramov introduced Hooks, followed by Ryan Florence demonstrating how to refactor an application to use them. Watch the video here:
+Στο React Conf 2018, η Sophie Alpert και ο Dan Abramov παρουσίασαν τα Hooks και ακολούθησε ο Ryan Florence που έδειξε πώς μπορείτε να κάνετε refactor μια εφαρμογή για να τα χρησιμοποιήσετε. Παρακολουθήστε το βίντεο εδώ:
 
 <br>
 
 <iframe width="650" height="366" src="//www.youtube.com/embed/dpw9EHDh2bM" frameborder="0" allowfullscreen></iframe>
 
-## No Breaking Changes {#no-breaking-changes}
+## Όχι αλλαγές που προκαλούν προβλήματα {#no-breaking-changes}
 
-Before we continue, note that Hooks are:
+Προτού προχωρήσουμε, λάβετε υπόψη ότι τα Hooks:
 
-* **Completely opt-in.** You can try Hooks in a few components without rewriting any existing code. But you don't have to learn or use Hooks right now if you don't want to.
-* **100% backwards-compatible.** Hooks don't contain any breaking changes.
-* **Available now.** Hooks are now available with the release of v16.8.0.
+* **Είναι εντελώς προαιρετικά.** Μπορείτε να δοκιμάσετε τα Hooks σε λίγα components χωρίς να ξαναγράψετε τον υπάρχοντα κώδικα. Σε κάθε περίπτωση, δεν χρειάζεται να μάθετε ή να χρησιμοποιήσετε τα Hooks τώρα, αν δεν θέλετε.
+* **Έχουν 100% συμβατότητα προς τα πίσω.** Τα Hooks δεν περιέχουν αλλαγές που μπορεί να προκαλέσουν προβλήματα.
+* **Είναι διαθέσιμα τώρα.** Τα Hooks είναι διαθέσιμα τώρα με την έκδοση v16.8.0.
 
-**There are no plans to remove classes from React.** You can read more about the gradual adoption strategy for Hooks in the [bottom section](#gradual-adoption-strategy) of this page.
+**Δεν υπάρχουν σχέδια για την κατάργηση των classes από το React.** Μπορείτε να διαβάσετε περισσότερα σχετικά με τη στρατηγική σταδιακής υιοθέτησης για τα Hooks στην [ενότητα στη βάση](#gradual-adoption-strategy) της παρούσας σελίδας.
 
-**Hooks don't replace your knowledge of React concepts.** Instead, Hooks provide a more direct API to the React concepts you already know: props, state, context, refs, and lifecycle. As we will show later, Hooks also offer a new powerful way to combine them.
+**Τα Hooks δεν υποκαθιστούν τη γνώση από μέρους σας των εννοιών του React.** Αντ' αυτού, τα Hooks παρέχουν ένα πιο άμεσο API στις έννοιες του React που γνωρίζετε ήδη: props, state, context, refs και lifecycle. Όπως θα δείξουμε αργότερα, τα Hooks προσφέρουν επίσης έναν πιο δυνατό τρόπο συνδυασμού τους.
 
-**If you just want to start learning Hooks, feel free to [jump directly to the next page!](/docs/hooks-overview.html)** You can also keep reading this page to learn more about why we're adding Hooks, and how we're going to start using them without rewriting our applications.
+**Αν θέλετε απλώς να ξεκινήσετε να μαθαίνετε τα Hooks, μπορείτε [να μεταπηδήσετε απευθείας στην επόμενη σελίδα!](/docs/hooks-overview.html)** Μπορείτε, επίσης, να συνεχίσετε την ανάγνωση αυτής της σελίδας για να μάθετε περισσότερα σχετικά με το γιατί προσθέσαμε τα Hooks και πώς μπορείτε να αρχίσετε να τα χρησιμοποιείτε χωρίς να χρειαστεί να ξαναγράψετε τις εφαρμογές σας.
 
-## Motivation {#motivation}
+## Κίνητρο {#motivation}
 
-Hooks solve a wide variety of seemingly unconnected problems in React that we've encountered over five years of writing and maintaining tens of thousands of components. Whether you're learning React, use it daily, or even prefer a different library with a similar component model, you might recognize some of these problems.
+Τα Hooks επιλύουν ευρεία γκάμα φαινομενικά ασύνδετων προβλημάτων στο React, τα οποία έχουμε αντιμετωπίσει στη διάρκεια των 5 ετών που γράφουμε και συντηρούμε δεκάδες χιλιάδες components. Ανεξάρτητα από το αν μαθαίνετε το React, αν το χρησιμοποιείτε σε καθημερινή βάση ή αν προτιμάτε ένα άλλο library με παρόμοιο μοντέλο components, ενδέχεται να αναγνωρίσετε μερικά από αυτά τα προβλήματα.
 
-### It's hard to reuse stateful logic between components {#its-hard-to-reuse-stateful-logic-between-components}
+### Είναι δύσκολη η επαναχρησιμοποίηση της stateful λογικής μεταξύ components {#its-hard-to-reuse-stateful-logic-between-components}
 
-React doesn't offer a way to "attach" reusable behavior to a component (for example, connecting it to a store). If you've worked with React for a while, you may be familiar with patterns like [render props](/docs/render-props.html) and [higher-order components](/docs/higher-order-components.html) that try to solve this. But these patterns require you to restructure your components when you use them, which can be cumbersome and make code harder to follow. If you look at a typical React application in React DevTools, you will likely find a "wrapper hell" of components surrounded by layers of providers, consumers, higher-order components, render props, and other abstractions. While we could [filter them out in DevTools](https://github.com/facebook/react-devtools/pull/503), this points to a deeper underlying problem: React needs a better primitive for sharing stateful logic.
+Το React δεν προσφέρει έναν τρόπο σύνδεσης μιας επαναχρησιμοποιούμενης συμπεριφοράς σε ένα component (για παράδειγμα, η σύνδεσή του με ένα store). Εάν έχετε εργαστεί με το React για κάποιο χρόνο, μπορεί να έχετε γνωρίσει ήδη μοτίβα όπως τα [render props](/docs/render-props.html) και τα [higher-order components](/docs/higher-order-components.html) που επιχειρούν να λύσουν αυτό το πρόβλημα. Όμως, αυτά τα μοτίβα απαιτούν από εσάς να αναδομήσετε τα components σας όταν τα χρησιμοποιείτε, κάτι που μπορεί να είναι περίπλοκο και να δυσχεράνει την κατανόηση του κώδικα. Εάν δείτε μια τυπική εφαρμογή με React στο React DevTools, το πιο πιθανό είναι ότι θα βρείτε μια «κόλαση από wrappers» των components, τα οποία περιβάλλονται από στρώματα παρόχων, καταναλωτών, higher-order components, render props και άλλες αφηρημένες έννοιες. Παρόλο που μπορούμε [να τα φιλτράρουμε στο DevTools](https://github.com/facebook/react-devtools/pull/503), αναδεικνύεται ένα βαθύτερο υποκείμενο πρόβλημα: το React χρειάζεται μια καλύτερη βάση για τον διαμοιρασμό της stateful λογικής.
 
-With Hooks, you can extract stateful logic from a component so it can be tested independently and reused. **Hooks allow you to reuse stateful logic without changing your component hierarchy.** This makes it easy to share Hooks among many components or with the community.
+Με τα Hooks, μπορείτε να εξαγάγετε τη stateful λογική από ένα component, ούτως ώστε να είναι δυνατό να δοκιμαστεί ανεξάρτητα και να επαναχρησιμοποιηθεί. **Τα Hooks σάς επιτρέπουν να επαναχρησιμοποιήσετε τη stateful λογική χωρίς να αλλάξετε την ιεραρχία των component σας.** Αυτό καθιστά εύκολο τον διαμοιρασμό των Hooks μεταξύ πολλών components ή με την κοινότητα.
 
-We'll discuss this more in [Building Your Own Hooks](/docs/hooks-custom.html).
+Θα συζητήσουμε περαιτέρω αυτό το σημείο στην ενότητα: [Δημιουργία των δικών σας Hooks](/docs/hooks-custom.html).
 
-### Complex components become hard to understand {#complex-components-become-hard-to-understand}
+### Τα περίπλοκα components είναι δυσνόητα {#complex-components-become-hard-to-understand}
 
-We've often had to maintain components that started out simple but grew into an unmanageable mess of stateful logic and side effects. Each lifecycle method often contains a mix of unrelated logic. For example, components might perform some data fetching in `componentDidMount` and `componentDidUpdate`. However, the same `componentDidMount` method might also contain some unrelated logic that sets up event listeners, with cleanup performed in `componentWillUnmount`. Mutually related code that changes together gets split apart, but completely unrelated code ends up combined in a single method. This makes it too easy to introduce bugs and inconsistencies.
+Συχνά, χρειάστηκε να αναλάβουμε τη συντήρηση components που ξεκίνησαν ως απλά, αλλά σύντομα μετατράπηκαν σε ένα μη διαχειρίσιμο χάος stateful λογικής και παρενεργειών. Κάθε μέθοδος lifecycle περιέχει πολλές φορές ένα μείγμα λογικής χωρίς συσχέτιση. Για παράδειγμα, τα components μερικές φορές εκτελούν λήψη δεδομένων στα `componentDidMount` και `componentDidUpdate`. Ωστόσο, η ίδια μέθοδος `componentDidMount` ενδέχεται να περιέχει επίσης κάποια μη σχετική λογική που ορίζει event listeners, ενώ η εκκαθάριση εκτελείται στο `componentWillUnmount`. Αμοιβαία συσχετισμένος κώδικας που αλλάζει ταυτόχρονα χωρίζεται, αλλά κώδικας χωρίς καμία συσχέτιση καταλήγει να συνδυάζεται σε μία ενιαία μέθοδο. Κατ' αυτόν τον τρόπο διευκολύνεται σημαντικά η εισαγωγή σφαλμάτων και ασυνεπειών.
 
-In many cases it's not possible to break these components into smaller ones because the stateful logic is all over the place. It's also difficult to test them. This is one of the reasons many people prefer to combine React with a separate state management library. However, that often introduces too much abstraction, requires you to jump between different files, and makes reusing components more difficult.
+Σε πολλές περιπτώσεις δεν είναι δυνατή η διάσπαση αυτών των components σε μικρότερα, επειδή η stateful λογική υπάρχει παντού. Επίσης, είναι δύσκολη η δοκιμή τους. Αυτός είναι ένας από τους λόγους που πολλοί επιλέγουν να συνδυάσουν το React με μια ξεχωριστή βιβλιοθήκη διαχείρισης state. Ωστόσο, αυτό εισάγει συχνά υπερβολική ασάφεια, απαιτεί τη μεταπήδηση μεταξύ διαφορετικών αρχείων και δυσχεραίνει την επαναχρησιμοποίηση πολλών components.
 
-To solve this, **Hooks let you split one component into smaller functions based on what pieces are related (such as setting up a subscription or fetching data)**, rather than forcing a split based on lifecycle methods. You may also opt into managing the component's local state with a reducer to make it more predictable.
+Για την επίλυση αυτού του προβλήματος, **τα Hooks σάς επιτρέπουν να διαχωρίσετε ένα component σε μικρότερα functions με βάση τα στοιχεία που είναι συσχετισμένα (όπως η ρύθμιση μιας συνδρομής ή η λήψη δεδομένων)**, αντί να επιβάλλουν έναν διαχωρισμό με βάση τις μεθόδους lifecycle. Μπορείτε, επίσης, να επιλέξετε τη διαχείριση του τοπικού state ενός component με ένα reducer για μεγαλύτερη προβλεψιμότητα.
 
-We'll discuss this more in [Using the Effect Hook](/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns).
+Θα συζητήσουμε περαιτέρω αυτό το σημείο στην ενότητα: [Χρήση του Effect Hook](/docs/hooks-effect.html#tip-use-multiple-effects-to-separate-concerns).
 
-### Classes confuse both people and machines {#classes-confuse-both-people-and-machines}
+### Τα classes μπερδεύουν τους ανθρώπους αλλά και τα μηχανήματα {#classes-confuse-both-people-and-machines}
 
-In addition to making code reuse and code organization more difficult, we've found that classes can be a large barrier to learning React. You have to understand how `this` works in JavaScript, which is very different from how it works in most languages. You have to remember to bind the event handlers. Without unstable [syntax proposals](https://babeljs.io/docs/en/babel-plugin-transform-class-properties/), the code is very verbose. People can understand props, state, and top-down data flow perfectly well but still struggle with classes. The distinction between function and class components in React and when to use each one leads to disagreements even between experienced React developers.
+Πέρα από το γεγονός ότι δυσχεραίνουν την επαναχρησιμοποίηση κώδικα και την οργάνωση του κώδικα, διαπιστώσαμε ότι τα classes μπορούν να αποτελέσουν μεγάλο εμπόδιο στην εκμάθηση του React. Πρέπει να κατανοήσετε τον τρόπο λειτουργίας του `this` στη JavaScript, ο οποίος διαφέρει σημαντικά από τον τρόπο λειτουργίας του στην πλειονότητα των άλλων γλωσσών. Πρέπει να θυμάστε να συνδέσετε τα event handlers. Χωρίς μη σταθερές [προτάσεις σύνταξης](https://babeljs.io/docs/en/babel-plugin-transform-class-properties/), ο κώδικας είναι πολύ μακροσκελής. Οι περισσότεροι μπορούν να κατανοήσουν χωρίς πρόβλημα τα props, το state και τη ροή δεδομένων από την κορυφή προς τη βάση, αλλά εξακολουθούν να δυσκολεύονται με τα classes. Η διάκριση ανάμεσα στα function components και τα class components στο React, καθώς και το πότε χρησιμοποιείται το καθένα, οδηγούν σε διαφωνίες ακόμη και μεταξύ έμπειρων προγραμματιστών που χρησιμοποιούν το React.
 
-Additionally, React has been out for about five years, and we want to make sure it stays relevant in the next five years. As [Svelte](https://svelte.dev/), [Angular](https://angular.io/), [Glimmer](https://glimmerjs.com/), and others show, [ahead-of-time compilation](https://en.wikipedia.org/wiki/Ahead-of-time_compilation) of components has a lot of future potential. Especially if it's not limited to templates. Recently, we've been experimenting with [component folding](https://github.com/facebook/react/issues/7323) using [Prepack](https://prepack.io/), and we've seen promising early results. However, we found that class components can encourage unintentional patterns that make these optimizations fall back to a slower path. Classes present issues for today's tools, too. For example, classes don't minify very well, and they make hot reloading flaky and unreliable. We want to present an API that makes it more likely for code to stay on the optimizable path.
+Επιπροσθέτως, το React κυκλοφορεί εδώ και περίπου 5 έτη και θέλουμε να βεβαιωθούμε ότι θα παραμείνει σημαντικό και τα επόμενα 5 έτη. Όπως δείχνουν το [Svelte](https://svelte.dev/), το [Angular](https://angular.io/), το [Glimmer](https://glimmerjs.com/) και άλλα, το [AOT (ahead-of-time compilation)](https://en.wikipedia.org/wiki/Ahead-of-time_compilation) των components έχει πολλή δυναμική για το μέλλον. Ιδιαίτερα αν δεν περιορίζεται σε πρότυπα. Πρόσφατα, πειραματιστήκαμε με το [component folding](https://github.com/facebook/react/issues/7323) με χρήση [Prepack](https://prepack.io/) και τα πρώιμα αποτελέσματα είναι ενθαρρυντικά. Ωστόσο, διαπιστώσαμε ότι τα class components μπορεί να ενθαρρύνουν τα ακούσια μοτίβα που θα θέσουν σε δεύτερη μοίρα αυτές τις βελτιστοποιήσεις. Τα classes παρουσιάζουν προβλήματα και για τα σημερινά εργαλεία. Για παράδειγμα, τα classes δεν ελαχιστοποιούνται πολύ καλά και καθιστούν το hot reloading ασυντόνιστο και αναξιόπιστο. Θέλουμε να παρουσιάσουμε ένα API που θα καθιστά πιθανότερο για τον κώδικά σας να παραμείνει σε πορεία βελτιστοποίησης.
 
-To solve these problems, **Hooks let you use more of React's features without classes.** Conceptually, React components have always been closer to functions. Hooks embrace functions, but without sacrificing the practical spirit of React. Hooks provide access to imperative escape hatches and don't require you to learn complex functional or reactive programming techniques.
+Για την επίλυση αυτών των προβλημάτων, **τα Hooks σάς δίνουν τη δυνατότητα να χρησιμοποιήσετε περισσότερα features του React χωρίς classes.** Από εννοιολογικής άποψης, τα React components ήταν πάντα εγγύτερα στα functions. Τα Hooks περιλαμβάνουν τα functions, αλλά χωρίς να θυσιάσουν το πρακτικό πνεύμα του React. Τα Hooks παρέχουν πρόσβαση σε imperative escape hatches και δεν απαιτούν από εσάς να μάθετε πολυσύνθετες τεχνικές προγραμματισμού functional ή reactive.
 
->Examples
+>Παραδείγματα
 >
->[Hooks at a Glance](/docs/hooks-overview.html) is a good place to start learning Hooks.
+>Η ενότητα: [Τα Hooks με μια ματιά](/docs/hooks-overview.html) είναι ένα καλό σημείο εκκίνησης για την εκμάθηση των Hooks.
 
-## Gradual Adoption Strategy {#gradual-adoption-strategy}
+## Στρατηγική σταδιακής υιοθέτησης {#gradual-adoption-strategy}
 
->**TLDR: There are no plans to remove classes from React.**
+>**TLDR: Δεν υπάρχουν πλάνα για την κατάργηση των classes από το React.**
 
-We know that React developers are focused on shipping products and don't have time to look into every new API that's being released. Hooks are very new, and it might be better to wait for more examples and tutorials before considering learning or adopting them.
+Γνωρίζουμε ότι οι προγραμματιστές που χρησιμοποιούν το React εστιάζουν στην ανάπτυξη προϊόντων και δεν έχουν τον χρόνο να ασχολούνται με κάθε νέο API που εμφανίζεται. Τα Hooks είναι πολύ καινούρια και ίσως είναι καλύτερα να περιμένουν να εμφανιστούν περισσότερα παραδείγματα και οδηγοί εκμάθησης προτού σκεφτούν να τα μάθουν ή να αρχίσουν να τα χρησιμοποιούν στην πράξη.
 
-We also understand that the bar for adding a new primitive to React is extremely high. For curious readers, we have prepared a [detailed RFC](https://github.com/reactjs/rfcs/pull/68) that dives into motivation with more details, and provides extra perspective on the specific design decisions and related prior art.
+Κατανοούμε, επίσης, ότι τα πρότυπα για την προσθήκη ενός νέου θεμελιώδους στοιχείου στο React είναι εξαιρετικά υψηλά. Για τους περίεργους αναγνώστες, έχουμε ετοιμάσει ένα [λεπτομερές RFC](https://github.com/reactjs/rfcs/pull/68) που εμβαθύνει στα κίνητρα με περισσότερες λεπτομέρειες και προσφέρει μια επιπλέον προοπτική στις αποφάσεις συγκεκριμένου σχεδιασμού και στις συναφείς προηγούμενες τεχνικές.
 
-**Crucially, Hooks work side-by-side with existing code so you can adopt them gradually.** There is no rush to migrate to Hooks. We recommend avoiding any "big rewrites", especially for existing, complex class components. It takes a bit of a mindshift to start "thinking in Hooks". In our experience, it's best to practice using Hooks in new and non-critical components first, and ensure that everybody on your team feels comfortable with them. After you give Hooks a try, please feel free to [send us feedback](https://github.com/facebook/react/issues/new), positive or negative.
+**Ένα εξαιρετικά σημαντικό στοιχείο είναι ότι τα Hooks λειτουργούν παράλληλα με τον υπάρχοντα κώδικα, οπότε μπορείτε να τα εντάξετε σταδιακά.** Δεν υπάρχει λόγος βιασύνης για τη μετάβαση στα Hooks. Συνιστούμε να αποφύγετε να ξαναγράψετε κώδικα σε εκτεταμένο βαθμό, ιδιαίτερα για υπάρχοντα πολυσύνθετα class components. Χρειάζεται μια μικρή αλλαγή νοοτροπίας για να αρχίσετε «να σκέφτεστε με βάση τα Hooks». Από την πείρα μας, είναι καλύτερο να εξασκηθείτε στη χρήση των Hooks πρώτα σε νέα components μη ζωτικής σημασίας και να διασφαλίσετε ότι όλοι στην ομάδα σας αισθάνονται άνετα με τη χρήση τους. Αφού δοκιμάσετε τα Hooks, [στείλτε μας τα σχόλιά σας](https://github.com/facebook/react/issues/new), θετικά ή αρνητικά.
 
-We intend for Hooks to cover all existing use cases for classes, but **we will keep supporting class components for the foreseeable future.** At Facebook, we have tens of thousands of components written as classes, and we have absolutely no plans to rewrite them. Instead, we are starting to use Hooks in the new code side by side with classes.
+Πρόθεσή μας είναι τα Hooks να καλύψουν όλες τις υπάρχουσες περιπτώσεις χρήσης για τα classes, αλλά **θα συνεχίσουμε να υποστηρίζουμε τα class components για το άμεσο μέλλον.** Στο Facebook, έχουμε δεκάδες χιλιάδες components γραμμένα ως classes και δεν έχουμε απολύτως κανένα σχέδιο να τα ξαναγράψουμε. Αντιθέτως, αρχίσαμε να χρησιμοποιούμε τα Hooks στον νέο κώδικα μαζί με τα classes.
 
-## Frequently Asked Questions {#frequently-asked-questions}
+## Συχνές ερωτήσεις {#frequently-asked-questions}
 
-We've prepared a [Hooks FAQ page](/docs/hooks-faq.html) that answers the most common questions about Hooks.
+Ετοιμάσαμε μια [σελίδα με συχνές ερωτήσεις για τα Hooks](/docs/hooks-faq.html), στην οποία θα βρείτε απαντήσεις στις πιο συνηθισμένες ερωτήσεις για τα Hooks.
 
-## Next Steps {#next-steps}
+## Επόμενα βήματα {#next-steps}
 
-By the end of this page, you should have a rough idea of what problems Hooks are solving, but many details are probably unclear. Don't worry! **Let's now go to [the next page](/docs/hooks-overview.html) where we start learning about Hooks by example.**
+Φτάνοντας στο τέλος αυτής της σελίδας, πρέπει να έχετε αποκτήσει μια γενική ιδέα σχετικά με τα προβλήματα που επιλύουν τα Hooks, αλλά πολλές λεπτομέρειες μάλλον δεν είναι εντελώς σαφείς. Μην ανησυχείτε! **Ας πάμε τώρα [στην επόμενη σελίδα](/docs/hooks-overview.html), όπου θα αρχίσουμε να μαθαίνουμε για τα Hooks μέσα από παραδείγματα.**
