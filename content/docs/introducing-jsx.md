@@ -92,7 +92,7 @@ function getGreeting(user) {
 Μπορείτε να χρησιμοποιήσετε εισαγωγικά για να καθορίσετε τα string literals ως attributes:
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <div tabIndex={0}></div>;
 ```
 
 Μπορείτε επίσης να χρησιμοποιήσετε άγκιστρα για να ενσωματώσετε μια έκφραση JavaScript σε ένα argument:
@@ -182,4 +182,8 @@ const element = {
 
 >**Tip:**
 >
+<<<<<<< HEAD
 >Προτείνουμε τη χρήση του ["Babel" language definition](https://babeljs.io/docs/editors) για τον editor της επιλογής σας, ώστε ο κώδικας ES6 και JSX να επισημαίνονται σωστά.
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> 5e437a10ed4e89cd5eaf990ce4f43e0857592b53
