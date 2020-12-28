@@ -8,7 +8,11 @@ redirect_from:
   - "docs/events-ko-KR.html"
 ---
 
+<<<<<<< HEAD
 Η διαχείριση των events με τα React elements είναι παρόμοια με τη διαχείριση των events στα DOM elements. Υπάρχουν μερικές διαφορές στο συντακτικό:
+=======
+Handling events with React elements is very similar to handling events on DOM elements. There are some syntax differences:
+>>>>>>> 7a11d71b384d41c21dd5d475b96d45b5497ade76
 
 * Στο React τα events ονομάζονται χρησιμοποιώντας camelCase, αντί για lowercase.
 * Με το JSX περνάτε μια συνάρτηση ως event handler, αντί για ένα string.
@@ -54,7 +58,11 @@ function ActionLink() {
 }
 ```
 
+<<<<<<< HEAD
 Εδώ το `e` είναι ένα synthetic event. Το React ορίζει αυτά τα synthetic events σύμφωνα με το [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), οπότε δεν χρειάζεται να ανησυχείτε για τη συμβατότητα μεταξύ των browsers. Δείτε τον οδηγό αναφοράς του [`SyntheticEvent`](/docs/events.html) για να μάθετε περισσότερα.
+=======
+Here, `e` is a synthetic event. React defines these synthetic events according to the [W3C spec](https://www.w3.org/TR/DOM-Level-3-Events/), so you don't need to worry about cross-browser compatibility. React events do not work exactly the same as native events. See the [`SyntheticEvent`](/docs/events.html) reference guide to learn more.
+>>>>>>> 7a11d71b384d41c21dd5d475b96d45b5497ade76
 
 Όταν χρησιμοποιείτε το React, γενικά δεν θα χρειαστεί να καλείτε το `addEventListener` για να προσθέσετε listeners σε ένα DOM element μετά τη δημιουργία του. Αντί για αυτό, απλά προσθέστε ένα listener όταν το element γίνεται αρχικά rendered.
 
@@ -130,7 +138,7 @@ class LoggingButton extends React.Component {
   render() {
     // Αυτή η σύνταξη εξασφαλίζει ότι το `this` είναι bound στο handleClick
     return (
-      <button onClick={(e) => this.handleClick(e)}>
+      <button onClick={() => this.handleClick()}>
         Click me
       </button>
     );
