@@ -73,7 +73,13 @@ npm start
 
 - Το **[Neutrino](https://neutrinojs.org/)** συνδυάζει τη δύναμη του [webpack](https://webpack.js.org/) με την απλότητα των presets και περιλαμβάνει ένα preset για [εφαρμογές React](https://neutrinojs.org/packages/react/) και [React components](https://neutrinojs.org/packages/react-components/).
 
+<<<<<<< HEAD
 - Το **[Parcel](https://parceljs.org/)** είναι ένα γρήγορο bundler διαδικτυακών εφαρμογών που δεν απαιτεί καμία διαμόρφωση και [λειτουργεί με το React](https://parceljs.org/recipes.html#react).
+=======
+- **[Nx](https://nx.dev/react)** is a toolkit for full-stack monorepo development, with built-in support for React, Next.js, [Express](https://expressjs.com/), and more.
+
+- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes.html#react).
+>>>>>>> 35179e85933265cb7a4f5d51c10fbe70deba3787
 
 - Το **[Razzle](https://github.com/jaredpalmer/razzle)** είναι ένα server-rendering framework που δεν απαιτεί καμία διαμόρφωση, αλλά προσφέρει μεγαλύτερη ευελιξία από το Next.js.
 
