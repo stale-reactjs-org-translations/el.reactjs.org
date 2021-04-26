@@ -31,7 +31,7 @@ Tα HTML form elements λειτουργούν λίγο διαφορετικά α
 
 Για παράδειγμα, εάν θέλουμε να κάνουμε το προηγούμενο παράδειγμα να καταγράψει το όνομα όταν υποβληθεί, μπορούμε να γράψουμε τη φόρμα ως controlled component:
 
-```javascript{4,10-12,24}
+```javascript{4,10-12,21,24}
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
@@ -68,6 +68,7 @@ class NameForm extends React.Component {
 
 Καθώς το `value` attribute έχει οριστεί στο form element, η εμφανιζόμενη τιμή θα είναι πάντα το `this.state.value`, καθιστώντας το React state ως την πηγή της αλήθειας. Καθώς το `handleChange` τρέχει σε κάθε πάτημα κάθε πλήκτρου, έτσι ώστε να ενημερωθεί το React state, η εμφανιζόμενη τιμή θα ενημερώνεται όσο ο χρήστης πληκτρολογεί.
 
+<<<<<<< HEAD
 Με ένα controlled component, κάθε μεταβολή του state θα συνδέεται και με μία function διαχείρισης του. Με αυτό τον τρόπο είναι πολύ απλό να αλλαχτεί ή να ελέγχθει ότι έχει εισάγει ο χρήστης στη φόρμα. Για παράδειγμα, εάν θέλαμε όλα τα ονόματα της φόρμας να είναι σε κεφαλαία μορφή, θα γράφαμε την `handleChange` ως εξής:
 
 ```javascript{2}
@@ -75,6 +76,9 @@ handleChange(event) {
   this.setState({value: event.target.value.toUpperCase()});
 }
 ```
+=======
+With a controlled component, the input's value is always driven by the React state. While this means you have to type a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.
+>>>>>>> 5119600cf6f7a5dcbd4d2cc23f6b4ff55d2969b2
 
 ## The textarea Tag {#the-textarea-tag}
 
@@ -220,7 +224,7 @@ class Reservation extends React.Component {
 
   handleInputChange(event) {
     const target = event.target;
-    const value = target.name === 'isGoing' ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
