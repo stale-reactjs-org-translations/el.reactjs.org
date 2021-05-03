@@ -422,12 +422,15 @@ this.setState(function(state, props) {
 Ένα component μπορεί να επιλέξει να περάσει το state του ως props στα child components:
 
 ```js
+<<<<<<< HEAD
 <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
 ```
 
 Αυτό επίσης λειτουργεί και για τα user-defined components:
 
 ```js
+=======
+>>>>>>> c3c93e2a7ff1b1f7b8735a3a87d4b10937eaaf91
 <FormattedDate date={this.state.date} />
 ```
 
