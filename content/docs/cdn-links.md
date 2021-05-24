@@ -3,24 +3,28 @@ id: cdn-links
 title: CDN Links
 permalink: docs/cdn-links.html
 prev: create-a-new-react-app.html
-next: hello-world.html
+next: release-channels.html
 ---
 
 Τόσο το React όσο και το ReactDOM είναι διαθέσιμα μέσω CDN.
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.development.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"></script>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.development.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.development.js"></script>
 ```
 
 Οι παραπάνω εκδόσεις προορίζονται μόνο για ανάπτυξη (Development) και δεν είναι κατάλληλες για παραγωγή (Production). Ελαχιστοποιημένες (Minified) και βελτιστοποιημένες (Optimized) εκδόσεις παραγωγής (Production) του React διατίθενται στη διεύθυνση:
 
 ```html
-<script crossorigin src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
-<script crossorigin src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react@17/umd/react.production.min.js"></script>
+<script crossorigin src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js"></script>
 ```
 
+<<<<<<< HEAD
 Για να φορτώσετε μια συγκεκριμένη έκδοση του `react` και `react-dom`, αντικαταστήστε το `16` με τον αριθμό έκδοσης.
+=======
+To load a specific version of `react` and `react-dom`, replace `17` with the version number.
+>>>>>>> e60bca04f3da690256ce019bd8907c2b368589ee
 
 ### Γιατί το `crossorigin` χαρακτηριστικό (Attribute)? {#why-the-crossorigin-attribute}
 
