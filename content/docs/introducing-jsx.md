@@ -182,4 +182,8 @@ const element = {
 
 >**Tip:**
 >
+<<<<<<< HEAD
 >Προτείνουμε τη χρήση του ["Babel" language definition](https://babeljs.io/docs/editors) για τον editor της επιλογής σας, ώστε ο κώδικας ES6 και JSX να επισημαίνονται σωστά.
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> f0a9793dff9f8e86ec365bfadb0b4b23c6f618ce
