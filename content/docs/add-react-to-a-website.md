@@ -52,10 +52,17 @@ next: create-a-new-react-app.html
 ```html{5,6,9}
   <!-- ... άλλη HTML ... -->
 
+<<<<<<< HEAD
   <!-- Φόρτωση του React. -->
   <!-- Σημείωση: Όταν κάνετε deploy, αντικαταστήστε το "development.js" με το "production.min.js". -->
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+=======
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@17/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@17/umd/react-dom.development.js" crossorigin></script>
+>>>>>>> 23d03a854ba21aeea0a03a0bd5185e0def9237d6
 
   <!-- Φόρτωση του React component μας. -->
   <script src="like_button.js"></script>
@@ -84,7 +91,11 @@ const domContainer = document.querySelector('#like_button_container');
 ReactDOM.render(e(LikeButton), domContainer);
 ```
 
+<<<<<<< HEAD
 Αυτές οι δύο σειρές κώδικα εντοπίζουν το `<div>` που προσθέσαμε στην HTML μας στο 1ο βήμα και, έπειτα, εμφανίζουν εντός του το React component μας με το κουμπί "Μου αρέσει". 
+=======
+These two lines of code find the `<div>` we added to our HTML in the first step, and then display our "Like" button React component inside of it.
+>>>>>>> 23d03a854ba21aeea0a03a0bd5185e0def9237d6
 
 ### Αυτό ήταν όλο! {#thats-it}
 
@@ -115,15 +126,19 @@ ReactDOM.render(e(LikeButton), domContainer);
 Εάν έχετε ήδη ελαχιστοποιήσει τα application scripts, **ο ιστότοπός σας θα είναι έτοιμος για παραγωγή**, εφόσον διασφαλίσετε ότι η deployed HTML φορτώνει τις εκδόσεις του React με κατάληξη `production.min.js`:
 
 ```js
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@17/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@17/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 Εάν δεν περιλαμβάνετε ένα βήμα ελαχιστοποίησης για τα scripts σας, [εδώ μπορείτε να βρείτε έναν τρόπο για να δημιουργήσετε ένα](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3).
 
 ## Προαιρετικό: Δοκιμή του React με το JSX {#optional-try-react-with-jsx}
 
+<<<<<<< HEAD
 Στα παραπάνω παραδείγματα, βασιστήκαμε αποκλειστικά σε features που υποστηρίζονται εγγενώς από τα προγράμματα περιήγησης. Αυτός είναι ο λόγος που χρησιμοποιήσαμε ένα JavaScript function call για να πούμε στο React τι να εμφανίσει:
+=======
+In the examples above, we only relied on features that are natively supported by browsers. This is why we used a JavaScript function call to tell React what to display:
+>>>>>>> 23d03a854ba21aeea0a03a0bd5185e0def9237d6
 
 ```js
 const e = React.createElement;
@@ -159,7 +174,11 @@ return (
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
+<<<<<<< HEAD
 Τώρα, μπορείτε να χρησιμοποιήσετε το JSX σε οποιοδήποτε `<script>` tag προσθέτοντας το `type="text/babel"` attribute σε αυτό. Ακολουθεί [ένα παράδειγμα αρχείου HTML με JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html), το οποίο μπορείτε να κάνετε λήψη και να πειραματιστείτε μαζί του.
+=======
+Now you can use JSX in any `<script>` tag by adding `type="text/babel"` attribute to it. Here is [an example HTML file with JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html) that you can download and play with.
+>>>>>>> 23d03a854ba21aeea0a03a0bd5185e0def9237d6
 
 Αυτή η προσέγγιση είναι ιδανική για εκμάθηση και δημιουργία απλών demos. Ωστόσο, καθιστά τον ιστότοπό σας πιο αργό και **δεν είναι κατάλληλη για το στάδιο της παραγωγής**. Όταν είστε έτοιμος να προχωρήσετε, αφαιρέστε αυτό το νέο `<script>` tag και τα `type="text/babel"` attributes που προσθέσατε. Αντ' αυτού, στην επόμενη ενότητα θα ρυθμίσετε ένα JSX preprocessor για την αυτόματη μετατροπή όλων των `<script>` tags σας.
 
@@ -184,7 +203,7 @@ return (
 Δημιουργήστε έναν φάκελο με την ονομασία `src` και εκτελέστε αυτήν την εντολή τερματικού:
 
 ```
-npx babel --watch src --out-dir . --presets react-app/prod 
+npx babel --watch src --out-dir . --presets react-app/prod
 ```
 
 >Σημείωση
