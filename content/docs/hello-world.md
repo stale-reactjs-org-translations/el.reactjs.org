@@ -39,7 +39,11 @@ ReactDOM.render(
 
 >Σημείωση
 >
+<<<<<<< HEAD
 >Αυτός ο οδηγός περιστασιακά χρησιμοποιεί ορισμένες από τις νεότερες συντάξεις JavaScript στα παραδείγματα. Εάν δεν έχετε δουλέψει με JavaScript τα τελευταία χρόνια, [αυτά τα τρία σημεία](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) θα πρέπει να σας βοηθήσουν περισσότερο.
+=======
+>This guide occasionally uses some newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>>>>>>> aa70dcedc6db07987a814dba2b296cc4c5219860
 
 
 ## Ας Ξεκινήσουμε! {#lets-get-started}
