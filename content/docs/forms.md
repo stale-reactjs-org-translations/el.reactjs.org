@@ -9,7 +9,11 @@ redirect_from:
   - docs/forms-zh-CN.html
 ---
 
+<<<<<<< HEAD
 Tα HTML form elements λειτουργούν λίγο διαφορετικά από τα υπόλοιπα DOM elements στο React, λόγω του ότι τα form elements συνήθως διατηρούν εσωτερικό state.  Για παράδειγμα, η επόμενη φόρμα σε απλή HTML δέχεται απλά ένα όνομα:
+=======
+HTML form elements work a bit differently from other DOM elements in React, because form elements naturally keep some internal state. For example, this form in plain HTML accepts a single name:
+>>>>>>> 69bd27a3d558d6633e4f0adc61ecb8bb3d5f2edf
 
 ```html
 <form>
@@ -31,7 +35,7 @@ Tα HTML form elements λειτουργούν λίγο διαφορετικά α
 
 Για παράδειγμα, εάν θέλουμε να κάνουμε το προηγούμενο παράδειγμα να καταγράψει το όνομα όταν υποβληθεί, μπορούμε να γράψουμε τη φόρμα ως controlled component:
 
-```javascript{4,10-12,24}
+```javascript{4,10-12,21,24}
 class NameForm extends React.Component {
   constructor(props) {
     super(props);
@@ -68,6 +72,7 @@ class NameForm extends React.Component {
 
 Καθώς το `value` attribute έχει οριστεί στο form element, η εμφανιζόμενη τιμή θα είναι πάντα το `this.state.value`, καθιστώντας το React state ως την πηγή της αλήθειας. Καθώς το `handleChange` τρέχει σε κάθε πάτημα κάθε πλήκτρου, έτσι ώστε να ενημερωθεί το React state, η εμφανιζόμενη τιμή θα ενημερώνεται όσο ο χρήστης πληκτρολογεί.
 
+<<<<<<< HEAD
 Με ένα controlled component, κάθε μεταβολή του state θα συνδέεται και με μία function διαχείρισης του. Με αυτό τον τρόπο είναι πολύ απλό να αλλαχτεί ή να ελέγχθει ότι έχει εισάγει ο χρήστης στη φόρμα. Για παράδειγμα, εάν θέλαμε όλα τα ονόματα της φόρμας να είναι σε κεφαλαία μορφή, θα γράφαμε την `handleChange` ως εξής:
 
 ```javascript{2}
@@ -75,6 +80,9 @@ handleChange(event) {
   this.setState({value: event.target.value.toUpperCase()});
 }
 ```
+=======
+With a controlled component, the input's value is always driven by the React state. While this means you have to type a bit more code, you can now pass the value to other UI elements too, or reset it from other event handlers.
+>>>>>>> 69bd27a3d558d6633e4f0adc61ecb8bb3d5f2edf
 
 ## The textarea Tag {#the-textarea-tag}
 
@@ -220,7 +228,7 @@ class Reservation extends React.Component {
 
   handleInputChange(event) {
     const target = event.target;
-    const value = target.name === 'isGoing' ? target.checked : target.value;
+    const value = target.type === 'checkbox' ? target.checked : target.value;
     const name = target.name;
 
     this.setState({
@@ -276,7 +284,11 @@ this.setState(partialState);
 
 ## Controlled Input Null Τιμή{#controlled-input-null-value}
 
+<<<<<<< HEAD
 Ο καθορισμός της τιμής prop σε ένα [controlled component](/docs/forms.html#controlled-components) εμποδίζει τον χρήστη να αλλάξει το input εκτός αν το επιθυμεί. Εάν έχεις ορίσει ένα `value` αλλά το input είναι ακόμη επεξεργάσιμο, ενδέχεται να ορίσετε τυχαία το `value` σε `undefined` ή `null`.
+=======
+Specifying the `value` prop on a [controlled component](/docs/forms.html#controlled-components) prevents the user from changing the input unless you desire so. If you've specified a `value` but the input is still editable, you may have accidentally set `value` to `undefined` or `null`.
+>>>>>>> 69bd27a3d558d6633e4f0adc61ecb8bb3d5f2edf
 
 Ο ακόλουθος κώδικας το καταδεικνύει αυτό. (Το input είναι κλειδωμένο στην αρχή αλλά γίνεται επεξεργάσιμο μετά από μια μικρή καθυστέρηση.)
 

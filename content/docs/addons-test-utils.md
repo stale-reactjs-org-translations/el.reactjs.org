@@ -19,9 +19,17 @@ var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
 
 > Σημείωση:
 >
+<<<<<<< HEAD
 > Συνιστούμε τη χρήση του [`react-testing-library`](https://testing-library.com/react) το οποίο είναι σχεδιασμένο να επιτρέπει και να ενθαρρύνει το γράψιμο tests τα οποία χρησιμοποιούν τα components με τον ίδιο τρόπο που τα χρησιμοποιούν και οι χρήστες.
 >
 > Εναλλακτικά, το Airbnb έχει ανακοινώσει ενα testing utility, το  [Enzyme](https://airbnb.io/enzyme/), το οποίο διευκολύνει στο assert, manipulate, και traverse του output των React Components.
+=======
+> We recommend using [React Testing Library](https://testing-library.com/react) which is designed to enable and encourage writing tests that use your components as the end users do.
+> 
+> For React versions <= 16, the [Enzyme](https://airbnb.io/enzyme/) library makes it easy to assert, manipulate, and traverse your React Components' output.
+
+
+>>>>>>> 69bd27a3d558d6633e4f0adc61ecb8bb3d5f2edf
 
  - [`act()`](#act)
  - [`mockComponent()`](#mockcomponent)
@@ -150,10 +158,14 @@ mockComponent(
 > Σημείωση:
 >
 <<<<<<< HEAD
+<<<<<<< HEAD
 > Το `mockComponent()` είναι ένα legacy API. Συνιστούμε να χρησιμοποιήσετε το [shallow rendering](/docs/shallow-renderer.html) ή το [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock).
 =======
 > `mockComponent()` is a legacy API. We recommend using [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) instead.
 >>>>>>> ddbd064d41d719f9ec0c2f6a4227f797a5828310
+=======
+> `mockComponent()` is a legacy API. We recommend using [`jest.mock()`](https://jestjs.io/docs/tutorial-react-native#mock-native-modules-using-jestmock) instead.
+>>>>>>> 69bd27a3d558d6633e4f0adc61ecb8bb3d5f2edf
 
 * * *
 
