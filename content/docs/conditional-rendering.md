@@ -122,7 +122,11 @@ ReactDOM.render(
 
 ### If σε μια γραμμή με το λογικό Οperator && {#inline-if-with-logical--operator}
 
+<<<<<<< HEAD
 Μπορείτε να [ενσωματώσετε οποιεσδήποτε εκφράσεις μέσα στο JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) περικλείοντας τα σε άγκιστρα. Αυτό περιλαμβάνει τον λογικό operator της JavaScript `&&`. Μπορεί να είναι βολικό για να συμπεριλάβει υπό συνθήκη ένα component:
+=======
+You may [embed expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+>>>>>>> 71cc6be6182418dec43b72f2a9ef464619cb7025
 
 ```js{6-10}
 function Mailbox(props) {
@@ -152,6 +156,19 @@ ReactDOM.render(
 
 Επομένως, αν η κατάσταση είναι `true`, το component αμέσως μετά το `&&` θα εμφανιστεί στο output. Εάν είναι `false`, το React θα το αγνοήσει.
 
+Note that returning a falsy expression will still cause the element after `&&` to be skipped but will return the falsy expression. In the example below, `<div>0</div>` will be returned by the render method.
+
+```javascript{2,5}
+render() {
+  const count = 0;
+  return (
+    <div>
+      { count && <h1>Messages: {count}</h1>}
+    </div>
+  );
+}
+```
+
 ### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
 
 Μια άλλη μέθοδος για να κάνετε rendering υπό συνθήκες τα components σε μια γραμμή, είναι η χρήση του conditional operator στη JavaScript [`condition ? true : false`](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator).
@@ -176,11 +193,10 @@ render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (
     <div>
-      {isLoggedIn ? (
-        <LogoutButton onClick={this.handleLogoutClick} />
-      ) : (
-        <LoginButton onClick={this.handleLoginClick} />
-      )}
+      {isLoggedIn
+        ? <LogoutButton onClick={this.handleLogoutClick} />
+        : <LoginButton onClick={this.handleLoginClick} />
+      }
     </div>
   );
 }
