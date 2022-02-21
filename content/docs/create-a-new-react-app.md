@@ -39,7 +39,11 @@ next: cdn-links.html
 
 Το [Create React App](https://github.com/facebookincubator/create-react-app) είναι ένα άνετο περιβάλλον για την **εκμάθηση του React** και αποτελεί τον καλύτερο τρόπο για να ξεκινήσετε τη δημιουργία **μιας νέας εφαρμογής [single-page](/docs/glossary.html#single-page-application)** στο React.
 
+<<<<<<< HEAD
 Ρυθμίζει το περιβάλλον προγραμματισμού έτσι ώστε να μπορείτε να χρησιμοποιήσετε τα πιο πρόσφατα features της JavaScript, παρέχει μια θετική εμπειρία για τον προγραμματιστή και βελτιστοποιεί την εφαρμογή σας για παραγωγή. Θα χρειαστεί να έχετε στο μηχάνημά σας τα [Node >= 8.10 και npm >= 5.6](https://nodejs.org/en/). Για τη δημιουργία ενός project, εκτελέστε:
+=======
+It sets up your development environment so that you can use the latest JavaScript features, provides a nice developer experience, and optimizes your app for production. You’ll need to have [Node >= 14.0.0 and npm >= 5.6](https://nodejs.org/en/) on your machine. To create a project, run:
+>>>>>>> 2310e15532aba273d713996a4c6ef04247dff764
 
 ```bash
 npx create-react-app my-app
@@ -73,7 +77,13 @@ npm start
 
 - Το **[Neutrino](https://neutrinojs.org/)** συνδυάζει τη δύναμη του [webpack](https://webpack.js.org/) με την απλότητα των presets και περιλαμβάνει ένα preset για [εφαρμογές React](https://neutrinojs.org/packages/react/) και [React components](https://neutrinojs.org/packages/react-components/).
 
+<<<<<<< HEAD
 - Το **[Parcel](https://parceljs.org/)** είναι ένα γρήγορο bundler διαδικτυακών εφαρμογών που δεν απαιτεί καμία διαμόρφωση και [λειτουργεί με το React](https://parceljs.org/recipes.html#react).
+=======
+- **[Nx](https://nx.dev/react)** is a toolkit for full-stack monorepo development, with built-in support for React, Next.js, [Express](https://expressjs.com/), and more.
+
+- **[Parcel](https://parceljs.org/)** is a fast, zero configuration web application bundler that [works with React](https://parceljs.org/recipes/react/).
+>>>>>>> 2310e15532aba273d713996a4c6ef04247dff764
 
 - Το **[Razzle](https://github.com/jaredpalmer/razzle)** είναι ένα server-rendering framework που δεν απαιτεί καμία διαμόρφωση, αλλά προσφέρει μεγαλύτερη ευελιξία από το Next.js.
 
