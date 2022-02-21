@@ -17,7 +17,7 @@ ReactDOM.render(
 
 Εμφανίζει μια επικεφαλίδα λέγοντας "Hello, world!" στη σελίδα.
 
-[](codepen://hello-world)
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrpgNB?editors=1010)**
 
 Κάντε κλικ στον παραπάνω σύνδεσμο για να ανοίξετε έναν online editor. Μη διστάσετε να κάνετε κάποιες αλλαγές και δείτε πώς επηρεάζουν την έξοδο. Οι περισσότερες σελίδες σε αυτόν τον οδηγό θα έχουν επεξεργάσιμα παραδείγματα όπως αυτή.
 
@@ -39,7 +39,11 @@ ReactDOM.render(
 
 >Σημείωση
 >
+<<<<<<< HEAD
 >Αυτός ο οδηγός περιστασιακά χρησιμοποιεί ορισμένες από τις νεότερες συντάξεις JavaScript στα παραδείγματα. Εάν δεν έχετε δουλέψει με JavaScript τα τελευταία χρόνια, [αυτά τα τρία σημεία](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) θα πρέπει να σας βοηθήσουν περισσότερο.
+=======
+>This guide occasionally uses some newer JavaScript syntax in the examples. If you haven't worked with JavaScript in the last few years, [these three points](https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c) should get you most of the way.
+>>>>>>> 2310e15532aba273d713996a4c6ef04247dff764
 
 
 ## Ας Ξεκινήσουμε! {#lets-get-started}
