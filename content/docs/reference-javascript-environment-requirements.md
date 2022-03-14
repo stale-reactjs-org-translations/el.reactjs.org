@@ -6,7 +6,11 @@ category: Reference
 permalink: docs/javascript-environment-requirements.html
 ---
 
+<<<<<<< HEAD
 Το React 16 βασίζεται στους collection types [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) και [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set). Σε περίπτωση που υποστηρίζετε παλιότερους browsers και συσκευές που δεν παρέχουν αυτές τις υλοποιήσεις (π.χ. IE < 11) ή δεν ειναι συμβατές (π.χ. IE 11), εξετάστε το ενδεχόμενο να συμπεριλάβετε ένα global polyfill στο bundle της εφαρμογής σας, όπως για παράδειγμα το [core-js](https://github.com/zloirock/core-js) ή το [babel-polyfill](https://babeljs.io/docs/usage/polyfill/).
+=======
+React 16 depends on the collection types [Map](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Map) and [Set](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Set). If you support older browsers and devices which may not yet provide these natively (e.g. IE < 11) or which have non-compliant implementations (e.g. IE 11), consider including a global polyfill in your bundled application, such as [core-js](https://github.com/zloirock/core-js).
+>>>>>>> 7994045415a9066f8663ee5403e874edbb4c5f83
 
 Ένα polyfilled περιβάλλον για το React 16 με χρήση του core-js που να υποστηρίζει παλιότερους browsers ενδέχεται να μοιάζει κάπως έτσι :
 
