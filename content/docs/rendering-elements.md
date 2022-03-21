@@ -39,7 +39,11 @@ const element = <h1>Hello, world</h1>;
 
 `embed:rendering-elements/render-an-element.js`
 
+<<<<<<< HEAD
 [Δοκιμάστε το στο CodePen](codepen://rendering-elements/render-an-element)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/ZpvBNJ?editors=1010)**
+>>>>>>> 1e3b023d3192c36a2da7b72389debee2f0e0e8b0
 
 Εμφανίζει "Hello, world" στη σελίδα.
 
@@ -53,7 +57,11 @@ Ta React elements είναι [αμετάβλητα](https://en.wikipedia.org/wik
 
 `embed:rendering-elements/update-rendered-element.js`
 
+<<<<<<< HEAD
 [Δοκιμάστε το στο CodePen](codepen://rendering-elements/update-rendered-element)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/gwoJZk?editors=1010)**
+>>>>>>> 1e3b023d3192c36a2da7b72389debee2f0e0e8b0
 
 Αυτό καλεί [`ReactDOM.render()`](/docs/react-dom.html#render) κάθε δευτερόλεπτο από μια [`setInterval()`](https://developer.mozilla.org/en-US/docs/Web/API/WindowTimers/setInterval) επανάκληση.
 
@@ -67,7 +75,11 @@ Ta React elements είναι [αμετάβλητα](https://en.wikipedia.org/wik
 
 Το React DOM συγρίνει το element και τα παιδιά του προηγούμενου, και μόνο εφαρμόζει οι ενημερώσεις απαραίτητες του DOM να φέρει το DOM στην επιθυμητή κατάσταση.
 
+<<<<<<< HEAD
 Μπορείτε να επαληθεύσετε ελέγχοντας το [τελευταίο παράδειγμα](codepen://rendering-elements/update-rendered-element) με τα εργαλεία του προγράμματος περιήγησης:
+=======
+You can verify by inspecting the [last example](https://codepen.io/gaearon/pen/gwoJZk?editors=1010) with the browser tools:
+>>>>>>> 1e3b023d3192c36a2da7b72389debee2f0e0e8b0
 
 ![DOM inspector showing granular updates](../images/docs/granular-dom-updates.gif)
 
