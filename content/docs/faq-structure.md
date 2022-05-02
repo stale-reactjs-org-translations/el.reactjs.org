@@ -12,7 +12,11 @@ category: FAQ
 
 #### Ομαδοποίηση κατά χαρακτηριστικά ή διαδρομές {#grouping-by-features-or-routes}
 
+<<<<<<< HEAD
 Ένας κοινός τρόπος για τη δομή των project είναι να τοποθετήσετε τα CSS, JS και tests μαζί σε φακέλους ομαδοποιημένους ανά χαρακτηριστικό ή διαδρομή.
+=======
+One common way to structure projects is to locate CSS, JS, and tests together inside folders grouped by feature or route.
+>>>>>>> 5f3a9756e00e256735a5f52df19b403d8fdd3a9d
 
 ```
 common/
