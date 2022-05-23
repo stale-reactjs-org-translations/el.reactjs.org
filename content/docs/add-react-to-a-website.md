@@ -25,7 +25,11 @@ next: create-a-new-react-app.html
 
 Δεν θα χρειαστούν περίπλοκα εργαλεία ούτε απαιτήσεις εγκατάστασης. **Για να ολοκληρώσετε αυτήν την ενότητα, το μόνο που θα χρειαστείτε είναι μια σύνδεση στο διαδίκτυο και ένα λεπτό από τον χρόνο σας.**
 
+<<<<<<< HEAD
 Προαιρετικό: [Κάντε λήψη του πλήρους παραδείγματος (2 KB συμπιεσμένο)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)
+=======
+Optional: [Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)
+>>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 ### Βήμα 1: Προσθήκη ενός DOM container στην HTML {#step-1-add-a-dom-container-to-the-html}
 
@@ -52,10 +56,17 @@ next: create-a-new-react-app.html
 ```html{5,6,9}
   <!-- ... άλλη HTML ... -->
 
+<<<<<<< HEAD
   <!-- Φόρτωση του React. -->
   <!-- Σημείωση: Όταν κάνετε deploy, αντικαταστήστε το "development.js" με το "production.min.js". -->
   <script src="https://unpkg.com/react@16/umd/react.development.js" crossorigin></script>
   <script src="https://unpkg.com/react-dom@16/umd/react-dom.development.js" crossorigin></script>
+=======
+  <!-- Load React. -->
+  <!-- Note: when deploying, replace "development.js" with "production.min.js". -->
+  <script src="https://unpkg.com/react@18/umd/react.development.js" crossorigin></script>
+  <script src="https://unpkg.com/react-dom@18/umd/react-dom.development.js" crossorigin></script>
+>>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
   <!-- Φόρτωση του React component μας. -->
   <script src="like_button.js"></script>
@@ -75,16 +86,28 @@ next: create-a-new-react-app.html
 >
 >Αυτός ο κώδικας ορίζει ένα React component που ονομάζεται `LikeButton`. Μην ανησυχείτε αν δεν τον κατανοείτε ακόμη. Θα καλύψουμε τα δομικά στοιχεία του React αργότερα στο [πρακτικό tutorial](/tutorial/tutorial.html) και τον [οδηγό βασικών εννοιών](/docs/hello-world.html). Για την ώρα, ας τον κάνουμε να εμφανιστεί στην οθόνη!
 
+<<<<<<< HEAD
 Μετά από **[τον κώδικα starter](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, προσθέστε δύο σειρές στο κάτω μέρος του `like_button.js`:
 
 ```js{3,4}
 // ... ο κώδικας starter που επικολλήσατε ...
+=======
+After **[the starter code](https://gist.github.com/gaearon/0b180827c190fe4fd98b4c7f570ea4a8/raw/b9157ce933c79a4559d2aa9ff3372668cce48de7/LikeButton.js)**, add three lines to the bottom of `like_button.js`:
+
+```js{3,4,5}
+// ... the starter code you pasted ...
+>>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 const domContainer = document.querySelector('#like_button_container');
-ReactDOM.render(e(LikeButton), domContainer);
+const root = ReactDOM.createRoot(domContainer);
+root.render(e(LikeButton));
 ```
 
+<<<<<<< HEAD
 Αυτές οι δύο σειρές κώδικα εντοπίζουν το `<div>` που προσθέσαμε στην HTML μας στο 1ο βήμα και, έπειτα, εμφανίζουν εντός του το React component μας με το κουμπί "Μου αρέσει". 
+=======
+These three lines of code find the `<div>` we added to our HTML in the first step, create a React app with it, and then display our "Like" button React component inside of it.
+>>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 ### Αυτό ήταν όλο! {#thats-it}
 
@@ -94,7 +117,11 @@ ReactDOM.render(e(LikeButton), domContainer);
 
 **[Προβολή του πλήρους πηγαίου κώδικα του παραδείγματος](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605)**
 
+<<<<<<< HEAD
 **[Λήψη του πλήρους παραδείγματος (2 KB συμπιεσμένο)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/f6c882b6ae18bde42dcf6fdb751aae93495a2275.zip)**
+=======
+**[Download the full example (2KB zipped)](https://gist.github.com/gaearon/6668a1f6986742109c00a581ce704605/archive/87f0b6f34238595b44308acfb86df6ea43669c08.zip)**
+>>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 ### Συμβουλή: Επαναχρησιμοποίηση ενός Component {#tip-reuse-a-component}
 
@@ -102,7 +129,11 @@ ReactDOM.render(e(LikeButton), domContainer);
 
 [Προβολή του πλήρους πηγαίου κώδικα του παραδείγματος](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda)
 
+<<<<<<< HEAD
 [Λήψη του πλήρους παραδείγματος (2 KB συμπιεσμένο)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/9d0dd0ee941fea05fd1357502e5aa348abb84c12.zip)
+=======
+[Download the full example (2KB zipped)](https://gist.github.com/gaearon/faa67b76a6c47adbab04f739cba7ceda/archive/279839cb9891bd41802ebebc5365e9dec08eeb9f.zip)
+>>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 >Σημείωση
 >
@@ -115,15 +146,19 @@ ReactDOM.render(e(LikeButton), domContainer);
 Εάν έχετε ήδη ελαχιστοποιήσει τα application scripts, **ο ιστότοπός σας θα είναι έτοιμος για παραγωγή**, εφόσον διασφαλίσετε ότι η deployed HTML φορτώνει τις εκδόσεις του React με κατάληξη `production.min.js`:
 
 ```js
-<script src="https://unpkg.com/react@16/umd/react.production.min.js" crossorigin></script>
-<script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react@18/umd/react.production.min.js" crossorigin></script>
+<script src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js" crossorigin></script>
 ```
 
 Εάν δεν περιλαμβάνετε ένα βήμα ελαχιστοποίησης για τα scripts σας, [εδώ μπορείτε να βρείτε έναν τρόπο για να δημιουργήσετε ένα](https://gist.github.com/gaearon/42a2ffa41b8319948f9be4076286e1f3).
 
 ## Προαιρετικό: Δοκιμή του React με το JSX {#optional-try-react-with-jsx}
 
+<<<<<<< HEAD
 Στα παραπάνω παραδείγματα, βασιστήκαμε αποκλειστικά σε features που υποστηρίζονται εγγενώς από τα προγράμματα περιήγησης. Αυτός είναι ο λόγος που χρησιμοποιήσαμε ένα JavaScript function call για να πούμε στο React τι να εμφανίσει:
+=======
+In the examples above, we only relied on features that are natively supported by browsers. This is why we used a JavaScript function call to tell React what to display:
+>>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 ```js
 const e = React.createElement;
@@ -149,7 +184,11 @@ return (
 
 Αυτά τα δύο snippets κώδικα είναι ισοδύναμα. Ενώ το **JSX είναι [εξ ολοκλήρου προαιρετικό](/docs/react-without-jsx.html)**, πολλοί το θεωρούν χρήσιμο για τη σύνταξη κώδικα UI - τόσο με το React όσο και με άλλες βιβλιοθήκες.
 
+<<<<<<< HEAD
 Μπορείτε να πειραματιστείτε με το JSX χρησιμοποιώντας [αυτόν τον online μετατροπέα](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.4.3).
+=======
+You can play with JSX using [this online converter](https://babeljs.io/en/repl#?babili=false&browsers=&build=&builtIns=false&spec=false&loose=false&code_lz=DwIwrgLhD2B2AEcDCAbAlgYwNYF4DeAFAJTw4B88EAFmgM4B0tAphAMoQCGETBe86WJgBMAXJQBOYJvAC-RGWQBQ8FfAAyaQYuAB6cFDhkgA&debug=false&forceAllTransforms=false&shippedProposals=false&circleciRepo=&evaluate=false&fileSize=false&timeTravel=false&sourceType=module&lineWrap=true&presets=es2015%2Creact%2Cstage-2&prettier=false&targets=&version=7.15.7).
+>>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 ### Γρήγορη δοκιμή του JSX {#quickly-try-jsx}
 
@@ -159,7 +198,11 @@ return (
 <script src="https://unpkg.com/babel-standalone@6/babel.min.js"></script>
 ```
 
+<<<<<<< HEAD
 Τώρα, μπορείτε να χρησιμοποιήσετε το JSX σε οποιοδήποτε `<script>` tag προσθέτοντας το `type="text/babel"` attribute σε αυτό. Ακολουθεί [ένα παράδειγμα αρχείου HTML με JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/master/static/html/single-file-example.html), το οποίο μπορείτε να κάνετε λήψη και να πειραματιστείτε μαζί του.
+=======
+Now you can use JSX in any `<script>` tag by adding `type="text/babel"` attribute to it. Here is [an example HTML file with JSX](https://raw.githubusercontent.com/reactjs/reactjs.org/main/static/html/single-file-example.html) that you can download and play with.
+>>>>>>> 3aac8c59848046fb427aab4373a7aadd7069a24c
 
 Αυτή η προσέγγιση είναι ιδανική για εκμάθηση και δημιουργία απλών demos. Ωστόσο, καθιστά τον ιστότοπό σας πιο αργό και **δεν είναι κατάλληλη για το στάδιο της παραγωγής**. Όταν είστε έτοιμος να προχωρήσετε, αφαιρέστε αυτό το νέο `<script>` tag και τα `type="text/babel"` attributes που προσθέσατε. Αντ' αυτού, στην επόμενη ενότητα θα ρυθμίσετε ένα JSX preprocessor για την αυτόματη μετατροπή όλων των `<script>` tags σας.
 
@@ -183,8 +226,8 @@ return (
 
 Δημιουργήστε έναν φάκελο με την ονομασία `src` και εκτελέστε αυτήν την εντολή τερματικού:
 
-```
-npx babel --watch src --out-dir . --presets react-app/prod 
+```console
+npx babel --watch src --out-dir . --presets react-app/prod
 ```
 
 >Σημείωση
