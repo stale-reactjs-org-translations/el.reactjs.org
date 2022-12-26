@@ -35,11 +35,6 @@ const element = <h1>Hello, world!</h1>;
 ```js{1,2}
 const name = 'Josh Perez';
 const element = <h1>Hello, {name}</h1>;
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
 ```
 
 Μπορείτε να βάλετε οποιαδήποτε έγκυρη [έκφραση της JavaScript](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Guide/Expressions_and_Operators#Expressions) μέσα σε αγκύλες στο JSX. Για παράδειγμα οι `2 + 2`, `user.firstName` ή `fotmatName(user)` είναι έγκυρες εκφράσεις της JavaScript.
@@ -61,14 +56,13 @@ const element = (
     Hello, {formatName(user)}!
   </h1>
 );
-
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
 ```
 
+<<<<<<< HEAD
 **[Δοκιμάστε το στο CodePen](codepen://introducing-jsx)**
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/PGEjdG?editors=1010)**
+>>>>>>> 4b68508440a985598571f78f60637b6dccdd5a1a
 
 Διαχωρίζουμε το JSX σε πολλές γραμμές για ευκολία στην ανάγνωση. Ενώ δεν απαιτείται, όταν το κάνετε αυτό, προτείνουμε να το κλείσετε σε παρενθέσεις για να αποφύγετε τις παγίδες [της αυτόματης εισαγωγής ερωτηματικού](https://stackoverflow.com/q/2846283).
 
@@ -92,7 +86,7 @@ function getGreeting(user) {
 Μπορείτε να χρησιμοποιήσετε εισαγωγικά για να καθορίσετε τα string literals ως attributes:
 
 ```js
-const element = <div tabIndex="0"></div>;
+const element = <a href="https://www.reactjs.org"> link </a>;
 ```
 
 Μπορείτε επίσης να χρησιμοποιήσετε άγκιστρα για να ενσωματώσετε μια έκφραση JavaScript σε ένα argument:
@@ -182,4 +176,8 @@ const element = {
 
 >**Tip:**
 >
+<<<<<<< HEAD
 >Προτείνουμε τη χρήση του ["Babel" language definition](https://babeljs.io/docs/editors) για τον editor της επιλογής σας, ώστε ο κώδικας ES6 και JSX να επισημαίνονται σωστά.
+=======
+>We recommend using the ["Babel" language definition](https://babeljs.io/docs/en/next/editors) for your editor of choice so that both ES6 and JSX code is properly highlighted.
+>>>>>>> 4b68508440a985598571f78f60637b6dccdd5a1a
