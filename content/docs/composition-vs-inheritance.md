@@ -170,4 +170,8 @@ class SignUpDialog extends React.Component {
 
 Τα props και η σύνθεση σας δίνουν όλη την ευελιξία που χρειάζεστε για να προσαρμόσετε την εμφάνιση και τη συμπεριφορά ενός component με έναν σαφή και ασφαλή τρόπο. Θυμηθείτε ότι τα components ενδέχεται να δέχονται αυθαίρετα props, συμπεριλαμβανομένων των primitive values, React elements ή συναρτήσεις.
 
+<<<<<<< HEAD
 Εάν θέλετε να επαναχρησιμοποιήσετε κάποια λειτουργία εκτός του UI μεταξύ των components, σας συνιστούμε να την εξαγάγετε σε ένα ξεχωριστό JavaScript module. Τα components μπορούν να το κάνουν import και να χρησιμοποιούν αυτή τη συνάρτηση, object ή κλάση, χωρίς να το επεκτείνουν.
+=======
+If you want to reuse non-UI functionality between components, we suggest extracting it into a separate JavaScript module. The components may import it and use that function, object, or class, without extending it.
+>>>>>>> 47adefd30c46f486428d8231a68e639d62f02c9e
