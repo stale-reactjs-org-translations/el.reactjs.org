@@ -8,7 +8,20 @@ redirect_from:
   - "tips/false-in-jsx.html"
 ---
 
+<<<<<<< HEAD
 Στο React, μπορείτε να δημιουργήσετε ξεχωριστά components που ενσωματώνουν τη συμπεριφορά που χρειάζεστε. Στη συνέχεια, μπορείτε να κάνετε render μόνο μαερικά από αυτά, ανάλογα με το state της εφαρμογής σας.
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Conditional Rendering](https://beta.reactjs.org/learn/conditional-rendering)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+
+In React, you can create distinct components that encapsulate behavior you need. Then, you can render only some of them, depending on the state of your application.
+>>>>>>> b0ccb47f33e52315b0ec65edb9a49dc4910dd99c
 
 Το rendering υπό συνθήκες στο React λειτουργεί με τον ίδιο τρόπο που λειτουργούν οι συνθήκες στη JavaScript. Χρησιμοποιήστε τα JavaScript operators όπως το [`if`](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Statements/if...else) ή το [conditional operator](https://developer.mozilla.org/en/docs/Web/JavaScript/Reference/Operators/Conditional_Operator) για να δημιουργήσετε components που αντιπροσωπεύουν το τρέχον state και αφήστε το React να ενημερώσει το UI για να τα ταιριάξει.
 
@@ -35,11 +48,9 @@ function Greeting(props) {
   return <GuestGreeting />;
 }
 
-ReactDOM.render(
-  // Try changing to isLoggedIn={true}:
-  <Greeting isLoggedIn={false} />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+// Try changing to isLoggedIn={true}:
+root.render(<Greeting isLoggedIn={false} />);
 ```
 
 [**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/ZpVxNq?editors=0011)
@@ -110,10 +121,8 @@ class LoginControl extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <LoginControl />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<LoginControl />);
 ```
 
 [**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/QKzAgB?editors=0010)
@@ -122,7 +131,11 @@ ReactDOM.render(
 
 ### If σε μια γραμμή με το λογικό Οperator && {#inline-if-with-logical--operator}
 
+<<<<<<< HEAD
 Μπορείτε να [ενσωματώσετε οποιεσδήποτε εκφράσεις μέσα στο JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) περικλείοντας τα σε άγκιστρα. Αυτό περιλαμβάνει τον λογικό operator της JavaScript `&&`. Μπορεί να είναι βολικό για να συμπεριλάβει υπό συνθήκη ένα component:
+=======
+You may [embed expressions in JSX](/docs/introducing-jsx.html#embedding-expressions-in-jsx) by wrapping them in curly braces. This includes the JavaScript logical `&&` operator. It can be handy for conditionally including an element:
+>>>>>>> b0ccb47f33e52315b0ec65edb9a49dc4910dd99c
 
 ```js{6-10}
 function Mailbox(props) {
@@ -140,10 +153,9 @@ function Mailbox(props) {
 }
 
 const messages = ['React', 'Re: React', 'Re:Re: React'];
-ReactDOM.render(
-  <Mailbox unreadMessages={messages} />,
-  document.getElementById('root')
-);
+
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<Mailbox unreadMessages={messages} />);
 ```
 
 [**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/ozJddz?editors=0010)
@@ -151,6 +163,19 @@ ReactDOM.render(
 Λειτουργεί επειδή στην JavaScript, το `true && expression` πάντα αποτιμάται σε `expression`, και το `false && expression` πάντα αποτιμάται σε `false`.
 
 Επομένως, αν η κατάσταση είναι `true`, το component αμέσως μετά το `&&` θα εμφανιστεί στο output. Εάν είναι `false`, το React θα το αγνοήσει.
+
+Note that returning a falsy expression will still cause the element after `&&` to be skipped but will return the falsy expression. In the example below, `<div>0</div>` will be returned by the render method.
+
+```javascript{2,5}
+render() {
+  const count = 0;
+  return (
+    <div>
+      {count && <h1>Messages: {count}</h1>}
+    </div>
+  );
+}
+```
 
 ### Inline If-Else with Conditional Operator {#inline-if-else-with-conditional-operator}
 
@@ -176,11 +201,10 @@ render() {
   const isLoggedIn = this.state.isLoggedIn;
   return (
     <div>
-      {isLoggedIn ? (
-        <LogoutButton onClick={this.handleLogoutClick} />
-      ) : (
-        <LoginButton onClick={this.handleLoginClick} />
-      )}
+      {isLoggedIn
+        ? <LogoutButton onClick={this.handleLogoutClick} />
+        : <LoginButton onClick={this.handleLoginClick} />
+      }
     </div>
   );
 }
@@ -232,10 +256,8 @@ class Page extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Page />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root')); 
+root.render(<Page />);
 ```
 
 [**Δοκιμάστε το στο CodePen**](https://codepen.io/gaearon/pen/Xjoqwm?editors=0010)
