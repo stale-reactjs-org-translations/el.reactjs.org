@@ -19,9 +19,17 @@ var ReactTestUtils = require('react-dom/test-utils'); // ES5 with npm
 
 > Σημείωση:
 >
+<<<<<<< HEAD
 > Συνιστούμε τη χρήση του [`react-testing-library`](https://testing-library.com/react) το οποίο είναι σχεδιασμένο να επιτρέπει και να ενθαρρύνει το γράψιμο tests τα οποία χρησιμοποιούν τα components με τον ίδιο τρόπο που τα χρησιμοποιούν και οι χρήστες.
 >
 > Εναλλακτικά, το Airbnb έχει ανακοινώσει ενα testing utility, το  [Enzyme](https://airbnb.io/enzyme/), το οποίο διευκολύνει στο assert, manipulate, και traverse του output των React Components.
+=======
+> We recommend using [React Testing Library](https://testing-library.com/react) which is designed to enable and encourage writing tests that use your components as the end users do.
+> 
+> For React versions <= 16, the [Enzyme](https://airbnb.io/enzyme/) library makes it easy to assert, manipulate, and traverse your React Components' output.
+
+
+>>>>>>> b0ccb47f33e52315b0ec65edb9a49dc4910dd99c
 
  - [`act()`](#act)
  - [`mockComponent()`](#mockcomponent)
@@ -87,7 +95,7 @@ class Counter extends React.Component {
 
 ```js{3,20-22,29-31}
 import React from 'react';
-import ReactDOM from 'react-dom';
+import ReactDOM from 'react-dom/client';
 import { act } from 'react-dom/test-utils';
 import Counter from './Counter';
 
@@ -106,7 +114,7 @@ afterEach(() => {
 it('can render and update a counter', () => {
   // Τεστάρει το πρώτο render και το componentDidMount
   act(() => {
-    ReactDOM.render(<Counter />, container);
+    ReactDOM.createRoot(container).render(<Counter />);
   });
   const button = container.querySelector('button');
   const label = container.querySelector('p');
@@ -150,10 +158,14 @@ mockComponent(
 > Σημείωση:
 >
 <<<<<<< HEAD
+<<<<<<< HEAD
 > Το `mockComponent()` είναι ένα legacy API. Συνιστούμε να χρησιμοποιήσετε το [shallow rendering](/docs/shallow-renderer.html) ή το [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock).
 =======
 > `mockComponent()` is a legacy API. We recommend using [`jest.mock()`](https://facebook.github.io/jest/docs/en/tutorial-react-native.html#mock-native-modules-using-jestmock) instead.
 >>>>>>> ddbd064d41d719f9ec0c2f6a4227f797a5828310
+=======
+> `mockComponent()` is a legacy API. We recommend using [`jest.mock()`](https://jestjs.io/docs/tutorial-react-native#mock-native-modules-using-jestmock) instead.
+>>>>>>> b0ccb47f33e52315b0ec65edb9a49dc4910dd99c
 
 * * *
 
@@ -314,7 +326,7 @@ renderIntoDocument(element)
 
 ```js
 const domContainer = document.createElement('div');
-ReactDOM.render(element, domContainer);
+ReactDOM.createRoot(domContainer).render(element);
 ```
 
 > Σημείωση:
