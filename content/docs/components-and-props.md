@@ -16,7 +16,20 @@ prev: rendering-elements.html
 next: state-and-lifecycle.html
 ---
 
+<<<<<<< HEAD
 Τα components σας επιτρέπουν να χωρίσετε το UI σε ανεξάρτητα, επαναχρησιμοποιούμενα κομμάτια και να σκεφτείτε κάθε κομμάτι μεμονωμένα. Αυτή η σελίδα παρέχει μια εισαγωγή στην ιδέα των components. Μπορείτε να βρείτε [εδώ μια αναλυτική αναφορά του component API](/docs/react-component.html).
+=======
+> Try the new React documentation.
+> 
+> These new documentation pages teach modern React and include live examples:
+>
+> - [Your First Component](https://beta.reactjs.org/learn/your-first-component)
+> - [Passing Props to a Component](https://beta.reactjs.org/learn/passing-props-to-a-component)
+>
+> The new docs will soon replace this site, which will be archived. [Provide feedback.](https://github.com/reactjs/reactjs.org/issues/3308)
+
+Components let you split the UI into independent, reusable pieces, and think about each piece in isolation. This page provides an introduction to the idea of components. You can find a [detailed component API reference here](/docs/react-component.html).
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 Εννοιολογικά, τα components είναι σαν συναρτήσεις JavaScript. Δέχονται αυθαίρετες εισόδους (που ονομάζονται "props") και επιστρέφουν React elements που περιγράφουν τι πρέπει να εμφανίζεται στην οθόνη.
 
@@ -64,26 +77,35 @@ const element = <Welcome name="Sara" />;
 
 Για παράδειγμα, αυτός ο κώδικας κάνει render "Hello, Sara" στη σελίδα:
 
-```js{1,5}
+```js{1,6}
 function Welcome(props) {
   return <h1>Hello, {props.name}</h1>;
 }
 
+const root = ReactDOM.createRoot(document.getElementById('root'));
 const element = <Welcome name="Sara" />;
-ReactDOM.render(
-  element,
-  document.getElementById('root')
-);
+root.render(element);
 ```
 
+<<<<<<< HEAD
 **[Δοκιμάστε το στο CodePen](codepen://components-and-props/rendering-a-component)**
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/YGYmEG?editors=1010)**
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 Ας ανακεφαλαιώσουμε τι συμβαίνει σε αυτό το παράδειγμα:
 
+<<<<<<< HEAD
 1. Θα καλέσουμε το `ReactDOM.render()`  με το `<Welcome name="Sara" />` element.
 2. Το React καλεί το `Welcome` component με το `{name: 'Sara'}` ως τα props.
 3. Το `Welcome` component μας επειστρέφει ως αποτέλεσμα ένα `<h1>Hello, Sara</h1>` element.
 4. Το React DOM ενημερώνει αποδοτικά το DOM για να ταιριάζει το `<h1>Hello, Sara</h1>`.
+=======
+1. We call `root.render()` with the `<Welcome name="Sara" />` element.
+2. React calls the `Welcome` component with `{name: 'Sara'}` as the props.
+3. Our `Welcome` component returns a `<h1>Hello, Sara</h1>` element as the result.
+4. React DOM efficiently updates the DOM to match `<h1>Hello, Sara</h1>`.
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 >**Σημείωση:** Πάντα να ξεκινάτε τα ονόματα των components με κεφαλαίο γράμμα.
 >
@@ -111,14 +133,13 @@ function App() {
     </div>
   );
 }
-
-ReactDOM.render(
-  <App />,
-  document.getElementById('root')
-);
 ```
 
+<<<<<<< HEAD
 **[Δοκιμάστε το στο CodePen](codepen://components-and-props/composing-components)**
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/KgQKPr?editors=1010)**
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 Συνήθως, οι νέες React εφαρμογές έχουν ένα μόνο `App` component στην κορυφή. Ωστόσο, εαν ενσωματώσετε το React σε μια υπάρχουσα εφαρμογή, μπορεί να ξεκινήσετε από τη βάση προς τα πάνω με ένα μικρό component όπως το `Button` και να φτάσετε σταδιακά στην κορυφή της view ιεραρχίας.
 
@@ -152,7 +173,11 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [Δοκιμάστε το στο CodePen](codepen://components-and-props/extracting-components)
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/VKQwEo?editors=1010)**
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 Αποδέχεται το `author` (ένα object), το `text` (ένα string), και το `date` (ένα date) ως props, και περιγράφει ένα σχόλιο σε έναν ιστότοπο social media.
 
@@ -231,9 +256,15 @@ function Comment(props) {
 }
 ```
 
+<<<<<<< HEAD
 [Δοκιμάστε το στο CodePen](codepen://components-and-props/extracting-components-continued)
 
 Η εξαγωγή των components ίσως μοιάζει αρχικά με εργασία, αλλά μια παλέτα επαναχρησιμοποιούμενων components αποδίδει σε μεγαλύτερες εφαρμογές. Ένας καλός κανόνας είναι ότι εαν ένα μέρος του UI σας χρησιμοποιείται αρκετές φορές (`Button`, `Panel`, `Avatar`), ή είναι αρκετά σύνθετο από μόνο του (`App`, `FeedStory`, `Comment`), είναι ένας καλός υποψήφιος να είναι ένα επαναχρησιμοποιήσιμο component.
+=======
+**[Try it on CodePen](https://codepen.io/gaearon/pen/rrJNJY?editors=1010)**
+
+Extracting components might seem like grunt work at first, but having a palette of reusable components pays off in larger apps. A good rule of thumb is that if a part of your UI is used several times (`Button`, `Panel`, `Avatar`), or is complex enough on its own (`App`, `FeedStory`, `Comment`), it is a good candidate to be extracted to a separate component.
+>>>>>>> 19aa5b4852c3905757edb16dd62f7e7506231210
 
 ## Τα Props είναι Read-Only {#props-are-read-only}
 
