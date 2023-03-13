@@ -17,10 +17,8 @@ class Hello extends React.Component {
   }
 }
 
-ReactDOM.render(
-  <Hello toWhat="World" />,
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(<Hello toWhat="World" />);
 ```
 
 μπορεί να "μεταφραστεί" σε αυτόν τον κώδικα που δεν χρησιμοποιεί JSX:
@@ -32,10 +30,8 @@ class Hello extends React.Component {
   }
 }
 
-ReactDOM.render(
-  React.createElement(Hello, {toWhat: 'World'}, null),
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(React.createElement(Hello, {toWhat: 'World'}, null));
 ```
 
 Αν είστε περίεργοι να δείτε περισσότερα παραδείγματα για το πώς το JSX μετατρέπεται σε JavaScript, μπορείτε να δοκιμάσετε [τον online Babel compiler](babel://jsx-simple-example).
@@ -47,10 +43,8 @@ ReactDOM.render(
 ```js
 const e = React.createElement;
 
-ReactDOM.render(
-  e('div', null, 'Hello World'),
-  document.getElementById('root')
-);
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(e('div', null, 'Hello World'));
 ```
 
 Εάν χρησιμοποιείτε αυτήν τη "σύντομη φόρμα" (shorthand form) για το `React.createElement`, μπορεί να είναι εξίσου βολικό να χρησιμοποιήσετε το React χωρίς JSX
